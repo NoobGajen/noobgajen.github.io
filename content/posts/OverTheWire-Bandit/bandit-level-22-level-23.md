@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 22 => Level 23"
 date: 2020-01-23
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-22-level-23"]
+description: "A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed."
+hidemeta: false
+hideSummary: false
 weight: 22
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
 
 ### Here are the details which we have from the previous level:

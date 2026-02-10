@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 24 => Level 25"
 date: 2020-01-25
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-24-level-25", "Git"]
+description: "A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pin code. There is no way to retrieve the pin code except by going through all the 10000 combinations, called brute-forcing."
+hidemeta: false
+hideSummary: false
 weight: 24
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pin code. There is no way to retrieve the pin code except by going through all the 10000 combinations, called brute-forcing.
 
 ### Here are the details which we have from the previous level:

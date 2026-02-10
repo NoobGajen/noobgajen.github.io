@@ -1,4 +1,0 @@
----
-title: "ReverseShell"
-hidemeta: true
----

@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 14 => Level 15"
 date: 2020-01-15
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-14-level-15"]
+description: "The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost."
+hidemeta: false
+hideSummary: false
 weight: 14
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
 ### Here are the details which we have from the previous level:

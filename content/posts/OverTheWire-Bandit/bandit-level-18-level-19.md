@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 18 => Level 19"
 date: 2020-01-19
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-18-level-19"]
+description: "The password for the next level is stored in a file `readme` in the homedirectory. Unfortunately, someone has modified `.bashrc` to log you out when you log in with SSH."
+hidemeta: false
+hideSummary: false
 weight: 18
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in a file `readme` in the homedirectory. Unfortunately, someone has modified `.bashrc` to log you out when you log in with SSH.
 
 ### Here are the details which we have from the previous level:

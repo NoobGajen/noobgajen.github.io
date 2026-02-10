@@ -1,5 +1,5 @@
 ---
-title: "🐉 Kali Docker Persistent Container"
+title: "Kali Docker Persistent Container"
 date: 2026-01-13
 tags: ['docker', 'security', 'penetration-testing', 'ctf', 'kali-linux', 'containerization', 'devops']
 ---

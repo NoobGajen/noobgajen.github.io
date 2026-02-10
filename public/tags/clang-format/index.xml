@@ -9,7 +9,7 @@
     <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/clang-format/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🛠️ Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)</title>
+      <title>Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)</title>
       <link>http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/</guid>

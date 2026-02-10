@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/lfi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>File Inclusion</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/</guid>
       <description>&lt;h1 id=&#34;file-inclusion-and-path-traversal&#34;&gt;File Inclusion and Path Traversal&lt;/h1&gt;
 &lt;h2 id=&#34;at-a-glance&#34;&gt;At a Glance&lt;/h2&gt;
 &lt;p&gt;File inclusion is the method for applications, and scripts, to include local or remote files during run-time. The vulnerability occurs when an application generates a path to executable code using an attacker-controlled variable, giving the attacker control over which file is executed.&lt;/p&gt;
@@ -20,9 +20,9 @@
     </item>
     <item>
       <title>Payloads and Outputs</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</guid>
       <description>&lt;h1 id=&#34;target-file-htaccess-output-with-php-string-filters&#34;&gt;Target File .htaccess Output with PHP String Filters&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -59,9 +59,9 @@ This filter remove any HTML or PHP tags from the file contents.&lt;/p&gt;
     </item>
     <item>
       <title>XSS File Stealing Cheat Sheet</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-steal-file-content-using-inline-xss-script-html&#34;&gt;1. Steal File Content Using Inline XSS Script (HTML)&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;

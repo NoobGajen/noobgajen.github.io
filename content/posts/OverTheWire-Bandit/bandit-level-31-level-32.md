@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 31 => Level 32"
 date: 2020-02-01
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-31-level-32", "Git"]
+description: "There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31."
+hidemeta: false
+hideSummary: false
 weight: 31
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.
 
 ### Here are the details which we have from the previous level:

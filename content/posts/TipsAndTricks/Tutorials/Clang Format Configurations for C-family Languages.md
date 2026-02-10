@@ -1,5 +1,5 @@
 ---
-title: "🛠️ Clang Format Configurations for C-family Languages (C, C++, etc)"
+title: "Clang Format Configurations for C-family Languages (C, C++, etc)"
 date: 2026-01-13
 tags: ['clang-format', 'code-formatting', 'c++', 'cpp']
 ---

@@ -10,16 +10,16 @@
     <atom:link href="http://localhost:1313/tags/log-poisoning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>File Inclusion</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/</guid>
       <description>&lt;h1 id=&#34;file-inclusion-and-path-traversal&#34;&gt;File Inclusion and Path Traversal&lt;/h1&gt;
 &lt;h2 id=&#34;at-a-glance&#34;&gt;At a Glance&lt;/h2&gt;
 &lt;p&gt;File inclusion is the method for applications, and scripts, to include local or remote files during run-time. The vulnerability occurs when an application generates a path to executable code using an attacker-controlled variable, giving the attacker control over which file is executed.&lt;/p&gt;
 &lt;p&gt;There are two different types. &lt;strong&gt;Local File Inclusion&lt;/strong&gt; (LFI) where the application includes files on the current server. And &lt;strong&gt;Remote File Inclusion&lt;/strong&gt; (RFI) where the application downloads and execute files from a remote server. &lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>🧨 Metasploit Practical Guide (for Beginners and CTF use)</title>
+      <title>Metasploit Practical Guide (for Beginners and CTF use)</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</guid>

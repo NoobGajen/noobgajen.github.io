@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bandit-Level-12-Level-13 on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/bandit-level-12-level-13/</link>
+    <description>Recent content in Bandit-Level-12-Level-13 on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bandit-level-12-level-13/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit: Level 12 =&gt; Level 13</title>
+      <link>http://localhost:1313/posts/overthewire-bandit/bandit-level-12-level-13/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/overthewire-bandit/bandit-level-12-level-13/</guid>
+      <description>The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)</description>
+    </item>
+  </channel>
+</rss>

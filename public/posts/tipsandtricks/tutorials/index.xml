@@ -57,38 +57,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>Rules for Kali Linux facebook group</title>
-      <link>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups/</link>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups/</guid>
-      <description>&lt;h2 id=&#34;1-stay-focused-on-learning--skill-development&#34;&gt;1. Stay Focused on Learning &amp;amp; Skill Development:&lt;/h2&gt;
-&lt;p&gt;This group is a knowledge hub for ethical hacking, cybersecurity, and Kali Linux.
-✅ Ask questions, share knowledge, and help each other grow!
-✅ All posts must be relevant to these topics.
-🚫 Basic Kali errors? Ask in the Community Chat, not as a post.
-💡 Tip: Search before asking! Many common issues are already discussed.&lt;/p&gt;
-&lt;p&gt;We’re here to learn, not to clutter the group with unnecessary posts.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Rules for Kali Linux facebook group</title>
-      <link>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups_old/</link>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups_old/</guid>
-      <description>&lt;h2 id=&#34;1-focus-on-learning-and-skill-development&#34;&gt;1. Focus on Learning and Skill Development:&lt;/h2&gt;
-&lt;p&gt;The primary focus of this group is to provide a platform for discussions, sharing, and collaboration related to ethical hacking, cybersecurity and Kali Linux. Members are encouraged to ask questions and share their knowledge and experiences to improve their skills and understanding of these topics.&lt;/p&gt;
-&lt;p&gt;All posts related to these topics are welcome and encouraged. But asking for assistance with basic errors in Kali Linux may not be approved. So, please ask in the Community Chat.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>What should ChatGPT call you?</title>
-      <link>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</link>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</guid>
-      <description>&lt;p&gt;You can call me Gajendra. I’m working to become a skilled ethical hacker and bug bounty hunter, focusing on learning practical cybersecurity techniques and offensive security methods. I prefer responses that are clear, technical, and straight to the point, with real-world examples related to CTF challenges and red/blue teaming. Keep it simple, focused on Linux/Arch Linux, and give me actionable insights.&lt;/p&gt;
-&lt;h2 id=&#34;what-do-you-do&#34;&gt;What do you do?&lt;/h2&gt;
-&lt;p&gt;I’m a student of Bachelor in Information Technology with a passion for cybersecurity, focusing on red teaming, blue teaming, bug bounties, and CTF challenges. My goal is to specialize in both offensive and defensive security techniques to become a professional ethical hacker. I actively participate in CTFs on platforms like TryHackMe and HackTheBox. Additionally, I’m learning programming languages such as Bash, Python, PHP, C, HTML, and JavaScript to better understand applications from a developer&amp;rsquo;s perspective and secure them by identifying vulnerabilities before malicious actors can exploit them.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>🛠️ Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)</title>
+      <title>Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)</title>
       <link>http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/</guid>
@@ -182,6 +151,37 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;UseTab&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Never&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Rules for Kali Linux facebook group</title>
+      <link>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups/</guid>
+      <description>&lt;h2 id=&#34;1-stay-focused-on-learning--skill-development&#34;&gt;1. Stay Focused on Learning &amp;amp; Skill Development:&lt;/h2&gt;
+&lt;p&gt;This group is a knowledge hub for ethical hacking, cybersecurity, and Kali Linux.
+✅ Ask questions, share knowledge, and help each other grow!
+✅ All posts must be relevant to these topics.
+🚫 Basic Kali errors? Ask in the Community Chat, not as a post.
+💡 Tip: Search before asking! Many common issues are already discussed.&lt;/p&gt;
+&lt;p&gt;We’re here to learn, not to clutter the group with unnecessary posts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rules for Kali Linux facebook group</title>
+      <link>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups_old/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups_old/</guid>
+      <description>&lt;h2 id=&#34;1-focus-on-learning-and-skill-development&#34;&gt;1. Focus on Learning and Skill Development:&lt;/h2&gt;
+&lt;p&gt;The primary focus of this group is to provide a platform for discussions, sharing, and collaboration related to ethical hacking, cybersecurity and Kali Linux. Members are encouraged to ask questions and share their knowledge and experiences to improve their skills and understanding of these topics.&lt;/p&gt;
+&lt;p&gt;All posts related to these topics are welcome and encouraged. But asking for assistance with basic errors in Kali Linux may not be approved. So, please ask in the Community Chat.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What should ChatGPT call you?</title>
+      <link>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</guid>
+      <description>&lt;p&gt;You can call me Gajendra. I’m working to become a skilled ethical hacker and bug bounty hunter, focusing on learning practical cybersecurity techniques and offensive security methods. I prefer responses that are clear, technical, and straight to the point, with real-world examples related to CTF challenges and red/blue teaming. Keep it simple, focused on Linux/Arch Linux, and give me actionable insights.&lt;/p&gt;
+&lt;h2 id=&#34;what-do-you-do&#34;&gt;What do you do?&lt;/h2&gt;
+&lt;p&gt;I’m a student of Bachelor in Information Technology with a passion for cybersecurity, focusing on red teaming, blue teaming, bug bounties, and CTF challenges. My goal is to specialize in both offensive and defensive security techniques to become a professional ethical hacker. I actively participate in CTFs on platforms like TryHackMe and HackTheBox. Additionally, I’m learning programming languages such as Bash, Python, PHP, C, HTML, and JavaScript to better understand applications from a developer&amp;rsquo;s perspective and secure them by identifying vulnerabilities before malicious actors can exploit them.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

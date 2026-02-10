@@ -1,5 +1,5 @@
 ---
-title: "🛠️ Chisel Port Forwarding Guide"
+title: "Chisel Port Forwarding Guide"
 date: 2026-01-13
 tags: ['networking', 'security', 'post-exploitation', 'red-teaming', 'tunneling', 'port-forwarding', 'chisel-tool']
 ---

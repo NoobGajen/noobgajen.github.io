@@ -9,7 +9,7 @@
     <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/scp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🔐 File Transfer Over SSH Using `scp`</title>
+      <title>File Transfer Over SSH Using `scp`</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</guid>

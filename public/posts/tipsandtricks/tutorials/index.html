@@ -213,6 +213,19 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The clang-format tool works for multiple programming languages, not just C or C&#43;&#43;. It supports:
+C C&#43;&#43; Objective-C Objective-C&#43;&#43; JavaScript Java C# Protobuf TableGen, etc. Style 1: Using Stroustrup Brace Style Uses Stroustrup-style braces (else on a new line). Short if statements are allowed on a single line. Template declarations always break. { &#34;AccessModifierOffset&#34;: -4, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;AlwaysBreakTemplateDeclarations&#34;: true, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34;, &#34;BreakBeforeBraces&#34;: &#34;Stroustrup&#34;, &#34;ColumnLimit&#34;: 0 } Style 2: Custom Style Based on LLVM style but customized. else goes on a new line. Braces after functions and control statements are on the same line. Compact and clean layout. { &#34;Language&#34;: &#34;Cpp&#34;, &#34;BasedOnStyle&#34;: &#34;LLVM&#34;, &#34;BreakBeforeBraces&#34;: &#34;Custom&#34;, &#34;BraceWrapping&#34;: { &#34;AfterFunction&#34;: false, &#34;AfterControlStatement&#34;: false, &#34;BeforeElse&#34;: true }, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;ColumnLimit&#34;: 0, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34; } Style 3: Same as Style 2 but with 4-space indentation and no tabs Useful to ensure consistent formatting across editors and systems. { &#34;Language&#34;: &#34;Cpp&#34;, &#34;BasedOnStyle&#34;: &#34;LLVM&#34;, &#34;BreakBeforeBraces&#34;: &#34;Custom&#34;, &#34;BraceWrapping&#34;: { &#34;AfterFunction&#34;: false, &#34;AfterControlStatement&#34;: false, &#34;BeforeElse&#34;: true }, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;ColumnLimit&#34;: 0, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34;, &#34;IndentWidth&#34;: 4, &#34;TabWidth&#34;: 4, &#34;UseTab&#34;: &#34;Never&#34; } ✅ Style 4: Same as Style 3 but keeps else on the same line (Your Favorite - Minimal Braces) If you prefer } else format instead of }\nelse. { &#34;Language&#34;: &#34;Cpp&#34;, &#34;BasedOnStyle&#34;: &#34;LLVM&#34;, &#34;BreakBeforeBraces&#34;: &#34;Custom&#34;, &#34;BraceWrapping&#34;: { &#34;AfterFunction&#34;: false, &#34;AfterControlStatement&#34;: false, &#34;BeforeElse&#34;: false }, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;ColumnLimit&#34;: 0, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34;, &#34;IndentWidth&#34;: 4, &#34;TabWidth&#34;: 4, &#34;UseTab&#34;: &#34;Never&#34; } </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)" href="http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Rules for Kali Linux facebook group
     </h2>
   </header>
@@ -252,19 +265,6 @@ What do you do? I’m a student of Bachelor in Information Technology with a pas
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
   <a class="entry-link" aria-label="post link to What should ChatGPT call you?" href="http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🛠️ Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>The clang-format tool works for multiple programming languages, not just C or C&#43;&#43;. It supports:
-C C&#43;&#43; Objective-C Objective-C&#43;&#43; JavaScript Java C# Protobuf TableGen, etc. Style 1: Using Stroustrup Brace Style Uses Stroustrup-style braces (else on a new line). Short if statements are allowed on a single line. Template declarations always break. { &#34;AccessModifierOffset&#34;: -4, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;AlwaysBreakTemplateDeclarations&#34;: true, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34;, &#34;BreakBeforeBraces&#34;: &#34;Stroustrup&#34;, &#34;ColumnLimit&#34;: 0 } Style 2: Custom Style Based on LLVM style but customized. else goes on a new line. Braces after functions and control statements are on the same line. Compact and clean layout. { &#34;Language&#34;: &#34;Cpp&#34;, &#34;BasedOnStyle&#34;: &#34;LLVM&#34;, &#34;BreakBeforeBraces&#34;: &#34;Custom&#34;, &#34;BraceWrapping&#34;: { &#34;AfterFunction&#34;: false, &#34;AfterControlStatement&#34;: false, &#34;BeforeElse&#34;: true }, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;ColumnLimit&#34;: 0, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34; } Style 3: Same as Style 2 but with 4-space indentation and no tabs Useful to ensure consistent formatting across editors and systems. { &#34;Language&#34;: &#34;Cpp&#34;, &#34;BasedOnStyle&#34;: &#34;LLVM&#34;, &#34;BreakBeforeBraces&#34;: &#34;Custom&#34;, &#34;BraceWrapping&#34;: { &#34;AfterFunction&#34;: false, &#34;AfterControlStatement&#34;: false, &#34;BeforeElse&#34;: true }, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;ColumnLimit&#34;: 0, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34;, &#34;IndentWidth&#34;: 4, &#34;TabWidth&#34;: 4, &#34;UseTab&#34;: &#34;Never&#34; } ✅ Style 4: Same as Style 3 but keeps else on the same line (Your Favorite - Minimal Braces) If you prefer } else format instead of }\nelse. { &#34;Language&#34;: &#34;Cpp&#34;, &#34;BasedOnStyle&#34;: &#34;LLVM&#34;, &#34;BreakBeforeBraces&#34;: &#34;Custom&#34;, &#34;BraceWrapping&#34;: { &#34;AfterFunction&#34;: false, &#34;AfterControlStatement&#34;: false, &#34;BeforeElse&#34;: false }, &#34;AllowShortIfStatementsOnASingleLine&#34;: true, &#34;ColumnLimit&#34;: 0, &#34;Standard&#34;: &#34;C&#43;&#43;11&#34;, &#34;IndentWidth&#34;: 4, &#34;TabWidth&#34;: 4, &#34;UseTab&#34;: &#34;Never&#34; } </p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🛠️ Clang Format Configurations for C-family Languages (C, C&#43;&#43;, etc)" href="http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/"></a>
-</article>
           <div style="margin-top: auto">
             <div class="content-footer">
               <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
@@ -293,7 +293,9 @@ C C&#43;&#43; Objective-C Objective-C&#43;&#43; JavaScript Java C# Protobuf Tabl
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

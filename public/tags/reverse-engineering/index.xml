@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🐚 JavaScript Reverse Shell &amp; Command Execution Cheat Sheet</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/</link>
+      <title>JavaScript Reverse Shell &amp; Command Execution Cheat Sheet</title>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/</guid>
       <description>&lt;p&gt;Useful JavaScript snippets for remote command execution, reverse shells, and post-exploitation via Node.js or vulnerable &lt;code&gt;eval()&lt;/code&gt; injection.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-basic-reverse-shell-using-child_processexec&#34;&gt;📄 Basic Reverse Shell using &lt;code&gt;child_process.exec()&lt;/code&gt;&lt;/h2&gt;
@@ -38,9 +38,9 @@
     </item>
     <item>
       <title>XSS File Stealing Cheat Sheet</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-steal-file-content-using-inline-xss-script-html&#34;&gt;1. Steal File Content Using Inline XSS Script (HTML)&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;

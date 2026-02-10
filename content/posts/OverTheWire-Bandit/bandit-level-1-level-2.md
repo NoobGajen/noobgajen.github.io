@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 1 => Level 2"
 date: 2020-01-02
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-1-level-2"]
+description: "The password for the next level is stored in a file called `-` located in the home directory."
+hidemeta: false
+hideSummary: false
 weight: 1
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in a file called `-` located in the home directory.
 
 ### Here are the details which we have from the previous level:

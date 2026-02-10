@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 19 => Level 20"
 date: 2020-01-20
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-19-level-20"]
+description: "To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary."
+hidemeta: false
+hideSummary: false
 weight: 19
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary.
 
 ### Here are the details which we have from the previous level:

@@ -1,5 +1,5 @@
 ---
-title: "🔐 File Transfer Over SSH Using `scp`"
+title: "File Transfer Over SSH Using `scp`"
 date: 2026-01-13
 tags: ['security', 'networking', 'scp', 'file-transfer']
 ---

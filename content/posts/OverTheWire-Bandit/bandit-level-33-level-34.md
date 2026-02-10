@@ -1,9 +1,16 @@
 ---
 title: "📑 Bandit: Level 33 => Level 34"
 date: 2020-02-03
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-33-level-34"]
+description: "At this moment, level 34 does not exist."
+hidemeta: false
+hideSummary: false
 weight: 33
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 At this moment, level 34 does not exist.
 
 ### Here are the details which we have from the previous level:

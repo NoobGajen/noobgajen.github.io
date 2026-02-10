@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bandit-Level-8-Level-9 on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/bandit-level-8-level-9/</link>
+    <description>Recent content in Bandit-Level-8-Level-9 on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bandit-level-8-level-9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit: Level 8 =&gt; Level 9</title>
+      <link>http://localhost:1313/posts/overthewire-bandit/bandit-level-8-level-9/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/overthewire-bandit/bandit-level-8-level-9/</guid>
+      <description>The password for the next level is stored in the file `data.txt` and is the only line of text that occurs only once.</description>
+    </item>
+  </channel>
+</rss>

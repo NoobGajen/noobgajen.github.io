@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 10 => Level 11"
 date: 2020-01-11
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-10-level-11"]
+description: "The password for the next level is stored in the file `data.txt`, which contains `base64` encoded data."
+hidemeta: false
+hideSummary: false
 weight: 10
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in the file `data.txt`, which contains `base64` encoded data.
 
 ### Here are the details which we have from the previous level:

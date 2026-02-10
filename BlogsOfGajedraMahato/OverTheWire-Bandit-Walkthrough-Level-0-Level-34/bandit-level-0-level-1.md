@@ -1,3 +1,13 @@
+---
+title: "Bandit: Level 0 => Level 1"
+date: 2020-01-01
+weight: -1
+cover:
+  image: "bandit-level.png"
+  alt: "Bandit Wargame"
+  relative: true
+---
+
 # Bandit: Level 0 → Level 1
 
 The goal of this level is to log into the game using SSH.&#x20;

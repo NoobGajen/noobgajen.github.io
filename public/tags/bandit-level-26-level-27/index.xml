@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bandit-Level-26-Level-27 on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/bandit-level-26-level-27/</link>
+    <description>Recent content in Bandit-Level-26-Level-27 on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bandit-level-26-level-27/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit: Level 26 =&gt; Level 27</title>
+      <link>http://localhost:1313/posts/overthewire-bandit/bandit-level-26-level-27/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/overthewire-bandit/bandit-level-26-level-27/</guid>
+      <description>Good job getting a shell! Now hurry and grab the password for `bandit27`!</description>
+    </item>
+  </channel>
+</rss>

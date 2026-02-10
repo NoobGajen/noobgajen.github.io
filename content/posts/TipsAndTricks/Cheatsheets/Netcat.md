@@ -1,5 +1,5 @@
 ---
-title: "📁 File Transfer Using Netcat"
+title: "File Transfer Using Netcat"
 date: 2026-01-13
 tags: ['networking', 'netcat', 'file-transfer']
 ---

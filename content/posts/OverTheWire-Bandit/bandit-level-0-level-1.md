@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 0 => Level 1"
 date: 2020-01-01
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-0-level-1"]
+description: "The goal of this level is to log into the game using SSH.&#x20;"
+hidemeta: false
+hideSummary: false
 weight: -1
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The goal of this level is to log into the game using SSH.&#x20;
 
 ### Here are the details which we need to login via SSH:

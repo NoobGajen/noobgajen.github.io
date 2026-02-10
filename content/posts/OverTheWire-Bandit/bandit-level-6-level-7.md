@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 6 => Level 7"
 date: 2020-01-07
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-6-level-7"]
+description: "The password for the next level is stored somewhere on the server and has all of the following properties:"
+hidemeta: false
+hideSummary: false
 weight: 6
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored somewhere on the server and has all of the following properties:
 
 * owned by user bandit7

@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 25 => Level 26"
 date: 2020-01-26
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-25-level-26", "Git"]
+description: "Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it."
+hidemeta: false
+hideSummary: false
 weight: 25
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
 
 ### Here are the details which we have from the previous level:

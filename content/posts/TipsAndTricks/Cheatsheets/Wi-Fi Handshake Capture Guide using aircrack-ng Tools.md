@@ -1,5 +1,5 @@
 ---
-title: "📡 Wi-Fi Handshake Capture Guide using aircrack-ng Tools"
+title: "Wi-Fi Handshake Capture Guide using aircrack-ng Tools"
 date: 2026-01-13
 tags: ['security', 'networking', 'wpa-wpa2-cracking', 'packet-capture', 'wireless-security', 'wifi-jamming', 'dos-attack']
 ---

@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 9 => Level 10"
 date: 2020-01-10
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-9-level-10"]
+description: "The password for the next level is stored in the file `data.txt` in one of the few human-readable strings, preceded by several `=` characters."
+hidemeta: false
+hideSummary: false
 weight: 9
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in the file `data.txt` in one of the few human-readable strings, preceded by several `=` characters.
 
 ### Here are the details which we have from the previous level:

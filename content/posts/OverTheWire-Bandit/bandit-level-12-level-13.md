@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 12 => Level 13"
 date: 2020-01-13
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-12-level-13"]
+description: "The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)"
+hidemeta: false
+hideSummary: false
 weight: 12
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
 ### Here are the details which we have from the previous level:

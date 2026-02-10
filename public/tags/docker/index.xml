@@ -9,7 +9,7 @@
     <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🐉 Kali Distrobox Persistent Config</title>
+      <title>Kali Distrobox Persistent Config</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/</guid>
@@ -35,7 +35,7 @@
 &lt;p&gt;Run from the folder with the &lt;code&gt;Dockerfile&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>🐉 Kali Docker Persistent Container</title>
+      <title>Kali Docker Persistent Container</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/</guid>

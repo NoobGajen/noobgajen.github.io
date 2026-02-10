@@ -7,19 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Bandit: Level 19 =&gt; Level 20 | Gajendra Mahato</title>
-<meta name="keywords" content="">
-<meta name="description" content="To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
-Here are the details which we have from the previous level:
-
-Host: bandit.labs.overthewire.org
-Port: 2220
-Username: bandit19
-Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
-
-
-So, The SSH syntax will be:
-sshpass -p cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 ssh bandit19@bandit.labs.overthewire.org -p 2220
-We are dealing with a SUID binary. SUID or setuid, is a special type of permission in Unix-like operating systems that allows users to execute a file with the permissions of the file&rsquo;s owner rather than their own permissions. This special permission bit (s in the permission string) can be set on executable files using the chmod command.">
+<meta name="keywords" content="OverTheWire, Bandit, SSH, Linux, bandit-level-19-level-20">
+<meta name="description" content="To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/overthewire-bandit/bandit-level-19-level-20/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
@@ -65,27 +54,22 @@ We are dealing with a SUID binary. SUID or setuid, is a special type of permissi
 <meta property="og:url" content="http://localhost:1313/posts/overthewire-bandit/bandit-level-19-level-20/">
   <meta property="og:site_name" content="Gajendra Mahato">
   <meta property="og:title" content="Bandit: Level 19 =&gt; Level 20">
-  <meta property="og:description" content="To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
-Here are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit19 Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 So, The SSH syntax will be: sshpass -p cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 ssh bandit19@bandit.labs.overthewire.org -p 2220 We are dealing with a SUID binary. SUID or setuid, is a special type of permission in Unix-like operating systems that allows users to execute a file with the permissions of the file’s owner rather than their own permissions. This special permission bit (s in the permission string) can be set on executable files using the chmod command.">
+  <meta property="og:description" content="To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2020-01-20T00:00:00+00:00">
     <meta property="article:modified_time" content="2020-01-20T00:00:00+00:00">
-<meta name="twitter:card" content="summary">
+    <meta property="article:tag" content="OverTheWire">
+    <meta property="article:tag" content="Bandit">
+    <meta property="article:tag" content="SSH">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Bandit-Level-19-Level-20">
+    <meta property="og:image" content="http://localhost:1313/posts/overthewire-bandit/bandit-level-19-level-20/images/Bandit/bandit-level.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/posts/overthewire-bandit/bandit-level-19-level-20/images/Bandit/bandit-level.jpg">
 <meta name="twitter:title" content="Bandit: Level 19 =&gt; Level 20">
-<meta name="twitter:description" content="To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
-Here are the details which we have from the previous level:
-
-Host: bandit.labs.overthewire.org
-Port: 2220
-Username: bandit19
-Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
-
-
-So, The SSH syntax will be:
-sshpass -p cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 ssh bandit19@bandit.labs.overthewire.org -p 2220
-We are dealing with a SUID binary. SUID or setuid, is a special type of permission in Unix-like operating systems that allows users to execute a file with the permissions of the file&rsquo;s owner rather than their own permissions. This special permission bit (s in the permission string) can be set on executable files using the chmod command.">
+<meta name="twitter:description" content="To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary.">
 
 
 <script type="application/ld+json">
@@ -120,14 +104,14 @@ We are dealing with a SUID binary. SUID or setuid, is a special type of permissi
   "@type": "BlogPosting",
   "headline": "Bandit: Level 19 =\u003e Level 20",
   "name": "Bandit: Level 19 =\u003e Level 20",
-  "description": "To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.\nHere are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit19 Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 So, The SSH syntax will be: sshpass -p cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 ssh bandit19@bandit.labs.overthewire.org -p 2220 We are dealing with a SUID binary. SUID or setuid, is a special type of permission in Unix-like operating systems that allows users to execute a file with the permissions of the file\u0026rsquo;s owner rather than their own permissions. This special permission bit (s in the permission string) can be set on executable files using the chmod command.\n",
+  "description": "To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary.",
   "keywords": [
-    
+    "OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-19-level-20"
   ],
   "articleBody": "To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.\nHere are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit19 Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 So, The SSH syntax will be: sshpass -p cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 ssh bandit19@bandit.labs.overthewire.org -p 2220 We are dealing with a SUID binary. SUID or setuid, is a special type of permission in Unix-like operating systems that allows users to execute a file with the permissions of the file’s owner rather than their own permissions. This special permission bit (s in the permission string) can be set on executable files using the chmod command.\nls -l # Output: # total 16 # -rwsr-x--- 1 bandit20 bandit19 14880 Jun 16 02:47 bandit20-do The file bandit20-do is owned by user bandit20. Therefore, when it gets executed by any user, it runs with the privileges of the bandit20 user. This provides us with an opportunity to achieve our objective by executing commands as the bandit20 user.\n./bandit20-do # Output: # Run a command as another user. # Example: ./bandit20-do id This binary is designed to execute commands. Hence, we can directly use it to read files accessible to its owner.\n./bandit20-do cat /etc/bandit_pass/bandit20 # Output: # 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO ",
   "wordCount" : "237",
   "inLanguage": "en",
-  "datePublished": "2020-01-20T00:00:00Z",
+  "image":"http://localhost:1313/posts/overthewire-bandit/bandit-level-19-level-20/images/Bandit/bandit-level.jpg","datePublished": "2020-01-20T00:00:00Z",
   "dateModified": "2020-01-20T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -253,10 +237,17 @@ We are dealing with a SUID binary. SUID or setuid, is a special type of permissi
     <h1 class="post-title entry-hint-parent">
       Bandit: Level 19 =&gt; Level 20
     </h1>
+    <div class="post-description">
+      To gain access to the next level, you should use the `setuid` binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place `(/etc/bandit_pass)`, after you have used the setuid binary.
+    </div>
     <div class="post-meta"><span title='2020-01-20 00:00:00 +0000 UTC'>January 20, 2020</span>&nbsp;·&nbsp;<span>2 min</span>
 
 </div>
   </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="http://localhost:1313/images/Bandit/bandit-level.jpg" alt="Bandit Wargame">
+        
+</figure>
   <div class="post-content"><p>To gain access to the next level, you should use the <code>setuid</code> binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place <code>(/etc/bandit_pass)</code>, after you have used the setuid binary.</p>
 <h3 id="here-are-the-details-which-we-have-from-the-previous-level">Here are the details which we have from the previous level:<a hidden class="anchor" aria-hidden="true" href="#here-are-the-details-which-we-have-from-the-previous-level">#</a></h3>
 <ul>
@@ -288,6 +279,11 @@ We are dealing with a SUID binary. SUID or setuid, is a special type of permissi
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/overthewire/">OverTheWire</a></li>
+      <li><a href="http://localhost:1313/tags/bandit/">Bandit</a></li>
+      <li><a href="http://localhost:1313/tags/ssh/">SSH</a></li>
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/bandit-level-19-level-20/">Bandit-Level-19-Level-20</a></li>
     </ul>
 <nav class="paginav">
     <a class="prev" href="/posts/overthewire-bandit/bandit-level-18-level-19/">
@@ -331,7 +327,9 @@ We are dealing with a SUID binary. SUID or setuid, is a special type of permissi
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

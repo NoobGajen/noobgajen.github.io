@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 13 => Level 14"
 date: 2020-01-14
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-13-level-14"]
+description: "The password for the next level is stored in `/etc/bandit_pass/bandit14` and can only be read by user `bandit14`. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. **Note:** `localhost` is a hostname that refers to the machine you are working on."
+hidemeta: false
+hideSummary: false
 weight: 13
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in `/etc/bandit_pass/bandit14` and can only be read by user `bandit14`. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. **Note:** `localhost` is a hostname that refers to the machine you are working on.
 
 ### Here are the details which we have from the previous level:

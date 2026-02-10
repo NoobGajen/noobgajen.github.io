@@ -9,7 +9,7 @@
     <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/file-sharing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>📁 File Sharing Over SMB Using `smbserver.py`</title>
+      <title>File Sharing Over SMB Using `smbserver.py`</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</guid>

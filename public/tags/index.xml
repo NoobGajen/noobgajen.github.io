@@ -1149,5 +1149,278 @@
       <guid>http://localhost:1313/tags/dns-configuration/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Bandit</title>
+      <link>http://localhost:1313/tags/bandit/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-33-Level-34</title>
+      <link>http://localhost:1313/tags/bandit-level-33-level-34/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-33-level-34/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OverTheWire</title>
+      <link>http://localhost:1313/tags/overthewire/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/overthewire/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>http://localhost:1313/tags/ssh/</link>
+      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-32-Level-33</title>
+      <link>http://localhost:1313/tags/bandit-level-32-level-33/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-32-level-33/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-31-Level-32</title>
+      <link>http://localhost:1313/tags/bandit-level-31-level-32/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-31-level-32/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-30-Level-31</title>
+      <link>http://localhost:1313/tags/bandit-level-30-level-31/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-30-level-31/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-29-Level-30</title>
+      <link>http://localhost:1313/tags/bandit-level-29-level-30/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-29-level-30/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-28-Level-29</title>
+      <link>http://localhost:1313/tags/bandit-level-28-level-29/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-28-level-29/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-27-Level-28</title>
+      <link>http://localhost:1313/tags/bandit-level-27-level-28/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-27-level-28/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-26-Level-27</title>
+      <link>http://localhost:1313/tags/bandit-level-26-level-27/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-26-level-27/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-25-Level-26</title>
+      <link>http://localhost:1313/tags/bandit-level-25-level-26/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-25-level-26/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-24-Level-25</title>
+      <link>http://localhost:1313/tags/bandit-level-24-level-25/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-24-level-25/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-23-Level-24</title>
+      <link>http://localhost:1313/tags/bandit-level-23-level-24/</link>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-23-level-24/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-22-Level-23</title>
+      <link>http://localhost:1313/tags/bandit-level-22-level-23/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-22-level-23/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-21-Level-22</title>
+      <link>http://localhost:1313/tags/bandit-level-21-level-22/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-21-level-22/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-20-Level-21</title>
+      <link>http://localhost:1313/tags/bandit-level-20-level-21/</link>
+      <pubDate>Tue, 21 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-20-level-21/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-19-Level-20</title>
+      <link>http://localhost:1313/tags/bandit-level-19-level-20/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-19-level-20/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-18-Level-19</title>
+      <link>http://localhost:1313/tags/bandit-level-18-level-19/</link>
+      <pubDate>Sun, 19 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-18-level-19/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-17-Level-18</title>
+      <link>http://localhost:1313/tags/bandit-level-17-level-18/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-17-level-18/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-16-Level-17</title>
+      <link>http://localhost:1313/tags/bandit-level-16-level-17/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-16-level-17/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-15-Level-16</title>
+      <link>http://localhost:1313/tags/bandit-level-15-level-16/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-15-level-16/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-14-Level-15</title>
+      <link>http://localhost:1313/tags/bandit-level-14-level-15/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-14-level-15/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-13-Level-14</title>
+      <link>http://localhost:1313/tags/bandit-level-13-level-14/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-13-level-14/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-12-Level-13</title>
+      <link>http://localhost:1313/tags/bandit-level-12-level-13/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-12-level-13/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-11-Level-12</title>
+      <link>http://localhost:1313/tags/bandit-level-11-level-12/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-11-level-12/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-10-Level-11</title>
+      <link>http://localhost:1313/tags/bandit-level-10-level-11/</link>
+      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-10-level-11/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-9-Level-10</title>
+      <link>http://localhost:1313/tags/bandit-level-9-level-10/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-9-level-10/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-8-Level-9</title>
+      <link>http://localhost:1313/tags/bandit-level-8-level-9/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-8-level-9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-7-Level-8</title>
+      <link>http://localhost:1313/tags/bandit-level-7-level-8/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-7-level-8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-6-Level-7</title>
+      <link>http://localhost:1313/tags/bandit-level-6-level-7/</link>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-6-level-7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-5-Level-6</title>
+      <link>http://localhost:1313/tags/bandit-level-5-level-6/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-5-level-6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-4-Level-5</title>
+      <link>http://localhost:1313/tags/bandit-level-4-level-5/</link>
+      <pubDate>Sun, 05 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-4-level-5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-3-Level-4</title>
+      <link>http://localhost:1313/tags/bandit-level-3-level-4/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-3-level-4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-2-Level-3</title>
+      <link>http://localhost:1313/tags/bandit-level-2-level-3/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-2-level-3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-1-Level-2</title>
+      <link>http://localhost:1313/tags/bandit-level-1-level-2/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-1-level-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bandit-Level-0-Level-1</title>
+      <link>http://localhost:1313/tags/bandit-level-0-level-1/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bandit-level-0-level-1/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

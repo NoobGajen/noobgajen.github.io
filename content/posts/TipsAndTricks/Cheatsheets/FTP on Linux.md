@@ -1,5 +1,5 @@
 ---
-title: "📡 File Transfer via FTP on Linux"
+title: "File Transfer via FTP on Linux"
 date: 2026-01-13
 tags: ['ftp-commands', 'networking', 'ftp-enumeration', 'file-transfer']
 ---

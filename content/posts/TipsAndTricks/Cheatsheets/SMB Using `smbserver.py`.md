@@ -1,5 +1,5 @@
 ---
-title: "📁 File Sharing Over SMB Using `smbserver.py`"
+title: "File Sharing Over SMB Using `smbserver.py`"
 date: 2026-01-13
 tags: ['networking', 'smb-server', 'file-sharing', 'unc-path']
 ---

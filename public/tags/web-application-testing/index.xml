@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/web-application-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comprehensive SQL Injection Vulnerability Exploration Tutorial</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/</guid>
       <description>&lt;h2 id=&#34;identifying-sql-injection-vulnerability-parameters&#34;&gt;Identifying SQL Injection Vulnerability Parameters&lt;/h2&gt;
 &lt;h1 id=&#34;comments-in-sql&#34;&gt;Comments in SQL&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;--		MySQL Linux style
@@ -38,9 +38,9 @@
     </item>
     <item>
       <title>HTTP Status Code</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/</guid>
       <description>&lt;p&gt;These codes indicate that the request was successfully received, understood, and accepted.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;200 OK&lt;/strong&gt;: The request was successful.&lt;/li&gt;
@@ -57,9 +57,9 @@
     </item>
     <item>
       <title>Payloads and Outputs</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</guid>
       <description>&lt;h1 id=&#34;target-file-htaccess-output-with-php-string-filters&#34;&gt;Target File .htaccess Output with PHP String Filters&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;

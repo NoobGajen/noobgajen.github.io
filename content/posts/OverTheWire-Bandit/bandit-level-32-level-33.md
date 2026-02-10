@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 32 => Level 33"
 date: 2020-02-02
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-32-level-33", "Git"]
+description: "After all this git stuff, it’s time for another escape. Good luck!"
+hidemeta: false
+hideSummary: false
 weight: 32
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 After all this git stuff, it’s time for another escape. Good luck!
 
 ### Here are the details which we have from the previous level:

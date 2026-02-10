@@ -182,8 +182,23 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/archlinux/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-01-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -202,62 +217,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/-bypassing-disable_functions-in-php-for-reverse-shell-using-chankro/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/-php-reverse-shell--webshell-cheat-sheet/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>http://localhost:1313/posts/tipsandtricks/archlinux/setup-cloudflare-warp-1.1.1.1-vpn-on-linux-using-wireguard/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -287,11 +247,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/archlinux/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>http://localhost:1313/tags/audio-configuration/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -307,7 +262,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/bash_command_revshell/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/bash_command_revshell/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -337,6 +292,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/-bypassing-disable_functions-in-php-for-reverse-shell-using-chankro/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -362,7 +322,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/tags/chisel-tool/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -387,7 +357,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -492,6 +462,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/posts/tipsandtricks/archlinux/chroot_in_btrfs_and_fixing_grub_boot_manager/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -537,7 +512,27 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/lfi/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/lfi/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -587,7 +582,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/metasploit_meterpreter_reverseshell/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/metasploit_meterpreter_reverseshell/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -642,7 +637,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/http_status_code/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/http_status_code/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -677,12 +672,27 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/tags/javascript-security/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/tags/jsp/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/kali-docker-persistent-container/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -743,6 +753,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/tags/metasploit/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -857,7 +872,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/rce_via_lfi-php_wrappers/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/rce_via_lfi-php_wrappers/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -868,6 +888,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/tags/perl-scripting/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/-php-reverse-shell--webshell-cheat-sheet/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -897,11 +922,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>http://localhost:1313/tags/powershell-reverse-shell/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -927,7 +947,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/python_revshell/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/python_revshell/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/-python-reverse-shell-cheat-sheet/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1012,7 +1037,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/runascs.exe_revshell/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/runascs.exe_revshell/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1187,6 +1212,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/tags/web-application-testing/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1202,12 +1232,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/</loc>
+    <loc>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</loc>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1247,7 +1277,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/xss-file-stealing-cheat-sheet/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/xss-file-stealing-cheat-sheet/</loc>
+    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/penetration-testing/webvulnerability/xss_payload/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1263,36 +1298,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/tags/xss-payloads/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/tutorials/clang-format-configurations-for-c-family-languages/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/webvulnerability/xss_payload/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/</loc>
-    <lastmod>2026-01-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1322,6 +1327,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/tipsandtricks/cheatsheets/network-hacking/</loc>
+    <lastmod>2025-09-18T08:53:56+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/portfolio/</loc>
     <lastmod>2025-09-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1342,6 +1352,201 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/tags/bandit/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-33-level-34/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/overthewire/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/ssh/</loc>
+    <lastmod>2020-02-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-32-level-33/</loc>
+    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2020-02-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-31-level-32/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-30-level-31/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-29-level-30/</loc>
+    <lastmod>2020-01-30T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-28-level-29/</loc>
+    <lastmod>2020-01-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-27-level-28/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-26-level-27/</loc>
+    <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-25-level-26/</loc>
+    <lastmod>2020-01-26T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-24-level-25/</loc>
+    <lastmod>2020-01-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-23-level-24/</loc>
+    <lastmod>2020-01-24T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-22-level-23/</loc>
+    <lastmod>2020-01-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-21-level-22/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-20-level-21/</loc>
+    <lastmod>2020-01-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-19-level-20/</loc>
+    <lastmod>2020-01-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-18-level-19/</loc>
+    <lastmod>2020-01-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-17-level-18/</loc>
+    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-16-level-17/</loc>
+    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-15-level-16/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-14-level-15/</loc>
+    <lastmod>2020-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-13-level-14/</loc>
+    <lastmod>2020-01-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-12-level-13/</loc>
+    <lastmod>2020-01-13T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-11-level-12/</loc>
+    <lastmod>2020-01-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-10-level-11/</loc>
+    <lastmod>2020-01-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-9-level-10/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-8-level-9/</loc>
+    <lastmod>2020-01-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-7-level-8/</loc>
+    <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-6-level-7/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-5-level-6/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-4-level-5/</loc>
+    <lastmod>2020-01-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-3-level-4/</loc>
+    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-2-level-3/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-1-level-2/</loc>
+    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/bandit-level-0-level-1/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1354,7 +1559,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/tipsandtricks/reverseshell/</loc>
+    <loc>http://localhost:1313/posts/penetration-testing/reverse_shell/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

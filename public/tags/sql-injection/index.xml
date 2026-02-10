@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/sql-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comprehensive SQL Injection Vulnerability Exploration Tutorial</title>
-      <link>http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/</link>
+      <link>http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/webvulnerability/sql_injection_cheat_sheet/</guid>
+      <guid>http://localhost:1313/posts/penetration-testing/webvulnerability/sql_injection_cheat_sheet/</guid>
       <description>&lt;h2 id=&#34;identifying-sql-injection-vulnerability-parameters&#34;&gt;Identifying SQL Injection Vulnerability Parameters&lt;/h2&gt;
 &lt;h1 id=&#34;comments-in-sql&#34;&gt;Comments in SQL&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;--		MySQL Linux style
@@ -37,7 +37,7 @@
 &lt;p&gt;Perform SQL injection testing with different payloads. If the payload results in an error or unexpected behavior, it might indicate a vulnerability. Examples include:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>🧨 Metasploit Practical Guide (for Beginners and CTF use)</title>
+      <title>Metasploit Practical Guide (for Beginners and CTF use)</title>
       <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/</guid>

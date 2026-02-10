@@ -6,7 +6,7 @@ hidemeta: true
 hideSummary: true
 weight: -1
 cover:
-#   image: "TipsAndTricks.png"
+  # image: "TipsAndTricks.png"
   alt: "Tips & Tricks Cover"
   relative: true
 ---

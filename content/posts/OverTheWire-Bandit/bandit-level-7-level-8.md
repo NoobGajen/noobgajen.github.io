@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 7 => Level 8"
 date: 2020-01-08
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-7-level-8"]
+description: "The password for the next level is stored in the file `data.txt` next to the word `millionth`"
+hidemeta: false
+hideSummary: false
 weight: 7
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in the file `data.txt` next to the word `millionth`
 
 ***

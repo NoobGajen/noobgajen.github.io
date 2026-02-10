@@ -1,6 +1,6 @@
 ---
-title: "🥇 Persistent MAC Address Spoofing (Global + Per-Connection)  by QwenAi"
-date: 2026-01-13
+title: "Persistent MAC Address Spoofing (Global + Per-Connection)  by QwenAi"
+date: 2026-01-20
 ---
 
 *by QwenAI | Verified on Arch Linux + NetworkManager ≥ 1.18*

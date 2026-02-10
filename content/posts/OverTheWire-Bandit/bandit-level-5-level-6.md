@@ -1,9 +1,16 @@
 ---
 title: "Bandit: Level 5 => Level 6"
 date: 2020-01-06
+tags: ["OverTheWire", "Bandit", "SSH", "Linux", "bandit-level-5-level-6"]
+description: "The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:"
+hidemeta: false
+hideSummary: false
 weight: 5
+cover:
+  image: "/images/Bandit/bandit-level.jpg"
+  alt: "Bandit Wargame"
+  relative: true
 ---
-
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
 * human-readable

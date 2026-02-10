@@ -6,8 +6,37 @@
     <description>Recent content in ArchLinux on Gajendra Mahato</description>
     <generator>Hugo -- 0.155.3</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/tipsandtricks/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/</link>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/</guid>
+      <description>&lt;p&gt;&lt;em&gt;by QwenAI | Verified on Arch Linux + NetworkManager ≥ 1.18&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ &lt;strong&gt;Goal&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Apply the &lt;em&gt;same&lt;/em&gt; spoofed MAC to &lt;strong&gt;all Wi-Fi connections&lt;/strong&gt; (global).&lt;/li&gt;
+&lt;li&gt;Optionally set a custom &lt;strong&gt;DHCP hostname&lt;/strong&gt; per network (e.g., &lt;code&gt;Galaxy-A06&lt;/code&gt; instead of &lt;code&gt;Nix&lt;/code&gt;).&lt;br&gt;
+🔧 &lt;strong&gt;Why it works&lt;/strong&gt;: Uses NM’s native &lt;code&gt;cloned-mac-address&lt;/code&gt; and &lt;code&gt;dhcp-hostname&lt;/code&gt; — no race conditions, no leaks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-1-global-mac-spoofing-all-wi-fi&#34;&gt;🔧 1. Global MAC Spoofing (All Wi-Fi)&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-create-policy-file&#34;&gt;Step 1: Create policy file&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /etc/NetworkManager/conf.d/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tee /etc/NetworkManager/conf.d/99-global-mac-address.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;[keyfile]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;unmanaged-devices=
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;[connection-wifi]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;# Global default for *all* Wi-Fi connections
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;wifi.cloned-mac-address=DE:AD:BE:EF:CA:FE
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;📝 Replace &lt;code&gt;DE:AD:BE:EF:CA:FE&lt;/code&gt; with your desired MAC (e.g., &lt;code&gt;90:01:C0:DE:13:37&lt;/code&gt;).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>📡 Setup Cloudflare WARP (1.1.1.1 VPN) on Arch Linux and Debian using WireGuard</title>
       <link>http://localhost:1313/posts/tipsandtricks/archlinux/setup-cloudflare-warp-1.1.1.1-vpn-on-linux-using-wireguard/</link>
@@ -203,35 +232,6 @@ Then:&lt;/p&gt;</description>
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install aircrack-ng
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;airmon-ng-commands&#34;&gt;Airmon-ng Commands&lt;/h2&gt;
 &lt;p&gt;To use airmon-ng commands:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi</title>
-      <link>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/</link>
-      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/</guid>
-      <description>&lt;p&gt;&lt;em&gt;by QwenAI | Verified on Arch Linux + NetworkManager ≥ 1.18&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;✅ &lt;strong&gt;Goal&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Apply the &lt;em&gt;same&lt;/em&gt; spoofed MAC to &lt;strong&gt;all Wi-Fi connections&lt;/strong&gt; (global).&lt;/li&gt;
-&lt;li&gt;Optionally set a custom &lt;strong&gt;DHCP hostname&lt;/strong&gt; per network (e.g., &lt;code&gt;Galaxy-A06&lt;/code&gt; instead of &lt;code&gt;Nix&lt;/code&gt;).&lt;br&gt;
-🔧 &lt;strong&gt;Why it works&lt;/strong&gt;: Uses NM’s native &lt;code&gt;cloned-mac-address&lt;/code&gt; and &lt;code&gt;dhcp-hostname&lt;/code&gt; — no race conditions, no leaks.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-1-global-mac-spoofing-all-wi-fi&#34;&gt;🔧 1. Global MAC Spoofing (All Wi-Fi)&lt;/h2&gt;
-&lt;h3 id=&#34;step-1-create-policy-file&#34;&gt;Step 1: Create policy file&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /etc/NetworkManager/conf.d/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tee /etc/NetworkManager/conf.d/99-global-mac-address.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;[keyfile]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;unmanaged-devices=
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;[connection-wifi]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;# Global default for *all* Wi-Fi connections
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;wifi.cloned-mac-address=DE:AD:BE:EF:CA:FE
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;📝 Replace &lt;code&gt;DE:AD:BE:EF:CA:FE&lt;/code&gt; with your desired MAC (e.g., &lt;code&gt;90:01:C0:DE:13:37&lt;/code&gt;).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configure Custom DNS Servers in Arch based Linux.</title>

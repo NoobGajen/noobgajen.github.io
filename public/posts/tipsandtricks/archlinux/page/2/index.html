@@ -200,6 +200,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Switch Back to PulseAudio
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Title: Disable Pipewire Audio Service To disable the Pipewire audio service, run the following commands:
+systemctl --user disable pipewire pipewire.socket systemctl --user mask pipewire pipewire.socket systemctl --user enable --now pulseaudio.service Uninstalling Pipewire To uninstall Pipewire, you can use the following command:
+paru -Rdd pipewire-pulse pipewire-support pipewire-alsa Installing Pulseaudio To install Pulseaudio, run:
+paru -S pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer-ladspa pulseaudio-jack pulseaudio-lirc pulseaudio </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Switch Back to PulseAudio" href="http://localhost:1313/posts/tipsandtricks/archlinux/switch_back_to_pulseaudio/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Table of Contents
     </h2>
   </header>
@@ -214,22 +229,6 @@ sudo apt-get update sudo apt-get install aircrack-ng Airmon-ng Commands To use a
   </div>
   <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
   <a class="entry-link" aria-label="post link to Table of Contents" href="http://localhost:1313/posts/tipsandtricks/archlinux/interface_managing_guide/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>by QwenAI | Verified on Arch Linux &#43; NetworkManager ≥ 1.18
-✅ Goal:
-Apply the same spoofed MAC to all Wi-Fi connections (global). Optionally set a custom DHCP hostname per network (e.g., Galaxy-A06 instead of Nix).
-🔧 Why it works: Uses NM’s native cloned-mac-address and dhcp-hostname — no race conditions, no leaks. 🔧 1. Global MAC Spoofing (All Wi-Fi) Step 1: Create policy file sudo mkdir -p /etc/NetworkManager/conf.d/ sudo tee /etc/NetworkManager/conf.d/99-global-mac-address.conf &lt;&lt;&#39;EOF&#39; [keyfile] unmanaged-devices= [connection-wifi] # Global default for *all* Wi-Fi connections wifi.cloned-mac-address=DE:AD:BE:EF:CA:FE EOF 📝 Replace DE:AD:BE:EF:CA:FE with your desired MAC (e.g., 90:01:C0:DE:13:37).
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to 🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi" href="http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -279,7 +278,9 @@ Apply the same spoofed MAC to all Wi-Fi connections (global). Optionally set a c
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>

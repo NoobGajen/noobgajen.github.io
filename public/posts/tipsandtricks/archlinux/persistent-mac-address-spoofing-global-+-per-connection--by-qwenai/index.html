@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi | Gajendra Mahato</title>
+<title>Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi | Gajendra Mahato</title>
 <meta name="keywords" content="">
 <meta name="description" content="by QwenAI | Verified on Arch Linux &#43; NetworkManager ≥ 1.18
 
@@ -75,7 +75,7 @@ EOF
 />
 <meta property="og:url" content="http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/">
   <meta property="og:site_name" content="Gajendra Mahato">
-  <meta property="og:title" content="🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi">
+  <meta property="og:title" content="Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi">
   <meta property="og:description" content="by QwenAI | Verified on Arch Linux &#43; NetworkManager ≥ 1.18
 ✅ Goal:
 Apply the same spoofed MAC to all Wi-Fi connections (global). Optionally set a custom DHCP hostname per network (e.g., Galaxy-A06 instead of Nix).
@@ -83,10 +83,10 @@ Apply the same spoofed MAC to all Wi-Fi connections (global). Optionally set a c
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-01-13T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:published_time" content="2026-01-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-20T00:00:00+00:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi">
+<meta name="twitter:title" content="Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi">
 <meta name="twitter:description" content="by QwenAI | Verified on Arch Linux &#43; NetworkManager ≥ 1.18
 
 ✅ Goal:
@@ -138,7 +138,7 @@ EOF
     {
       "@type": "ListItem",
       "position":  4 ,
-      "name": "🥇 Persistent MAC Address Spoofing (Global + Per-Connection)  by QwenAi",
+      "name": "Persistent MAC Address Spoofing (Global + Per-Connection)  by QwenAi",
       "item": "http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-+-per-connection--by-qwenai/"
     }
   ]
@@ -148,8 +148,8 @@ EOF
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "🥇 Persistent MAC Address Spoofing (Global + Per-Connection)  by QwenAi",
-  "name": "🥇 Persistent MAC Address Spoofing (Global \u002b Per-Connection)  by QwenAi",
+  "headline": "Persistent MAC Address Spoofing (Global + Per-Connection)  by QwenAi",
+  "name": "Persistent MAC Address Spoofing (Global \u002b Per-Connection)  by QwenAi",
   "description": "by QwenAI | Verified on Arch Linux + NetworkManager ≥ 1.18\n✅ Goal:\nApply the same spoofed MAC to all Wi-Fi connections (global). Optionally set a custom DHCP hostname per network (e.g., Galaxy-A06 instead of Nix).\n🔧 Why it works: Uses NM’s native cloned-mac-address and dhcp-hostname — no race conditions, no leaks. 🔧 1. Global MAC Spoofing (All Wi-Fi) Step 1: Create policy file sudo mkdir -p /etc/NetworkManager/conf.d/ sudo tee /etc/NetworkManager/conf.d/99-global-mac-address.conf \u0026lt;\u0026lt;\u0026#39;EOF\u0026#39; [keyfile] unmanaged-devices= [connection-wifi] # Global default for *all* Wi-Fi connections wifi.cloned-mac-address=DE:AD:BE:EF:CA:FE EOF 📝 Replace DE:AD:BE:EF:CA:FE with your desired MAC (e.g., 90:01:C0:DE:13:37).\n",
   "keywords": [
     
@@ -157,8 +157,8 @@ EOF
   "articleBody": "by QwenAI | Verified on Arch Linux + NetworkManager ≥ 1.18\n✅ Goal:\nApply the same spoofed MAC to all Wi-Fi connections (global). Optionally set a custom DHCP hostname per network (e.g., Galaxy-A06 instead of Nix).\n🔧 Why it works: Uses NM’s native cloned-mac-address and dhcp-hostname — no race conditions, no leaks. 🔧 1. Global MAC Spoofing (All Wi-Fi) Step 1: Create policy file sudo mkdir -p /etc/NetworkManager/conf.d/ sudo tee /etc/NetworkManager/conf.d/99-global-mac-address.conf \u003c\u003c'EOF' [keyfile] unmanaged-devices= [connection-wifi] # Global default for *all* Wi-Fi connections wifi.cloned-mac-address=DE:AD:BE:EF:CA:FE EOF 📝 Replace DE:AD:BE:EF:CA:FE with your desired MAC (e.g., 90:01:C0:DE:13:37).\nStep 2: Reload NetworkManager sudo systemctl reload NetworkManager # If changes don’t apply, restart: # sudo systemctl restart NetworkManager Step 3: Verify macchanger -s wlp4s0 # ✅ Expected output: # Current MAC: DE:AD:BE:EF:CA:FE # Permanent MAC: 9c:2f:9d:77:9c:67 💡 List active connections:\nnmcli -g NAME con show --active\n🎯 2. Per-Network Hostname Spoofing (Optional) Make your device appear as a different device (e.g., phone, IoT) in the router UI:\nnmcli con modify \"MyWiFi\" \\ ipv4.dhcp-hostname \"Galaxy-A06\" \\ ipv4.dhcp-send-hostname yes ✅ Replace:\n\"MyWiFi\" → your connection name (e.g., \"HUAWEI-5G-8BbD\") \"Galaxy-A06\" → any believable name (Smart-TV, Printer-HP, Lumen, etc.) 🔁 Reconnect to apply:\nnmcli con down \"MyWiFi\" \u0026\u0026 nmcli con up \"MyWiFi\" 📌 Why it works: Most home routers (Huawei, TP-Link) display dhcp-hostname as Device Name — not the system hostname.\n🔗 References Arch Wiki: MAC spoofing — NetworkManager man NetworkManager.conf → connection-*.wifi.cloned-mac-address ",
   "wordCount" : "233",
   "inLanguage": "en",
-  "datePublished": "2026-01-13T00:00:00Z",
-  "dateModified": "2026-01-13T00:00:00Z",
+  "datePublished": "2026-01-20T00:00:00Z",
+  "dateModified": "2026-01-20T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-+-per-connection--by-qwenai/"
@@ -281,9 +281,9 @@ EOF
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/">Tips &amp; Tricks</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/archlinux/">ArchLinux</a></div>
     <h1 class="post-title entry-hint-parent">
-      🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi
+      Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi
     </h1>
-    <div class="post-meta"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2026-01-20 00:00:00 +0000 UTC'>January 20, 2026</span>&nbsp;·&nbsp;<span>2 min</span>
 
 </div>
   </header> 
@@ -356,15 +356,10 @@ EOF
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-    <a class="prev" href="/posts/tipsandtricks/archlinux/interface_managing_guide/">
-        <span class="title">« Prev</span>
-        <br>
-        <span>Table of Contents</span>
-    </a>
-    <a class="next" href="/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/">
+    <a class="next" href="/posts/tipsandtricks/archlinux/setup-cloudflare-warp-1.1.1.1-vpn-on-linux-using-wireguard/">
         <span class="title">Next »</span>
         <br>
-        <span>Configure Custom DNS Servers in Arch based Linux.</span>
+        <span>📡 Setup Cloudflare WARP (1.1.1.1 VPN) on Arch Linux and Debian using WireGuard</span>
     </a>
 </nav>
   </footer>
@@ -397,7 +392,9 @@ EOF
 
     <section>
         <h2>Trending Tags</h2>
-                                                                                                                                                                                    
+              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                                                                                                                                                                                                            
         <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
                                                                                                                                                                    
     </section>
