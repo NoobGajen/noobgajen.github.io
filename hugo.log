@@ -1,0 +1,583 @@
+Watching for changes in /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/archetypes, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/assets/{css,images,js}, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/layouts/{_default,cheatsheet,partials}, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/static/images, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/themes/PaperMod/assets/{css,js}, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/themes/PaperMod/i18n, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/themes/PaperMod/layouts/{_default,partials,shortcodes}
+Watching for config changes in /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/hugo.toml, /home/gajen/Documents/GajendraMahato.com.np.bak/my-website/config/_default
+Start building sites … 
+hugo v0.154.4+extended+withdeploy linux/amd64 BuildDate=unknown
+
+
+                  │ EN  
+──────────────────┼─────
+ Pages            │ 453 
+ Paginator pages  │  21 
+ Non-page files   │   2 
+ Static files     │  64 
+ Processed images │   0 
+ Aliases          │ 175 
+ Cleaned          │   0 
+
+Built in 593 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
+
+Change detected, rebuilding site (#1).
+2026-01-13 19:46:35.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 169 ms
+
+Change detected, rebuilding site (#2).
+2026-01-13 19:46:41.075 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 86 ms
+
+Change detected, rebuilding site (#3).
+2026-01-13 19:46:50.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:4:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 23 ms
+
+Change detected, rebuilding site (#4).
+2026-01-13 19:46:51.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 20 ms
+
+Change detected, rebuilding site (#5).
+2026-01-13 19:46:59.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 21 ms
+
+Change detected, rebuilding site (#6).
+2026-01-13 19:47:15.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+Template changed /_default/index.json
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 58 ms
+
+Change detected, rebuilding site (#7).
+2026-01-13 19:47:17.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#8).
+2026-01-13 19:47:17.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#9).
+2026-01-13 19:47:52.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:2:1": EOF looking for end TOML front matter delimiter
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 32 ms
+
+Change detected, rebuilding site (#10).
+2026-01-13 19:47:56.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 238 ms
+
+Change detected, rebuilding site (#11).
+2026-01-13 19:47:57.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 132 ms
+
+Change detected, rebuilding site (#12).
+2026-01-13 19:47:58.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 95 ms
+
+Change detected, rebuilding site (#13).
+2026-01-13 19:48:00.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 110 ms
+
+Change detected, rebuilding site (#14).
+2026-01-13 19:48:01.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:2:1": [1:1] unexpected key name
+>  1 | date = '2025-09-18T08:03:56+07:00'
+   2 | title: "Tips & Tricks"
+       ^
+   3 | tags = ['Blog', 'Homelab']
+   4 | categories = ['Home Lab Setup']
+   5 | description: "A collection of useful tips, cheatsheets, and guides."
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#15).
+2026-01-13 19:48:15.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:1": [2:1] non-map value is specified
+   1 | title: "Tips & Tricks"
+>  2 | tags = ['Blog', 'Homelab']
+       ^
+   3 | categories = ['Home Lab Setup']
+   4 | description: "A collection of useful tips, cheatsheets, and guides."
+   5 | draft = false
+   6 | 
+   7 |
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 21 ms
+
+Change detected, rebuilding site (#16).
+2026-01-13 19:48:23.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:1": [2:1] non-map value is specified
+   1 | title: "Tips & Tricks"
+>  2 | categories = ['Home Lab Setup']
+       ^
+   3 | description: "A collection of useful tips, cheatsheets, and guides."
+   4 | draft = false
+   5 | 
+   6 |
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 20 ms
+
+Change detected, rebuilding site (#17).
+2026-01-13 19:48:30.577 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:4:1": [3:1] non-map value is specified
+   1 | title: "Tips & Tricks"
+   2 | description: "A collection of useful tips, cheatsheets, and guides."
+>  3 | draft = false
+       ^
+   5 | [cover]
+   6 |   image = 'images/avatar.jpg'
+   7 |   alt = 'Install Metasploitable 2 On Mac Apple Silicon Cover'
+   8 |   caption = 'Install Metasploitable 2 On Mac Apple Silicon Cover'
+   9 |   relative = false
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 21 ms
+
+Change detected, rebuilding site (#18).
+2026-01-13 19:48:36.577 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:5:1": [4:1] non-map value is specified
+   1 | title: "Tips & Tricks"
+   2 | description: "A collection of useful tips, cheatsheets, and guides."
+   3 | 
+>  4 | [cover]
+       ^
+   5 |   image = 'images/avatar.jpg'
+   6 |   alt = 'Install Metasploitable 2 On Mac Apple Silicon Cover'
+   7 |   caption = 'Install Metasploitable 2 On Mac Apple Silicon Cover'
+   8 |   relative = false
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#19).
+2026-01-13 19:48:42.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:2:1": EOF looking for end TOML front matter delimiter
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 26 ms
+
+Change detected, rebuilding site (#20).
+2026-01-13 19:48:44.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:2:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 24 ms
+
+Change detected, rebuilding site (#21).
+2026-01-13 19:48:50.576 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:2:6": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 20 ms
+
+Change detected, rebuilding site (#22).
+2026-01-13 19:49:03.076 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 129 ms
+
+Change detected, rebuilding site (#23).
+2026-01-13 19:49:15.097 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:5:8": [4:8] could not find end character of single-quoted text
+   1 | title: "Tips & Tricks"
+   2 | description: "A collection of useful tips, cheatsheets, and guides."
+   3 | hidemeta: true
+>  4 | image: 'images
+              ^
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#24).
+2026-01-13 19:49:19.599 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:5:8": [4:8] could not find end character of double-quoted text
+   1 | title: "Tips & Tricks"
+   2 | description: "A collection of useful tips, cheatsheets, and guides."
+   3 | hidemeta: true
+>  4 | image: "
+              ^
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#25).
+2026-01-13 19:49:24.594 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 93 ms
+
+Change detected, rebuilding site (#26).
+2026-01-13 19:50:42.652 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 78 ms
+
+Change detected, rebuilding site (#27).
+2026-01-13 19:50:47.102 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:5:2": [4:2] value is not allowed in this context. map key-value is pre-defined
+   1 | title: "Tips & Tricks"
+   2 | description: "A collection of useful tips, cheatsheets, and guides."
+   3 | hidemeta: true
+>  4 | image = 'https://raw.githubusercontent.com/jameskaois/install-metasploitable2-on-mac-apple-silicon/refs/heads/main/screenshot_images/images.png'
+        ^
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 29 ms
+
+Change detected, rebuilding site (#28).
+2026-01-13 19:51:08.099 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:6:1": [5:1] non-map value is specified
+   2 | description: "A collection of useful tips, cheatsheets, and guides."
+   3 | hidemeta: true
+   4 | 
+>  5 | [cover]
+       ^
+   6 | image = 'https://raw.githubusercontent.com/jameskaois/install-metasploitable2-on-mac-apple-silicon/refs/heads/main/screenshot_images/images.png'
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 23 ms
+
+Change detected, rebuilding site (#29).
+2026-01-13 19:51:24.220 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 219 ms
+
+Change detected, rebuilding site (#30).
+2026-01-13 19:59:10.289 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 227 ms
+
+Change detected, rebuilding site (#31).
+2026-01-13 20:01:52.930 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 205 ms
+
+Change detected, rebuilding site (#32).
+2026-01-13 20:03:45.326 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 282 ms
+
+Change detected, rebuilding site (#33).
+2026-01-13 20:04:40.099 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:3:5": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 22 ms
+
+Change detected, rebuilding site (#34).
+2026-01-13 20:04:44.229 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 180 ms
+
+Change detected, rebuilding site (#35).
+2026-01-13 20:04:47.215 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 129 ms
+
+Change detected, rebuilding site (#36).
+2026-01-13 20:04:48.112 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 191 ms
+
+Change detected, rebuilding site (#37).
+2026-01-13 20:04:52.283 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 246 ms
+
+Change detected, rebuilding site (#38).
+2026-01-13 20:04:53.312 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 209 ms
+
+Change detected, rebuilding site (#39).
+2026-01-13 20:05:00.630 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 103 ms
+
+Change detected, rebuilding site (#40).
+2026-01-13 20:05:13.253 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:6:7": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 24 ms
+
+Change detected, rebuilding site (#41).
+2026-01-13 20:05:13.596 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:6:7": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 24 ms
+
+Change detected, rebuilding site (#42).
+2026-01-13 20:05:14.593 +0545
+Source changed /posts/tipsandtricks/_index.md
+ERROR Rebuild failed: assemble: failed to create page from pageMetaSource /posts/tipsandtricks: "/home/gajen/Documents/GajendraMahato.com.np.bak/my-website/content/posts/TipsAndTricks/_index.md:6:7": unmarshal failed: toml: expected character =
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 24 ms
+
+Change detected, rebuilding site (#43).
+2026-01-13 20:05:17.189 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 155 ms
+
+Change detected, rebuilding site (#44).
+2026-01-13 20:07:05.780 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 237 ms
+
+Change detected, rebuilding site (#45).
+2026-01-13 20:07:24.229 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 120 ms
+
+Change detected, rebuilding site (#46).
+2026-01-13 20:08:56.679 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 231 ms
+
+Change detected, rebuilding site (#47).
+2026-01-13 20:11:25.738 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 108 ms
+
+Change detected, rebuilding site (#48).
+2026-01-13 20:11:49.745 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 194 ms
+
+Change detected, rebuilding site (#49).
+2026-01-13 20:11:54.324 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 232 ms
+
+Change detected, rebuilding site (#50).
+2026-01-13 20:12:00.200 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 176 ms
+
+Change detected, rebuilding site (#51).
+2026-01-13 20:12:02.698 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 195 ms
+
+Change detected, rebuilding site (#52).
+2026-01-13 20:12:18.270 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 193 ms
+
+Change detected, rebuilding site (#53).
+2026-01-13 20:12:22.285 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 157 ms
+
+Change detected, rebuilding site (#54).
+2026-01-13 20:12:23.382 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 177 ms
+
+Change detected, rebuilding site (#55).
+2026-01-13 20:12:31.051 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 219 ms
+
+Change detected, rebuilding site (#56).
+2026-01-13 20:12:36.761 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 182 ms
+
+Change detected, rebuilding site (#57).
+2026-01-13 20:12:42.199 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 189 ms
+
+Change detected, rebuilding site (#58).
+2026-01-13 20:12:45.410 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 88 ms
+
+Change detected, rebuilding site (#59).
+2026-01-13 20:12:57.414 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 227 ms
+
+Change detected, rebuilding site (#60).
+2026-01-13 20:13:00.790 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 213 ms
+
+Change detected, rebuilding site (#61).
+2026-01-13 20:13:08.596 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 161 ms
+
+Change detected, rebuilding site (#62).
+2026-01-13 20:13:25.431 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 173 ms
+
+Change detected, rebuilding site (#63).
+2026-01-13 20:14:17.272 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 175 ms
+
+Change detected, rebuilding site (#64).
+2026-01-13 20:14:30.463 +0545
+Source changed /posts/overthewire-bandit/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 283 ms
+
+Change detected, rebuilding site (#65).
+2026-01-13 20:16:53.892 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 317 ms
+
+Change detected, rebuilding site (#66).
+2026-01-13 20:17:09.872 +0545
+Source changed /posts/overthewire-bandit/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 300 ms
+
+Change of config file detected, rebuilding site (#67).
+2026-01-13 20:17:48.576 +0545
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Rebuilt in 889 ms
+
+Change of config file detected, rebuilding site (#68).
+2026-01-13 20:18:07.575 +0545
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Rebuilt in 1684 ms
+
+Change of config file detected, rebuilding site (#69).
+2026-01-13 20:18:26.576 +0545
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Rebuilt in 1852 ms
+
+Change detected, rebuilding site (#70).
+2026-01-13 20:19:01.577 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 432 ms
+
+Change detected, rebuilding site (#71).
+2026-01-13 20:19:13.030 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 484 ms
+
+Change detected, rebuilding site (#72).
+2026-01-13 20:19:23.580 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 425 ms
+
+Change detected, rebuilding site (#73).
+2026-01-13 20:20:35.617 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 399 ms
+
+Change detected, rebuilding site (#74).
+2026-01-13 20:20:42.101 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 461 ms
+
+Change detected, rebuilding site (#75).
+2026-01-13 20:20:55.635 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 516 ms
+
+Change detected, rebuilding site (#76).
+2026-01-13 20:21:01.090 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 460 ms
+
+Change detected, rebuilding site (#77).
+2026-01-13 20:21:11.550 +0545
+Source changed /posts/tipsandtricks/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 424 ms
+
+Change detected, rebuilding site (#78).
+2026-01-13 20:21:38.124 +0545
+Source changed /posts/overthewire-bandit/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 583 ms
+
+Change detected, rebuilding site (#79).
+2026-01-13 20:21:44.283 +0545
+Source changed /posts/overthewire-bandit/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 568 ms
+
+Change detected, rebuilding site (#80).
+2026-01-13 20:21:57.642 +0545
+Source changed /posts/overthewire-bandit/_index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 460 ms

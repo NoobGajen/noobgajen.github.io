@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Atheros AR9271 Adapter Chipset On Kali Linux | Gajendra Mahato</title>
+<meta name="keywords" content="Blog, Homelab">
+<meta name="description" content="Guide to set up Atheros AR9271 WiFi adapter on Linux with monitor mode &amp; packet injection support.">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:1313/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="Atheros AR9271 Adapter Chipset On Kali Linux">
+  <meta property="og:description" content="Guide to set up Atheros AR9271 WiFi adapter on Linux with monitor mode &amp; packet injection support.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cheatsheet">
+    <meta property="article:published_time" content="2025-09-18T08:08:33+07:00">
+    <meta property="article:modified_time" content="2025-09-18T08:08:33+07:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Homelab">
+    <meta property="og:image" content="https://raw.githubusercontent.com/jameskaois/atheros-ar9271-chipset-adapter-linux/main/images/adapter-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jameskaois/atheros-ar9271-chipset-adapter-linux/main/images/adapter-image.jpg">
+<meta name="twitter:title" content="Atheros AR9271 Adapter Chipset On Kali Linux">
+<meta name="twitter:description" content="Guide to set up Atheros AR9271 WiFi adapter on Linux with monitor mode &amp; packet injection support.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Cheatsheets",
+      "item": "http://localhost:1313/cheatsheet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Atheros AR9271 Adapter Chipset On Kali Linux",
+      "item": "http://localhost:1313/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Atheros AR9271 Adapter Chipset On Kali Linux",
+  "name": "Atheros AR9271 Adapter Chipset On Kali Linux",
+  "description": "Guide to set up Atheros AR9271 WiFi adapter on Linux with monitor mode \u0026 packet injection support.",
+  "keywords": [
+    "Blog", "Homelab"
+  ],
+  "articleBody": "📡 Atheros AR9271 on Linux – Driver \u0026 Setup Guide A personal project and guide by a cybersecurity enthusiast\nto get the Atheros AR9271 WiFi adapter fully working on Linux for wireless pentesting.\n🌐 About This Project When I started learning wireless pentesting, I discovered that Atheros AR9271-based adapters are one of the most recommended options for Linux users. They have native Linux support, excellent monitor mode and packet injection capabilities, and are widely used in ethical hacking labs.\nI’m currently using this wireless adapter chipset with my TP-LINK Archer T2U Plus for ethical hacking.\n🔍 Adapter Overview Chipset: Atheros AR9271 WiFi: 2.4GHz (150 Mbps) USB: 2.0 Antenna: Varies by model (commonly 5 dBi detachable) Supports monitor mode \u0026 packet injection: ✅ Natively supported This adapter is perfect for CTFs, WiFi auditing, and learning network security.\n⚙️ Setup on Kali Linux 🐧 Tested On Kali Linux 2023.4 \u0026 2024.1 Kernel 6.x Works out-of-the-box on most Debian-based distros 🔧 Step-by-Step Setup 1. Update Your System sudo apt update \u0026\u0026 sudo apt upgrade -y 2. Plug In Your Adapter Check if it’s detected:\nlsusb | grep Atheros You should see something like:\nBus 002 Device 003: ID 0cf3:9271 Qualcomm Atheros Communications AR9271 802.11n 3. Verify Wireless Interface iwconfig Look for a wireless interface like wlan0.\n🧪 Using Monitor Mode \u0026 Packet Injection Enable monitor mode:\nsudo ip link set wlan0 down sudo iw dev wlan0 set type monitor sudo ip link set wlan0 up Test packet injection:\nsudo aireplay-ng --test wlan0 🧪 Tested Tools (Confirmed Working) Tool Status Description airmon-ng ✅ Monitor mode Enables monitor mode airodump-ng ✅ Packet capture Captures WiFi traffic aireplay-ng ✅ Injection OK Packet injection supported Wireshark ✅ Sniffing works Real-time packet analysis wifite ✅ Fully supported Automated WiFi attacks 🙌 Credit Native support via ath9k_htc driver (built into Linux kernel) Inspiration: Kali Linux forums, aircrack-ng docs 🧑‍💻 Author James Cao\nKali Linux user, WiFi hacker in training, open-source supporter.\nConnect on LinkedIn or drop a ⭐ if this helped you!\n",
+  "wordCount" : "333",
+  "inLanguage": "en",
+  "image":"https://raw.githubusercontent.com/jameskaois/atheros-ar9271-chipset-adapter-linux/main/images/adapter-image.jpg","datePublished": "2025-09-18T08:08:33+07:00",
+  "dateModified": "2025-09-18T08:08:33+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/cheatsheet/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+      <span style="margin: 0 4px;">››</span> <a href="/cheatsheet">Cheatsheet</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>Atheros AR9271 Adapter Chipset On Kali Linux</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>Atheros AR9271 Adapter Chipset On Kali Linux</h1>
+    <p class="post-description">Guide to set up Atheros AR9271 WiFi adapter on Linux with monitor mode &amp; packet injection support.</p>
+    <p class="post-meta">
+      Sep 18, 2025 • 2 min read
+    </p>
+    
+    
+      <figure class="post-cover">
+        <img src="https://raw.githubusercontent.com/jameskaois/atheros-ar9271-chipset-adapter-linux/main/images/adapter-image.jpg" alt="Atheros AR9271 Adapter Chipset On Kali Linux">
+      </figure>
+    
+  
+  </header>
+
+  
+  <div class="post-content">
+    <h2 id="-atheros-ar9271-on-linux--driver--setup-guide">📡 Atheros AR9271 on Linux – Driver &amp; Setup Guide</h2>
+<blockquote>
+<p>A personal project and guide by a cybersecurity enthusiast<br>
+to get the <strong>Atheros AR9271</strong> WiFi adapter fully working on Linux for wireless pentesting.</p>
+</blockquote>
+<hr>
+<h3 id="-about-this-project">🌐 About This Project</h3>
+<p>When I started learning wireless pentesting, I discovered that <strong>Atheros AR9271-based adapters</strong> are one of the most recommended options for Linux users. They have <strong>native Linux support</strong>, excellent <strong>monitor mode</strong> and <strong>packet injection</strong> capabilities, and are <strong>widely used in ethical hacking labs</strong>.</p>
+<p>I&rsquo;m currently using this wireless adapter chipset with my <a href="https://github.com/jameskaois/tplink-archer-t2uplus-kali-linux">TP-LINK Archer T2U Plus</a> for <strong>ethical hacking</strong>.</p>
+<hr>
+<h3 id="-adapter-overview">🔍 Adapter Overview</h3>
+<ul>
+<li><strong>Chipset:</strong> Atheros AR9271</li>
+<li><strong>WiFi:</strong> 2.4GHz (150 Mbps)</li>
+<li><strong>USB:</strong> 2.0</li>
+<li><strong>Antenna:</strong> Varies by model (commonly 5 dBi detachable)</li>
+<li><strong>Supports monitor mode &amp; packet injection:</strong> ✅ Natively supported</li>
+</ul>
+<p>This adapter is perfect for <strong>CTFs, WiFi auditing, and learning network security</strong>.</p>
+<hr>
+<h3 id="-setup-on-kali-linux">⚙️ Setup on Kali Linux</h3>
+<h4 id="-tested-on">🐧 Tested On</h4>
+<ul>
+<li>Kali Linux 2023.4 &amp; 2024.1</li>
+<li>Kernel 6.x</li>
+<li>Works out-of-the-box on most Debian-based distros</li>
+</ul>
+<h4 id="-step-by-step-setup">🔧 Step-by-Step Setup</h4>
+<h5 id="1-update-your-system">1. Update Your System</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
+</span></span></code></pre></div><h5 id="2-plug-in-your-adapter">2. Plug In Your Adapter</h5>
+<p>Check if it&rsquo;s detected:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsusb <span class="p">|</span> grep Atheros
+</span></span></code></pre></div><p>You should see something like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Bus <span class="m">002</span> Device 003: ID 0cf3:9271 Qualcomm Atheros Communications AR9271 802.11n
+</span></span></code></pre></div><h5 id="3-verify-wireless-interface">3. Verify Wireless Interface</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iwconfig
+</span></span></code></pre></div><p>Look for a wireless interface like <code>wlan0</code>.</p>
+<h4 id="-using-monitor-mode--packet-injection">🧪 Using Monitor Mode &amp; Packet Injection</h4>
+<p>Enable monitor mode:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ip link <span class="nb">set</span> wlan0 down
+</span></span><span class="line"><span class="cl">sudo iw dev wlan0 <span class="nb">set</span> <span class="nb">type</span> monitor
+</span></span><span class="line"><span class="cl">sudo ip link <span class="nb">set</span> wlan0 up
+</span></span></code></pre></div><p>Test packet injection:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo aireplay-ng --test wlan0
+</span></span></code></pre></div><hr>
+<h4 id="-tested-tools-confirmed-working">🧪 Tested Tools (Confirmed Working)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Tool</th>
+          <th>Status</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>airmon-ng</code></td>
+          <td>✅ Monitor mode</td>
+          <td>Enables monitor mode</td>
+      </tr>
+      <tr>
+          <td><code>airodump-ng</code></td>
+          <td>✅ Packet capture</td>
+          <td>Captures WiFi traffic</td>
+      </tr>
+      <tr>
+          <td><code>aireplay-ng</code></td>
+          <td>✅ Injection OK</td>
+          <td>Packet injection supported</td>
+      </tr>
+      <tr>
+          <td><code>Wireshark</code></td>
+          <td>✅ Sniffing works</td>
+          <td>Real-time packet analysis</td>
+      </tr>
+      <tr>
+          <td><code>wifite</code></td>
+          <td>✅ Fully supported</td>
+          <td>Automated WiFi attacks</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="-credit">🙌 Credit</h4>
+<ul>
+<li>Native support via <code>ath9k_htc</code> driver (built into Linux kernel)</li>
+<li>Inspiration: Kali Linux forums, aircrack-ng docs</li>
+</ul>
+<hr>
+<h3 id="-author">🧑‍💻 Author</h3>
+<p><a href="https://github.com/jameskaois">James Cao</a></p>
+<p>Kali Linux user, WiFi hacker in training, open-source supporter.</p>
+<p>Connect on LinkedIn or drop a ⭐ if this helped you!</p>
+
+  </div>
+
+  
+
+  
+
+<section class="related-posts">
+  <h3>Related Posts</h3>
+    <div class="related-posts-list">
+        
+        <article>
+            <a href="/cheatsheet/home-lab-setup/install-metasploitable2-on-mac-apple-silicon/" class="related-item">
+              <time>Sep 18, 2025</time>
+              <h4 href="/cheatsheet/home-lab-setup/install-metasploitable2-on-mac-apple-silicon/">Install Metasploitable 2 on Mac Apple Silicon</h4>
+              <p>A step-by-step guide to install and run Metasploitable 2 on Mac with Apple Silicon (M1, M2, M3, etc.) using UTM. Ideal for ethical hacking, penetration testing, and cybersecurity students.</p>
+            </a>
+        </article>
+    
+        <article>
+            <a href="/cheatsheet/home-lab-setup/tp-link-archer-t2u-plus-on-kali/" class="related-item">
+              <time>Sep 18, 2025</time>
+              <h4 href="/cheatsheet/home-lab-setup/tp-link-archer-t2u-plus-on-kali/">TP-LINK Archer T2U Plus On Kali Linux</h4>
+              <p>Guide for using TP-Link Archer T2U Plus on Kali Linux for ethical hacking &amp; pentesting</p>
+            </a>
+        </article>
+    
+        <article>
+            <a href="/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/" class="related-item">
+              <time>Sep 17, 2025</time>
+              <h4 href="/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/">Install Windows 11 on Mac Apple Silicon</h4>
+              <p>A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.</p>
+            </a>
+        </article>
+    
+    </div>
+</section>
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post" href="/cheatsheet/home-lab-setup/install-metasploitable2-on-mac-apple-silicon/">
+
+        <span>OLDER</span>
+        <div>Install Metasploitable 2 on Mac Apple Silicon</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post" href="/cheatsheet/network-hacking/cracking-wifi-password-documentary/">
+
+        <span>NEWER</span>
+        <div>Cracking Wi-Fi Password Documentary</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/2.-number/">✅ `floor()`</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/3.-strings/">✅ String Basics in Python</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/">🎵 How to Use Jockie Music Bot. 🎶</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/">🐍 Python Reverse Shell Cheat Sheet</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-bypassing-disable_functions-in-php-for-reverse-shell-using-chankro/">🐘 Bypassing `disable_functions` in PHP for Reverse Shell Using Chankro</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                                                                                                                                                                                                                                                                    
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-atheros-ar9271-on-linux--driver--setup-guide">📡 Atheros AR9271 on Linux – Driver &amp; Setup Guide</a>
+      <ul>
+        <li><a href="#-about-this-project">🌐 About This Project</a></li>
+        <li><a href="#-adapter-overview">🔍 Adapter Overview</a></li>
+        <li><a href="#-setup-on-kali-linux">⚙️ Setup on Kali Linux</a></li>
+        <li><a href="#-author">🧑‍💻 Author</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

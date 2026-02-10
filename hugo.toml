@@ -1,0 +1,145 @@
+baseURL = "https://gajendramahato.com.np/"
+title = "Gajendra Mahato"
+theme = "PaperMod"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+# pretty URLs
+# pretty URLs
+uglyURLs = false
+# relativeURLs = true
+
+# syntax highlighting
+[markup]
+  [markup.highlight]
+    noClasses = false
+    guessSyntax = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# site params (PaperMod)
+[params]
+  env = "production"
+  mainSections = ["posts"]
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  defaultTheme = "dark"
+  disableThemeToggle = false
+  ShowPostCover = true
+  ShowPostCoverInList = true
+  ShowPostCoverInSingle = true
+  description = "Computer Science Student"
+  
+  # Assets configuration
+  [params.assets]
+    favicon = "favicon.jpg"
+    favicon16x16 = "favicon.jpg"
+    favicon32x32 = "favicon.jpg"
+    apple_touch_icon = "favicon.jpg"
+
+  # Profile Mode (optional, if you want a profile card instead of a list on home)
+  [params.profileMode]
+    enabled = true
+    title = "Gajendra Mahato"
+    subtitle = "Computer Science Student"
+    imageUrl = "images/avatar.jpg"
+    imageWidth = 150
+    imageHeight = 150
+    buttons = [
+       { name = "About", url = "/about/" },
+       { name = "Contact", url = "/contact/" }
+    ]
+
+  # Home Info Mode (default)
+  # [params.homeInfoParams]
+  #   Title = "Hi there 👋"
+  #   Content = "Welcome to my corner of the internet. I explore **Network Engineering**, **Cybersecurity**, **Cloud**, and **DevSecOps**."
+  #   AlignSocialIconsTo = "center"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/GajendraMahato"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/NoobGajen" 
+  [[params.socialIcons]]
+    name = "youtube"
+    url = "https://www.youtube.com/@NoobGajen"
+  # Add other social icons as needed
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[related]
+  threshold = 0
+  includeNewer = true
+  toLower = false
+
+[[related.indices]]
+  name = "tags"
+  weight = 100
+
+[[related.indices]]
+  name = "categories"
+  weight = 80
+
+[[related.indices]]
+  name = "title"
+  weight = 30
+
+# main menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+    pre = "<i class='fa-solid fa-house'></i>"
+
+  [[menu.main]]
+    name = "About Me"
+    url = "/about/"
+    weight = 2
+    pre = "<i class='fa-solid fa-user'></i>"
+
+  [[menu.main]]
+    name = "Writeups"
+    url = "/posts/"
+    weight = 3
+    pre = "<i class='fa-solid fa-pen-nib'></i>"
+
+  [[menu.main]]
+    name = "Portfolio"
+    url = "/portfolio/"
+    weight = 4
+    pre = "<i class='fa-solid fa-briefcase'></i>"
+
+  [[menu.main]]
+    name = "Cheatsheet"
+    url = "/posts/tipsandtricks/cheatsheets/"
+    weight = 5
+    pre = "<i class='fa-solid fa-book'></i>"
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 6
+    pre = "<i class='fa-solid fa-envelope'></i>"

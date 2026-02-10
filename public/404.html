@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8" />
+    <title>404 - Page Not Found | Gajendra Mahato</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #d2603a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 72px;
+            margin: 0;
+            text-shadow: 0 0 10px #d2603a, 0 0 20px #d2603a, 0 0 40px #d2603a;
+            animation: flicker 2s infinite alternate;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 10px 0 30px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #d2603a;
+            box-shadow: 0 0 15px #d2603a;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        a {
+            color: #d2603a;
+            text-decoration: none;
+            border: 1px solid #d2603a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #d2603a;
+            color: #0d0d0d;
+            box-shadow: 0 0 10px #d2603a, 0 0 20px #d2603a, 0 0 30px #d2603a;
+        }
+
+        .terminal {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border: 2px solid #d2603a;
+            border-radius: 8px;
+            box-shadow: 0 0 20px #d2603a;
+            max-width: 600px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #d2603a;
+            animation: blink 1s step-start infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+
+            45% {
+                opacity: 0.85;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .terminal {
+                max-width: calc(100vw - 100px);
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="terminal">
+        
+        <img src="/images/avatar.jpg" alt="Gajendra Mahato" class="avatar" />
+
+        <h1>404</h1>
+        <h2>Gajendra Mahato :: Computer Science Student</h2>
+
+        <p>ACCESS DENIED :: Page Not Found</p>
+        <p>Return to <a href="/">Home Base</a></p>
+        <p>[ SYSTEM LOG: <span id="msg">Signal Lost</span><span class="cursor"></span> ]</p>
+    </div>
+</body>
+
+</html>

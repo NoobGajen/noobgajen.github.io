@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=42495&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Bandit: Level 14 → Level 15 | Gajendra Mahato</title>
+<meta name="keywords" content="">
+<meta name="description" content="The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+Here are the details which we have from the previous level:
+
+Host: bandit.labs.overthewire.org
+Port: 2220
+Username: bandit14
+private SSH key file: sshkey.private
+
+
+So, The SSH syntax will be:
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+From the previous bandit13 level challenges, we know that bandit14 has access to the file /etc/bandit_pass/bandit14. We need to read this file to obtain the bandit14 password, which is necessary for completing the next step.">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:42495/posts/overthewire/bandit/bandit-level-14-level-15/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:42495/posts/overthewire/bandit/bandit-level-14-level-15/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:42495/index.xml"
+/>
+<meta property="og:url" content="http://localhost:42495/posts/overthewire/bandit/bandit-level-14-level-15/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="Bandit: Level 14 → Level 15">
+  <meta property="og:description" content="The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+Here are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit14 private SSH key file: sshkey.private So, The SSH syntax will be: ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220 From the previous bandit13 level challenges, we know that bandit14 has access to the file /etc/bandit_pass/bandit14. We need to read this file to obtain the bandit14 password, which is necessary for completing the next step.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-13T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bandit: Level 14 → Level 15">
+<meta name="twitter:description" content="The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+Here are the details which we have from the previous level:
+
+Host: bandit.labs.overthewire.org
+Port: 2220
+Username: bandit14
+private SSH key file: sshkey.private
+
+
+So, The SSH syntax will be:
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+From the previous bandit13 level challenges, we know that bandit14 has access to the file /etc/bandit_pass/bandit14. We need to read this file to obtain the bandit14 password, which is necessary for completing the next step.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:42495/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "OverTheWire",
+      "item": "http://localhost:42495/posts/overthewire/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Bandit: Level 14 → Level 15",
+      "item": "http://localhost:42495/posts/overthewire/bandit/bandit-level-14-level-15/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Bandit: Level 14 → Level 15",
+  "name": "Bandit: Level 14 → Level 15",
+  "description": "The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.\nHere are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit14 private SSH key file: sshkey.private So, The SSH syntax will be: ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220 From the previous bandit13 level challenges, we know that bandit14 has access to the file /etc/bandit_pass/bandit14. We need to read this file to obtain the bandit14 password, which is necessary for completing the next step.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.\nHere are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit14 private SSH key file: sshkey.private So, The SSH syntax will be: ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220 From the previous bandit13 level challenges, we know that bandit14 has access to the file /etc/bandit_pass/bandit14. We need to read this file to obtain the bandit14 password, which is necessary for completing the next step.\ncat /etc/bandit_pass/bandit14 # Output: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS Now that we have the bandit14 password, we can use it to log in. While it’s possible to log in using the password directly, it’s not necessary for this task. But, We can also connect with SSH from creds:\nsshpass -p MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS ssh bandit14@bandit.labs.overthewire.org -p 2220 Now, let’s begin the challenges To proceed, we need to submit the bandit14 password to the localhost on port 30000 to retrieve the next level password:\nnc localhost 30000 This command connects to port 30000 on localhost. When we paste and enter the current level’s password, it will return the next level’s password. Use the following command to automate this:\nOR, echo MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS | nc localhost 30000 This will send the bandit14 password to port 30000 and return the password for the next level.\n",
+  "wordCount" : "226",
+  "inLanguage": "en",
+  "datePublished": "2026-01-13T00:00:00Z",
+  "dateModified": "2026-01-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:42495/posts/overthewire/bandit/bandit-level-14-level-15/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:42495/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:42495/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:42495/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:42495/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/posts/tipsandtricks/cheatsheets/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:42495/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+      <span style="margin: 0 4px;">››</span> <a href="/posts">Posts</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>Bandit: Level 14 → Level 15</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>Bandit: Level 14 → Level 15</h1>
+    <p class="post-description"></p>
+    <p class="post-meta">
+      Jan 13, 2026 • 2 min read
+    </p>
+    
+  </header>
+
+  
+  <div class="post-content">
+    <p>The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.</p>
+<h3 id="here-are-the-details-which-we-have-from-the-previous-level">Here are the details which we have from the previous level:</h3>
+<ul>
+<li><strong>Host:</strong> <code>bandit.labs.overthewire.org</code></li>
+<li><strong>Port:</strong> <code>2220</code></li>
+<li><strong>Username:</strong> <code>bandit14</code></li>
+<li><strong>private SSH key file:</strong> <code>sshkey.private</code></li>
+</ul>
+<hr>
+<h4 id="so-the-ssh-syntax-will-be">So, The SSH syntax will be:</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p <span class="m">2220</span>
+</span></span></code></pre></div><p>From the previous <code>bandit13</code> level challenges, we know that <code>bandit14</code> has access to the file <code>/etc/bandit_pass/bandit14</code>. We need to read this file to obtain the <code>bandit14</code> password, which is necessary for completing the next step.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/bandit_pass/bandit14
+</span></span><span class="line"><span class="cl"><span class="c1"># Output: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS</span>
+</span></span></code></pre></div><p>Now that we have the <code>bandit14</code> password, we can use it to log in. While it’s possible to log in using the password directly, <strong>it’s not necessary for this task</strong>. But, We can also connect with SSH from creds:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sshpass -p MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS ssh bandit14@bandit.labs.overthewire.org -p <span class="m">2220</span>
+</span></span></code></pre></div><hr>
+<h4 id="now-lets-begin-the-challenges">Now, let&rsquo;s begin the challenges</h4>
+<p>To proceed, we need to submit the <code>bandit14</code> password to the localhost on port 30000 to retrieve the next level password:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nc localhost <span class="m">30000</span>
+</span></span></code></pre></div><p>This command connects to port 30000 on localhost. When we paste and enter the current level&rsquo;s password, it will return the next level&rsquo;s password. Use the following command to automate this:</p>
+<h4 id="or">OR,</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS <span class="p">|</span> nc localhost <span class="m">30000</span>
+</span></span></code></pre></div><p>This will send the <code>bandit14</code> password to port 30000 and return the password for the next level.</p>
+<figure><img src=".gitbook/assets/Level 14 to Level 15.png" alt=""><figcaption></figcaption></figure>
+  </div>
+
+  
+
+  
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post" href="/posts/overthewire/bandit/bandit-level-15-level-16/">
+
+        <span>OLDER</span>
+        <div>Bandit: Level 15 → Level 16</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post" href="/posts/overthewire/bandit/bandit-level-13-level-14/">
+
+        <span>NEWER</span>
+        <div>Bandit: Level 13 → Level 14</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/cheatsheets/chatgpt-secret-codes---hidden-prompts--power-features/">**ChatGPT Secret Codes - Hidden Prompts &amp; Power Features**</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/programming/2.-number/">✅ `floor()`</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/programming/3.-strings/">✅ String Basics in Python</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/">🎵 How to Use Jockie Music Bot. 🎶</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/">🐉 Kali Distrobox Persistent Config</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                                                                                                                                                                                      
+        <a class="sidebar-tag" href="http://localhost:42495/tags/blog/"> Blog </a>
+                                                                                                          
+        <a class="sidebar-tag" href="http://localhost:42495/tags/overthewire/"> OverTheWire </a>
+                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#here-are-the-details-which-we-have-from-the-previous-level">Here are the details which we have from the previous level:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

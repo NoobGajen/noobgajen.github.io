@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=42495&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Bandit: Level 25 → Level 26 | Gajendra Mahato</title>
+<meta name="keywords" content="">
+<meta name="description" content="Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+Here are the details which we have from the previous level:
+
+Host: bandit.labs.overthewire.org
+Port: 2220
+Username: bandit25
+Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
+
+So, The SSH syntax will be:
+sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p 2220
+In this level, we need to find which shell is used by bandit26, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let&rsquo;s dive into the challenge.">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:42495/posts/overthewire/bandit/bandit-level-25-level-26/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:42495/posts/overthewire/bandit/bandit-level-25-level-26/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:42495/index.xml"
+/>
+<meta property="og:url" content="http://localhost:42495/posts/overthewire/bandit/bandit-level-25-level-26/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="Bandit: Level 25 → Level 26">
+  <meta property="og:description" content="Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+Here are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit25 Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 So, The SSH syntax will be: sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p 2220 In this level, we need to find which shell is used by bandit26, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let’s dive into the challenge.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-13T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bandit: Level 25 → Level 26">
+<meta name="twitter:description" content="Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+Here are the details which we have from the previous level:
+
+Host: bandit.labs.overthewire.org
+Port: 2220
+Username: bandit25
+Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
+
+
+So, The SSH syntax will be:
+sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p 2220
+In this level, we need to find which shell is used by bandit26, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let&rsquo;s dive into the challenge.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:42495/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "OverTheWire",
+      "item": "http://localhost:42495/posts/overthewire/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Bandit: Level 25 → Level 26",
+      "item": "http://localhost:42495/posts/overthewire/bandit/bandit-level-25-level-26/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Bandit: Level 25 → Level 26",
+  "name": "Bandit: Level 25 → Level 26",
+  "description": "Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.\nHere are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit25 Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 So, The SSH syntax will be: sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p 2220 In this level, we need to find which shell is used by bandit26, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let\u0026rsquo;s dive into the challenge.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.\nHere are the details which we have from the previous level: Host: bandit.labs.overthewire.org Port: 2220 Username: bandit25 Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 So, The SSH syntax will be: sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p 2220 In this level, we need to find which shell is used by bandit26, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let’s dive into the challenge.\n1. List Files in Home Directory First, log in to bandit25 and list the files in the home directory to see what we have access to.\nls -a # Output: # . .. .bandit24.password bandit26.sshkey .banner .bash_logout .bashrc .flag .pin .profile 2. Copy bandit26 Private SSH Key to Local Machine Lol, bandit26 SSH private key is right there in our home directory, and we have access to that file. It looks pretty straightforward. Let’s copy the bandit26 SSH private key to our local machine. We can view the contents of that file and manually copy-paste it into our own system. OR, we can copy/download it using the scp tool.\nscp -P 2220 bandit25@bandit.labs.overthewire.org:~/bandit26.sshkey . This will prompt for a password. Enter the bandit25 password to transfer the file.\nOR, use sshpass for automation:\nsshpass -p \"iCi86ttT4KSNe1armKiwbQNmB3YJP3q4\" scp -P 2220 bandit25@bandit.labs.overthewire.org:~/bandit26.sshkey . 3. Set Correct Permissions for SSH Key The SSH private key needs appropriate permissions to work without errors. Otherwise, it will throw an error similar like Permissions for 'sshkey' are too open.\nchmod 400 bandit26.sshkey 4. Log in to bandit26 Using the SSH Key Attempt to log in using the SSH key.\nssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p 2220 # Output: # Connection to bandit.labs.overthewire.org closed. [image]\nOOPS! The connection to bandit.labs.overthewire.org closed unexpectedly. This situation feels familiar to us, as it is similar to what was encountered in Bandit: Level 18 → Level 19. Let’s try that trick.\nssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p 2220 'ls -a' This trick didn’t work and got stuck on the Bandit logo.\nIf you see our hint, we need to figure out which shell is used by bandit26 and break out of it. So, let’s log in from bandit25 user, which is working fine.\nsshpass -p \"iCi86ttT4KSNe1armKiwbQNmB3YJP3q4\" ssh -p 2220 bandit25@bandit.labs.overthewire.org 5. Inspect the /etc/passwd File The /etc/passwd file contains user information, including their login shells.\ncat /etc/passwd | grep bandit26 # Output: # bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext This is weird, I’ve never heard of the /usr/bin/showtext shell. It might be a custom shell or some kind of bash script. Let’s investigate more about this shell.\n6. Examine the showtext Script Read the showtext script to understand its behavior.\ncat /usr/bin/showtext Output:\n{% code lineNumbers=“true” %}\n#!/bin/sh export TERM=linux exec more ~/text.txt exit 0 {% endcode %}\nThe shell script located at /usr/bin/showtext uses /bin/sh as its shebang line, which means it runs its script by using the /bin/sh shell. It begins by exporting TERM as linux, which sets the terminal type for compatibility purposes. The script then executes more ~/text.txt. Unlike cat, which can overwhelm the terminal with large file content, more allows for a controlled display of text, making it easier to read extensive file contents. After displaying ~/text.txt, the script exits with a status code of 0. Now, the name ‘showtext’ makes more sense to me because it prints ~/text.txt file contents and exits with a status code of 0. If we think carefully, export TERM=linux simply sets the value linux to the variable TERM, which doesn’t seem interesting. But, the exec more ~/text.txt line actually executes the more command to print the content of the ~/text.txt file. So, we might abuse and potentially exploit this behavior, which is our main aim for this level.\n7. Researching to Exploit It After some research, I discovered that if we shrink our terminal window size, the shell opens in interactive interface, requiring us to press Enter to scroll down. This feature is similar to how less works, so let’s reduce our terminal size to prompt an interactive session.\nVoila! We now have an interactive interface. We can utilize the functionalities of the more command, which indeed has the capability to execute commands as mentioned in its man page.\n8. Abusing more command to Get a Shell We can exploit this in two potential ways: through the command mode or via the vi or vim text editor mode.\na. Attempting Command Mode (Failed)\nEnter :! or ! then command to execute our command, example :!/bin/bash or !/bin/bash to get a shell.\nThis method kinda seems failed because the default shell of bandit26 is /usr/bin/showtext. and in this method our /bin/bash is executed by the default shell /usr/bin/showtext, which is just a bash script to display ASCII art and when /bin/bash is got execute by /usr/bin/showtext it keep printing this bandit ASCII art. Which result failure of our method.\nb. Using vi Editor Mode\nAfter entering the interactive interface of more , press v to switch to vi editor mode at the current line. In vi editor mode, there’s a feature that allows us to execute commands, which is useful for our objective.\nNow, Executing to execute command to get shell. :!/bin/bash This method also seems failed because it continues to display the bandit banner. This happens because vim uses the default shell to execute commands. But hackers never give up, right? Let, read about the features and functionality of vi or vim.\nAfter some research, I discovered that in vim, we can specify the default shell to execute our command, rather than it being executed by the default shell /usr/bin/showtext.\nLet’s test this approach quickly.\nTo verify the default shell: :set shell? # Output: # shell=/usr/bin/showtext Setting the shell to /bin/bash: :set shell=/bin/bash :!/bin/bash Success! We now have access to a shell.\n9. Retrieve the Password for bandit26 Finally, we got a shell, Now, it’s turn to read the password of bandit26.\ncat /etc/bandit_pass/bandit26 # Output: # s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ ",
+  "wordCount" : "1019",
+  "inLanguage": "en",
+  "datePublished": "2026-01-13T00:00:00Z",
+  "dateModified": "2026-01-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:42495/posts/overthewire/bandit/bandit-level-25-level-26/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:42495/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:42495/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:42495/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:42495/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/posts/tipsandtricks/cheatsheets/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:42495/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+      <span style="margin: 0 4px;">››</span> <a href="/posts">Posts</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>Bandit: Level 25 → Level 26</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>Bandit: Level 25 → Level 26</h1>
+    <p class="post-description"></p>
+    <p class="post-meta">
+      Jan 13, 2026 • 5 min read
+    </p>
+    
+  </header>
+
+  
+  <div class="post-content">
+    <p>Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.</p>
+<h3 id="here-are-the-details-which-we-have-from-the-previous-level">Here are the details which we have from the previous level:</h3>
+<ul>
+<li><strong>Host:</strong> <code>bandit.labs.overthewire.org</code></li>
+<li><strong>Port:</strong> <code>2220</code></li>
+<li><strong>Username:</strong> <code>bandit25</code></li>
+<li><strong>Password:</strong> <code>iCi86ttT4KSNe1armKiwbQNmB3YJP3q4</code></li>
+</ul>
+<hr>
+<h4 id="so-the-ssh-syntax-will-be">So, The SSH syntax will be:</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p <span class="m">2220</span>
+</span></span></code></pre></div><p>In this level, we need to find which shell is used by <code>bandit26</code>, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let&rsquo;s dive into the challenge.</p>
+<h4 id="1-list-files-in-home-directory">1. List Files in Home Directory</h4>
+<p>First, log in to <code>bandit25</code> and list the files in the home directory to see what we have access to.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -a
+</span></span><span class="line"><span class="cl"><span class="c1"># Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># .  ..  .bandit24.password  bandit26.sshkey  .banner  .bash_logout  .bashrc  .flag  .pin  .profile</span>
+</span></span></code></pre></div><h4 id="2-copy-bandit26-private-ssh-key-to-local-machine">2. Copy <code>bandit26</code> Private SSH Key to Local Machine</h4>
+<p>Lol, <code>bandit26</code> SSH private key is right there in our home directory, and we have access to that file. It looks pretty straightforward. Let&rsquo;s copy the <code>bandit26</code> SSH private key to our local machine. We can view the contents of that file and manually copy-paste it into our own system. <strong>OR</strong>, we can copy/download it using the <code>scp</code> tool.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">scp -P <span class="m">2220</span> bandit25@bandit.labs.overthewire.org:~/bandit26.sshkey .
+</span></span></code></pre></div><p>This will prompt for a password. Enter the <code>bandit25</code> password to transfer the file.</p>
+<p><strong>OR</strong>, use <code>sshpass</code> for automation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sshpass -p <span class="s2">&#34;iCi86ttT4KSNe1armKiwbQNmB3YJP3q4&#34;</span> scp -P <span class="m">2220</span> bandit25@bandit.labs.overthewire.org:~/bandit26.sshkey .
+</span></span></code></pre></div><h4 id="3-set-correct-permissions-for-ssh-key">3. Set Correct Permissions for SSH Key</h4>
+<p>The SSH private key needs <a href="https://gist.github.com/grenade/6318301#file-z-deprecated-ssh-key-permissions-sh">appropriate permissions</a> to work without errors. Otherwise, it will throw an error similar like <code>Permissions for 'sshkey' are too open.</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">400</span> bandit26.sshkey
+</span></span></code></pre></div><h4 id="4-log-in-to-bandit26-using-the-ssh-key">4. Log in to <code>bandit26</code> Using the SSH Key</h4>
+<p>Attempt to log in using the SSH key.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p <span class="m">2220</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Connection to bandit.labs.overthewire.org closed.</span>
+</span></span></code></pre></div><p>[image]</p>
+<p>OOPS! The connection to bandit.labs.overthewire.org closed unexpectedly. This situation feels familiar to us, as it is similar to what was encountered in <a href="bandit-level-18-level-19.md">Bandit: Level 18 → Level 19</a>. Let&rsquo;s try that trick.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p <span class="m">2220</span> <span class="s1">&#39;ls -a&#39;</span>
+</span></span></code></pre></div><p>This trick didn&rsquo;t work and got stuck on the Bandit logo.</p>
+<figure><img src=".gitbook/assets/Level 25 to Level 26 1.png" alt=""><figcaption></figcaption></figure>
+<p><strong>If you see our hint</strong>, we need to figure out which shell is used by <code>bandit26</code> and break out of it. So, let&rsquo;s log in from <code>bandit25</code> user, which is working fine.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sshpass -p <span class="s2">&#34;iCi86ttT4KSNe1armKiwbQNmB3YJP3q4&#34;</span> ssh -p <span class="m">2220</span> bandit25@bandit.labs.overthewire.org
+</span></span></code></pre></div><h4 id="5-inspect-the-etcpasswd-file">5. Inspect the <code>/etc/passwd</code> File</h4>
+<p>The <code>/etc/passwd</code> file contains user information, including their login shells.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/passwd <span class="p">|</span> grep bandit26
+</span></span><span class="line"><span class="cl"><span class="c1"># Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext</span>
+</span></span></code></pre></div><p>This is weird, I&rsquo;ve never heard of the <code>/usr/bin/showtext</code> shell. It might be a custom shell or some kind of bash script. Let&rsquo;s investigate more about this shell.</p>
+<h4 id="6-examine-the-showtext-script">6. Examine the <code>showtext</code> Script</h4>
+<p>Read the <code>showtext</code> script to understand its behavior.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /usr/bin/showtext
+</span></span></code></pre></div><p><strong>Output:</strong></p>
+<p>{% code lineNumbers=&ldquo;true&rdquo; %}</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TERM</span><span class="o">=</span>linux
+</span></span><span class="line"><span class="cl"><span class="nb">exec</span> more ~/text.txt
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></div><p>{% endcode %}</p>
+<ul>
+<li>The shell script located at <code>/usr/bin/showtext</code> uses <code>/bin/sh</code> as its shebang line, which means it runs its script by using the <code>/bin/sh</code> shell.</li>
+<li>It begins by exporting <code>TERM</code> as <code>linux</code>, which sets the terminal type for compatibility purposes.</li>
+<li>The script then executes <code>more ~/text.txt</code>. Unlike <code>cat</code>, which can overwhelm the terminal with large file content, <code>more</code> allows for a controlled display of text, making it easier to read extensive file contents.</li>
+<li>After displaying <code>~/text.txt</code>, the script exits with a status code of <code>0</code>. Now, the name &lsquo;showtext&rsquo; makes more sense to me because it prints <code>~/text.txt</code> file contents and exits with a status code of <code>0</code>.</li>
+</ul>
+<p>If we think carefully, <code>export TERM=linux</code> simply sets the value <code>linux</code> to the variable <code>TERM</code>, which doesn&rsquo;t seem interesting. But, the <code>exec more ~/text.txt</code> line actually executes the <code>more</code> command to print the content of the <code>~/text.txt</code> file. So, we might abuse and potentially exploit this behavior, which is our main aim for this level.</p>
+<h4 id="7-researching-to-exploit-it">7. Researching to Exploit It</h4>
+<p>After some research, I discovered that if we shrink our terminal window size, the shell opens in interactive interface, requiring us to press Enter to scroll down. This feature is similar to how <code>less</code> works, so let&rsquo;s reduce our terminal size to prompt an interactive session.</p>
+<p><img loading="lazy" src=".gitbook/assets/Level%2025%20to%20Level%2026%202.png"></p>
+<p>Voila! We now have an interactive interface. We can utilize the functionalities of the <code>more</code> command, which indeed has the capability to execute commands as mentioned in its man page.</p>
+<h4 id="8-abusing-more-command-to-get-a-shell">8. Abusing <code>more</code> command to Get a Shell</h4>
+<p>We can exploit this in two potential ways: through the <code>command mode</code> or via the <code>vi</code> or <code>vim</code> text editor mode.</p>
+<figure><img src=".gitbook/assets/Level 25 to Level 26 3.png" alt=""><figcaption></figcaption></figure>
+<p><strong>a. Attempting Command Mode (Failed)</strong></p>
+<p><strong>Enter</strong> <code>:!</code> or <code>!</code> then command to execute our command, example <code>:!/bin/bash</code> or <code>!/bin/bash</code> to get a shell.</p>
+<figure><img src=".gitbook/assets/Level 25 to Level 26 4.png" alt=""><figcaption></figcaption></figure>
+<p>This method kinda seems failed because the default shell of <code>bandit26</code> is <code>/usr/bin/showtext</code>. and in this method our <code>/bin/bash</code> is executed by the default shell <code>/usr/bin/showtext</code>, which is just a <code>bash script</code> to display ASCII art and when <code>/bin/bash</code> is got execute by <code>/usr/bin/showtext</code> it keep printing this bandit ASCII art. Which result failure of our method.</p>
+<p><strong>b. Using <code>vi</code> Editor Mode</strong></p>
+<p>After entering the interactive interface of <code>more</code> , press <code>v</code> to switch to <code>vi</code> editor mode at the current line. In <code>vi</code> editor mode, there&rsquo;s a feature that allows us to execute commands, which is useful for our objective.</p>
+<ul>
+<li>Now, Executing to execute command to get shell.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:!/bin/bash
+</span></span></code></pre></div><figure><img src=".gitbook/assets/Level 25 to Level 26 5.png" alt=""><figcaption></figcaption></figure>
+<p>This method also seems failed because it continues to display the <code>bandit</code> banner. This happens because <code>vim</code> uses the default shell to execute commands. But hackers never give up, right? Let, read about the features and functionality of <code>vi</code> or <code>vim</code>.</p>
+<p>After some research, I discovered that in <code>vim</code>, we can specify the default shell to execute our command, rather than it being executed by the default shell <code>/usr/bin/showtext</code>.</p>
+<p>Let&rsquo;s test this approach quickly.</p>
+<ul>
+<li>To verify the default shell:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:set shell?
+</span></span><span class="line"><span class="cl"><span class="c1"># Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># shell=/usr/bin/showtext</span>
+</span></span></code></pre></div><figure><img src=".gitbook/assets/Level 25 to Level 26 6.png" alt=""><figcaption></figcaption></figure>
+<ul>
+<li>Setting the shell to <code>/bin/bash</code>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:set <span class="nv">shell</span><span class="o">=</span>/bin/bash
+</span></span><span class="line"><span class="cl">:!/bin/bash
+</span></span></code></pre></div><p>Success! We now have access to a shell.</p>
+<h4 id="9-retrieve-the-password-for-bandit26">9. Retrieve the Password for <code>bandit26</code></h4>
+<p>Finally, we got a shell, Now, it&rsquo;s turn to read the password of <code>bandit26</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/bandit_pass/bandit26
+</span></span><span class="line"><span class="cl"><span class="c1"># Output:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ</span>
+</span></span></code></pre></div><figure><img src=".gitbook/assets/Level 25 to Level 26 7.png" alt=""><figcaption></figcaption></figure>
+  </div>
+
+  
+
+  
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post" href="/posts/overthewire/bandit/bandit-level-26-level-27/">
+
+        <span>OLDER</span>
+        <div>Bandit: Level 26 → Level 27</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post" href="/posts/overthewire/bandit/bandit-level-24-level-25/">
+
+        <span>NEWER</span>
+        <div>Bandit: Level 24 → Level 25</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/cheatsheets/chatgpt-secret-codes---hidden-prompts--power-features/">**ChatGPT Secret Codes - Hidden Prompts &amp; Power Features**</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/programming/2.-number/">✅ `floor()`</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/programming/3.-strings/">✅ String Basics in Python</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/">🎵 How to Use Jockie Music Bot. 🎶</a></div>
+        
+        <div><a href="http://localhost:42495/posts/tipsandtricks/cheatsheets/kali-distrobox-persistent-config/">🐉 Kali Distrobox Persistent Config</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                                                                                                                                                                                      
+        <a class="sidebar-tag" href="http://localhost:42495/tags/blog/"> Blog </a>
+                                                                                                          
+        <a class="sidebar-tag" href="http://localhost:42495/tags/overthewire/"> OverTheWire </a>
+                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#here-are-the-details-which-we-have-from-the-previous-level">Here are the details which we have from the previous level:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

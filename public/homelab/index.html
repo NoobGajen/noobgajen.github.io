@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>My Home Lab | Gajendra Mahato</title>
+<meta name="keywords" content="">
+<meta name="description" content="An overview of my homelab setup where I experiment with cybersecurity, networking, and system administration.">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:1313/homelab/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/homelab/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/homelab/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="My Home Lab">
+  <meta property="og:description" content="An overview of my homelab setup where I experiment with cybersecurity, networking, and system administration.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-09-16T15:39:11+07:00">
+    <meta property="article:modified_time" content="2025-09-16T15:39:11+07:00">
+    <meta property="og:image" content="http://localhost:1313/images/posts/my-home-lab-cover-2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/posts/my-home-lab-cover-2.png">
+<meta name="twitter:title" content="My Home Lab">
+<meta name="twitter:description" content="An overview of my homelab setup where I experiment with cybersecurity, networking, and system administration.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "My Home Lab",
+      "item": "http://localhost:1313/homelab/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "My Home Lab",
+  "name": "My Home Lab",
+  "description": "An overview of my homelab setup where I experiment with cybersecurity, networking, and system administration.",
+  "keywords": [
+    
+  ],
+  "articleBody": "About My Homelab My home lab is my personal playground for learning and experimenting.\nIt’s where I break things, fix them, and gain hands-on experience with the tools and technologies that are essential in cybersecurity and IT.\nInstead of just reading about concepts, I test them in practice — in a safe, controlled environment.\nWhy I Built It To practice ethical hacking and CTF challenges in a safe way. To understand networking beyond theory. To simulate real-world attacks and defenses. To get comfortable with system administration tasks. A homelab gives me freedom: if I mess something up, I can just reset it without fear of breaking my main computer.\nDevices in My Homelab MacBook Air (M1) Specs: M1 (ARM64), 8 GB RAM, 256 GB SSD Role: Main device — primary machine for running most VMs and day-to-day hacking work. Notes: Runs ARM-compatible images (e.g. Kali ARM64). I rely on snapshots and fast backups because this is the device I use most. Careful with heavy parallel VMs due to 8 GB RAM — I usually run 1–2 lightweight VMs simultaneously. MacBook Pro (2018) Specs: Intel i5, 8/16 GB (depending on model), 256 GB SSD Role: Secondary machine for browsing, research, and other tasks (including dark-web exploration in isolated VMs). Notes: Good for running x86 VMs (Metasploitable, Windows). Keep isolation: use separate VM networks and avoid sharing host folders when researching risky content. Vsmart Joy 3 Role: Mobile device used for penetration testing (on-device testing, mobile recon, app testing). Notes: Useful for testing mobile-specific behaviors and recon tools. Always factory-reset or isolate before/after sensitive testing. USB Wireless Adapters TP-LINK Archer T2U Plus\nRole: Wireless adapter used for network hacking, supports monitor mode and packet sniffing in many Linux distributions. Notes: Works great as a USB adapter for Kali; ensure drivers are installed and you attach it to the VM (USB passthrough). Custom Atheros AR9271\nRole: My preferred adapter for soft packet sniffing, AP mode, and general wireless experimentation. Notes: Atheros chips have great Linux support; ideal for Aircrack-ng, hostapd, and related tools. VMs I Run Kali Linux 2025 (ARM64)\nPrimary pentest distribution on the M1. Includes tooling for network, web, and wireless testing. Tip: use lightweight desktop (XFCE) or headless setups to save RAM. Metasploitable 3\nVulnerable target VMs for safe practice of exploitation techniques. Run in an isolated network or NAT mode. Windows 11 Home Edition\nUse for testing Windows-specific tools, payloads, and for malware/behavior analysis within an isolated VM. Snapshot before/after experiments. What I Do in the Lab TryHackMe \u0026 OverTheWire challenges \u0026 other CTFs challenges. Network scanning and enumeration Building small services (web, database) and securing them Testing \u0026 learning tools like Wireshark, Burp Suite, Hydra, Nmap, etc. Closing Thoughts This homelab isn’t about having the latest hardware.\nIt’s about creating an environment where I can fail, learn, and grow as a cybersecurity student.\nA homelab is like a gym for your technical skills — the more you train, the stronger you get. 💻🔥\n",
+  "wordCount" : "495",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/posts/my-home-lab-cover-2.png","datePublished": "2025-09-16T15:39:11+07:00",
+  "dateModified": "2025-09-16T15:39:11+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/homelab/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/cheatsheet/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>My Home Lab</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>My Home Lab</h1>
+    <p class="post-description">An overview of my homelab setup where I experiment with cybersecurity, networking, and system administration.</p>
+    <p class="post-meta">
+      Sep 16, 2025 • 3 min read
+    </p>
+    
+    
+      <figure class="post-cover">
+        <img src="/images/posts/my-home-lab-cover-2.png" alt="My Home Lab">
+      </figure>
+    
+  
+  </header>
+
+  
+  <div class="post-content">
+    <h2 id="about-my-homelab">About My Homelab</h2>
+<p>My home lab is my personal playground for learning and experimenting.<br>
+It’s where I break things, fix them, and gain hands-on experience with the tools and technologies that are essential in cybersecurity and IT.</p>
+<p>Instead of just reading about concepts, I test them in practice — in a safe, controlled environment.</p>
+<hr>
+<h2 id="why-i-built-it">Why I Built It</h2>
+<ul>
+<li>To practice <strong>ethical hacking</strong> and <strong>CTF challenges</strong> in a safe way.</li>
+<li>To understand <strong>networking</strong> beyond theory.</li>
+<li>To simulate real-world <strong>attacks and defenses</strong>.</li>
+<li>To get comfortable with <strong>system administration</strong> tasks.</li>
+</ul>
+<p>A homelab gives me freedom: if I mess something up, I can just reset it without fear of breaking my main computer.</p>
+<hr>
+<h2 id="devices-in-my-homelab">Devices in My Homelab</h2>
+<p><img alt="My Home Lab Setup" loading="lazy" src="/images/posts/my-home-lab-cover.png"></p>
+<h3 id="macbook-air-m1">MacBook Air (M1)</h3>
+<ul>
+<li><strong>Specs:</strong> M1 (ARM64), 8 GB RAM, 256 GB SSD</li>
+<li><strong>Role:</strong> Main device — primary machine for running most VMs and day-to-day hacking work.</li>
+<li><strong>Notes:</strong>
+<ul>
+<li>Runs ARM-compatible images (e.g. Kali ARM64).</li>
+<li>I rely on snapshots and fast backups because this is the device I use most.</li>
+<li>Careful with heavy parallel VMs due to 8 GB RAM — I usually run 1–2 lightweight VMs simultaneously.</li>
+</ul>
+</li>
+</ul>
+<h3 id="macbook-pro-2018">MacBook Pro (2018)</h3>
+<ul>
+<li><strong>Specs:</strong> Intel i5, 8/16 GB (depending on model), 256 GB SSD</li>
+<li><strong>Role:</strong> Secondary machine for browsing, research, and other tasks (including dark-web exploration in isolated VMs).</li>
+<li><strong>Notes:</strong>
+<ul>
+<li>Good for running x86 VMs (Metasploitable, Windows).</li>
+<li>Keep isolation: use separate VM networks and avoid sharing host folders when researching risky content.</li>
+</ul>
+</li>
+</ul>
+<h3 id="vsmart-joy-3">Vsmart Joy 3</h3>
+<ul>
+<li><strong>Role:</strong> Mobile device used for penetration testing (on-device testing, mobile recon, app testing).</li>
+<li><strong>Notes:</strong>
+<ul>
+<li>Useful for testing mobile-specific behaviors and recon tools.</li>
+<li>Always factory-reset or isolate before/after sensitive testing.</li>
+</ul>
+</li>
+</ul>
+<h3 id="usb-wireless-adapters">USB Wireless Adapters</h3>
+<ul>
+<li>
+<p><strong>TP-LINK Archer T2U Plus</strong></p>
+<ul>
+<li><strong>Role:</strong> Wireless adapter used for network hacking, supports monitor mode and packet sniffing in many Linux distributions.</li>
+<li><strong>Notes:</strong> Works great as a USB adapter for Kali; ensure drivers are installed and you attach it to the VM (USB passthrough).</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Atheros AR9271</strong></p>
+<ul>
+<li><strong>Role:</strong> My preferred adapter for soft packet sniffing, AP mode, and general wireless experimentation.</li>
+<li><strong>Notes:</strong> Atheros chips have great Linux support; ideal for Aircrack-ng, hostapd, and related tools.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="vms-i-run">VMs I Run</h2>
+<ul>
+<li>
+<p><strong>Kali Linux 2025 (ARM64)</strong></p>
+<ul>
+<li>Primary pentest distribution on the M1. Includes tooling for network, web, and wireless testing.</li>
+<li>Tip: use lightweight desktop (XFCE) or headless setups to save RAM.</li>
+</ul>
+</li>
+<li>
+<p><strong>Metasploitable 3</strong></p>
+<ul>
+<li>Vulnerable target VMs for safe practice of exploitation techniques. Run in an isolated network or NAT mode.</li>
+</ul>
+</li>
+<li>
+<p><strong>Windows 11 Home Edition</strong></p>
+<ul>
+<li>Use for testing Windows-specific tools, payloads, and for malware/behavior analysis within an isolated VM. Snapshot before/after experiments.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="what-i-do-in-the-lab">What I Do in the Lab</h2>
+<ul>
+<li>TryHackMe &amp; OverTheWire challenges &amp; other CTFs challenges.</li>
+<li>Network scanning and enumeration</li>
+<li>Building small services (web, database) and securing them</li>
+<li>Testing &amp; learning tools like Wireshark, Burp Suite, Hydra, Nmap, etc.</li>
+</ul>
+<h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>This homelab isn’t about having the latest hardware.<br>
+It’s about creating an environment where I can <strong>fail, learn, and grow</strong> as a cybersecurity student.</p>
+<blockquote>
+<p>A homelab is like a gym for your technical skills — the more you train, the stronger you get. 💻🔥</p>
+</blockquote>
+
+  </div>
+
+  
+
+  
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post" href="/portfolio/">
+
+        <span>OLDER</span>
+        <div>Portfolio</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post disabled">
+
+        <span>NEWER</span>
+        <div>-</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/overthewire/bandit/level-0/">Bandit Level 0</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+          
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                  
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+         
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#about-my-homelab">About My Homelab</a></li>
+    <li><a href="#why-i-built-it">Why I Built It</a></li>
+    <li><a href="#devices-in-my-homelab">Devices in My Homelab</a>
+      <ul>
+        <li><a href="#macbook-air-m1">MacBook Air (M1)</a></li>
+        <li><a href="#macbook-pro-2018">MacBook Pro (2018)</a></li>
+        <li><a href="#vsmart-joy-3">Vsmart Joy 3</a></li>
+        <li><a href="#usb-wireless-adapters">USB Wireless Adapters</a></li>
+      </ul>
+    </li>
+    <li><a href="#vms-i-run">VMs I Run</a></li>
+    <li><a href="#what-i-do-in-the-lab">What I Do in the Lab</a></li>
+    <li><a href="#closing-thoughts">Closing Thoughts</a></li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

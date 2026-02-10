@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ftp-Enumeration on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/ftp-enumeration/</link>
+    <description>Recent content in Ftp-Enumeration on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ftp-enumeration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📡 File Transfer via FTP on Linux</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-using-ftp-command&#34;&gt;🧰 Using &lt;code&gt;ftp&lt;/code&gt; Command&lt;/h2&gt;
+&lt;h3 id=&#34;1-connect-to-ftp-server&#34;&gt;1. Connect to FTP Server&lt;/h3&gt;
+&lt;p&gt;Replace &lt;code&gt;10.10.10.98&lt;/code&gt; with your target FTP server IP or domain:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp 10.10.10.98
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;2-login-as-anonymous&#34;&gt;2. Login as Anonymous&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Name (10.10.10.98:yourusername): anonymous
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Password: (press Enter)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;3-set-binary-mode&#34;&gt;3. Set Binary Mode&lt;/h3&gt;
+&lt;p&gt;To handle all types of files properly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; binary
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;4-disable-prompting-for-multiple-files&#34;&gt;4. Disable Prompting (for Multiple Files)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; prompt off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Interactive mode off.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;5-download-files-wildcard&#34;&gt;5. Download Files (Wildcard)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; mget *
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ Note: Standard &lt;code&gt;ftp&lt;/code&gt; does &lt;strong&gt;not support recursive&lt;/strong&gt; download.
+For recursive download, use a better client like &lt;code&gt;lftp&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Install Windows 11 on Mac Apple Silicon | Gajendra Mahato</title>
+<meta name="keywords" content="Blog, Homelab">
+<meta name="description" content="A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:1313/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="Install Windows 11 on Mac Apple Silicon">
+  <meta property="og:description" content="A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cheatsheet">
+    <meta property="article:published_time" content="2025-09-17T15:52:40+07:00">
+    <meta property="article:modified_time" content="2025-09-17T15:52:40+07:00">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Homelab">
+    <meta property="og:image" content="http://localhost:1313/images/cheatsheet/install-windows-11-cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/cheatsheet/install-windows-11-cover.webp">
+<meta name="twitter:title" content="Install Windows 11 on Mac Apple Silicon">
+<meta name="twitter:description" content="A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Cheatsheets",
+      "item": "http://localhost:1313/cheatsheet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Install Windows 11 on Mac Apple Silicon",
+      "item": "http://localhost:1313/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Install Windows 11 on Mac Apple Silicon",
+  "name": "Install Windows 11 on Mac Apple Silicon",
+  "description": "A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.",
+  "keywords": [
+    "Blog", "Homelab"
+  ],
+  "articleBody": "💥 Install Windows 11 on Mac (Apple Silicon - M1, M2, M3, M4) A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.\n📚 Table of Contents Why Install Windows 11 on Apple Silicon? What You’ll Need Download Requirements 🚀 Why Install Windows 11 on Apple Silicon? Run Windows-only software on macOS. Use Microsoft Office, games, or enterprise tools. Test apps across platforms. Lightweight and fast with virtualization. For ethical hacking labs, hacking. 🧰 What You’ll Need An Apple Silicon Mac (M1, M2, M3 or M4 chip) Windows 11 ARM ISO or VHDX UTM (Free) At least 25GB of free disk space 🔽 Download Requirements ✅ Download UTM Go to the official UTM website: https://mac.getutm.app/ Click the “Download” button to get the latest version. Once downloaded, move UTM.app to your Applications folder. Open UTM and allow permissions if prompted by macOS. ✅ Download Windows 11 ARM ISO The easiest way to get the Windows 11 ARM ISO is by using the CrystalFetch app from the App Store:\nOpen the App Store on your Mac. Search for CrystalFetch or use this link: CrystalFetch on App Store Download and open CrystalFetch. For the options, Choose: Version: Windows 11 Build: Latest Architecture: Apple Silicon Language: English (United States) Edition: Windows 11 Click Download ISO and wait for it to complete. Save the ISO file somewhere accessible (like your Downloads folder). Note: Because of the large file, Windows 11 ARM ISO may take about 1-2 hours to download depends on your network connection.\n| 💡 CrystalFetch downloads the ISO directly from Microsoft’s servers—safe and easy!\n⚙️ Step-by-Step Installation (Using UTM) 1. Open UTM and Create a New VM Click Create a New Virtual Machine. Select Virtualize. Select Windows. 2. System Configuration Check on Install Windows 10 or higher. Click Browse then choose the Windows 11 ISO you have installed. Choose 4096 MiB for Memory (this is the minimum amount). Choose 64 GiB for Storage. Click Continue -\u003e Continue -\u003e Save. Run the VM Windows. 3. Windows Settings Select I don’t have a product key.\nSelect Windows 11 Pro -\u003e Next.\nThen just wait for Windows update and you have completed install Windows on Mac Apple Silicon.\n📄 Useful Resources Download Windows 11 ARM ISO (with CrystalFetch) UTM Official Website 📢 Support \u0026 Contributions Feel free to open an issue or submit a PR if you want to improve the guide!\n📌 Keywords (for SEO) install windows 11 on m1 mac, windows 11 arm mac, windows 11 apple silicon, utm windows 11, parallels m1 windows, windows 11 vm mac m2, mac m3 install windows\n",
+  "wordCount" : "450",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/images/cheatsheet/install-windows-11-cover.webp","datePublished": "2025-09-17T15:52:40+07:00",
+  "dateModified": "2025-09-17T15:52:40+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/cheatsheet/home-lab-setup/install-windows-11-on-mac-apple-silicon/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/cheatsheet/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+      <span style="margin: 0 4px;">››</span> <a href="/cheatsheet">Cheatsheet</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>Install Windows 11 on Mac Apple Silicon</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>Install Windows 11 on Mac Apple Silicon</h1>
+    <p class="post-description">A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using UTM (free). Perfect for developers, students, or anyone needing Windows on a Mac.</p>
+    <p class="post-meta">
+      Sep 17, 2025 • 3 min read
+    </p>
+    
+    
+      <figure class="post-cover">
+        <img src="/images/cheatsheet/install-windows-11-cover.webp" alt="Install Windows 11 on Mac Apple Silicon">
+      </figure>
+    
+  
+  </header>
+
+  
+  <div class="post-content">
+    <h2 id="-install-windows-11-on-mac-apple-silicon---m1-m2-m3-m4">💥 Install Windows 11 on Mac (Apple Silicon - M1, M2, M3, M4)</h2>
+<p>A complete and updated guide to installing Windows 11 on your Apple Silicon Mac (M1, M2, M3) using <strong>UTM</strong> (free). Perfect for developers, students, or anyone needing Windows on a Mac.</p>
+<hr>
+<h3 id="-table-of-contents">📚 Table of Contents</h3>
+<ul>
+<li><a href="#-why-install-windows-11-on-apple-silicon">Why Install Windows 11 on Apple Silicon?</a></li>
+<li><a href="#-what-you'll-need">What You&rsquo;ll Need</a></li>
+<li><a href="#-download-requirements">Download Requirements</a></li>
+</ul>
+<hr>
+<h3 id="-why-install-windows-11-on-apple-silicon">🚀 Why Install Windows 11 on Apple Silicon?</h3>
+<ul>
+<li>Run Windows-only software on macOS.</li>
+<li>Use Microsoft Office, games, or enterprise tools.</li>
+<li>Test apps across platforms.</li>
+<li>Lightweight and fast with virtualization.</li>
+<li>For ethical hacking labs, hacking.</li>
+</ul>
+<hr>
+<h3 id="-what-youll-need">🧰 What You’ll Need</h3>
+<ul>
+<li>An Apple Silicon Mac (M1, M2, M3 or M4 chip)</li>
+<li>Windows 11 ARM ISO or VHDX</li>
+<li>UTM (Free)</li>
+<li>At least 25GB of free disk space</li>
+</ul>
+<hr>
+<h3 id="-download-requirements">🔽 Download Requirements</h3>
+<h4 id="-download-utm">✅ Download UTM</h4>
+<ol>
+<li>Go to the official UTM website: <a href="https://mac.getutm.app/">https://mac.getutm.app/</a></li>
+<li>Click the &ldquo;Download&rdquo; button to get the latest version.</li>
+<li>Once downloaded, move UTM.app to your Applications folder.</li>
+<li>Open UTM and allow permissions if prompted by macOS.</li>
+</ol>
+<h4 id="-download-windows-11-arm-iso">✅ Download Windows 11 ARM ISO</h4>
+<p>The easiest way to get the Windows 11 ARM ISO is by using the CrystalFetch app from the App Store:</p>
+<ol>
+<li>Open the App Store on your Mac.</li>
+<li>Search for CrystalFetch or use this link: <a href="https://apps.apple.com/us/app/crystalfetch-iso-downloader/id6454431289?mt=12">CrystalFetch on App Store</a></li>
+<li>Download and open CrystalFetch.</li>
+<li>For the options, Choose:
+<ul>
+<li><strong>Version:</strong> Windows 11</li>
+<li><strong>Build:</strong> Latest</li>
+<li><strong>Architecture:</strong> Apple Silicon</li>
+<li><strong>Language:</strong> English (United States)</li>
+<li><strong>Edition:</strong> Windows 11</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot1.png"></p>
+<ol start="5">
+<li>Click Download ISO and wait for it to complete.</li>
+<li>Save the ISO file somewhere accessible (like your Downloads folder).</li>
+</ol>
+<p><em>Note: Because of the large file, Windows 11 ARM ISO may take about 1-2 hours to download depends on your network connection.</em></p>
+<p>| 💡 CrystalFetch downloads the ISO directly from Microsoft&rsquo;s servers—safe and easy!</p>
+<hr>
+<h3 id="-step-by-step-installation-using-utm">⚙️ Step-by-Step Installation (Using UTM)</h3>
+<h4 id="1-open-utm-and-create-a-new-vm">1. Open UTM and Create a New VM</h4>
+<ul>
+<li>Click <strong>Create a New Virtual Machine</strong>.</li>
+</ul>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/install-metasploitable2-on-mac-apple-silicon/refs/heads/main/screenshot_images/shot2.png"></p>
+<ul>
+<li>Select <strong>Virtualize</strong>.</li>
+</ul>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot2.png"></p>
+<ul>
+<li>Select <strong>Windows</strong>.</li>
+</ul>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot3.png"></p>
+<h4 id="2-system-configuration">2. System Configuration</h4>
+<ul>
+<li>Check on <strong>Install Windows 10 or higher</strong>.</li>
+<li>Click <strong>Browse</strong> then choose the Windows 11 ISO you have installed.</li>
+</ul>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot4.png"></p>
+<ul>
+<li>Choose <strong>4096 MiB</strong> for Memory (this is the minimum amount).</li>
+</ul>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot5.png"></p>
+<ul>
+<li>Choose <strong>64 GiB</strong> for Storage.</li>
+</ul>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot6.png"></p>
+<ul>
+<li>Click <strong>Continue</strong> -&gt; <strong>Continue</strong> -&gt; <strong>Save</strong>.</li>
+<li>Run the VM Windows.</li>
+</ul>
+<h4 id="3-windows-settings">3. Windows Settings</h4>
+<ul>
+<li>
+<p>Select <strong>I don&rsquo;t have a product key</strong>.</p>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot7.png"></p>
+</li>
+<li>
+<p>Select <strong>Windows 11 Pro</strong> -&gt; <strong>Next</strong>.</p>
+<p><img alt="Guide Image" loading="lazy" src="https://raw.githubusercontent.com/jameskaois/windows-11-on-mac-apple-silicon/refs/heads/main/screenshot_images/screenshot8.png"></p>
+</li>
+<li>
+<p>Then just wait for Windows update and you have completed install Windows on Mac Apple Silicon.</p>
+</li>
+</ul>
+<hr>
+<h3 id="-useful-resources">📄 Useful Resources</h3>
+<ul>
+<li><a href="https://apps.apple.com/us/app/crystalfetch-iso-downloader/id6454431289?mt=12">Download Windows 11 ARM ISO (with CrystalFetch)</a></li>
+<li><a href="https://mac.getutm.app/">UTM Official Website</a></li>
+</ul>
+<hr>
+<h3 id="-support--contributions">📢 Support &amp; Contributions</h3>
+<p>Feel free to open an issue or submit a PR if you want to improve the guide!</p>
+<hr>
+<h3 id="-keywords-for-seo">📌 Keywords (for SEO)</h3>
+<p>install windows 11 on m1 mac, windows 11 arm mac, windows 11 apple silicon, utm windows 11, parallels m1 windows, windows 11 vm mac m2, mac m3 install windows</p>
+
+  </div>
+
+  
+
+  
+
+<section class="related-posts">
+  <h3>Related Posts</h3>
+    <div class="related-posts-list">
+        
+        <article>
+            <a href="/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/" class="related-item">
+              <time>Sep 18, 2025</time>
+              <h4 href="/cheatsheet/home-lab-setup/atheros-ar9271-adapter-chipset-on-kali-linux/">Atheros AR9271 Adapter Chipset On Kali Linux</h4>
+              <p>Guide to set up Atheros AR9271 WiFi adapter on Linux with monitor mode &amp; packet injection support.</p>
+            </a>
+        </article>
+    
+        <article>
+            <a href="/cheatsheet/home-lab-setup/install-metasploitable2-on-mac-apple-silicon/" class="related-item">
+              <time>Sep 18, 2025</time>
+              <h4 href="/cheatsheet/home-lab-setup/install-metasploitable2-on-mac-apple-silicon/">Install Metasploitable 2 on Mac Apple Silicon</h4>
+              <p>A step-by-step guide to install and run Metasploitable 2 on Mac with Apple Silicon (M1, M2, M3, etc.) using UTM. Ideal for ethical hacking, penetration testing, and cybersecurity students.</p>
+            </a>
+        </article>
+    
+        <article>
+            <a href="/cheatsheet/home-lab-setup/tp-link-archer-t2u-plus-on-kali/" class="related-item">
+              <time>Sep 18, 2025</time>
+              <h4 href="/cheatsheet/home-lab-setup/tp-link-archer-t2u-plus-on-kali/">TP-LINK Archer T2U Plus On Kali Linux</h4>
+              <p>Guide for using TP-Link Archer T2U Plus on Kali Linux for ethical hacking &amp; pentesting</p>
+            </a>
+        </article>
+    
+    </div>
+</section>
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post disabled">
+
+        <span>OLDER</span>
+        <div>-</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post" href="/cheatsheet/home-lab-setup/tp-link-archer-t2u-plus-on-kali/">
+
+        <span>NEWER</span>
+        <div>TP-LINK Archer T2U Plus On Kali Linux</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/2.-number/">✅ `floor()`</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/3.-strings/">✅ String Basics in Python</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/">🎵 How to Use Jockie Music Bot. 🎶</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/">🐍 Python Reverse Shell Cheat Sheet</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-bypassing-disable_functions-in-php-for-reverse-shell-using-chankro/">🐘 Bypassing `disable_functions` in PHP for Reverse Shell Using Chankro</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                              
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                                                                                                                                                                                                                                                                    
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-install-windows-11-on-mac-apple-silicon---m1-m2-m3-m4">💥 Install Windows 11 on Mac (Apple Silicon - M1, M2, M3, M4)</a>
+      <ul>
+        <li><a href="#-table-of-contents">📚 Table of Contents</a></li>
+        <li><a href="#-why-install-windows-11-on-apple-silicon">🚀 Why Install Windows 11 on Apple Silicon?</a></li>
+        <li><a href="#-what-youll-need">🧰 What You’ll Need</a></li>
+        <li><a href="#-download-requirements">🔽 Download Requirements</a></li>
+        <li><a href="#-step-by-step-installation-using-utm">⚙️ Step-by-Step Installation (Using UTM)</a></li>
+        <li><a href="#-useful-resources">📄 Useful Resources</a></li>
+        <li><a href="#-support--contributions">📢 Support &amp; Contributions</a></li>
+        <li><a href="#-keywords-for-seo">📌 Keywords (for SEO)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

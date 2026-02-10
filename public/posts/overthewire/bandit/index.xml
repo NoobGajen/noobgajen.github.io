@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bandit on Gajendra Mahato</title>
+    <link>http://localhost:36511/posts/overthewire/bandit/</link>
+    <description>Recent content in Bandit on Gajendra Mahato</description>
+    <generator>Hugo -- 0.154.4</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:36511/posts/overthewire/bandit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📑 Bandit: Level 33 → Level 34</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-33-level-34/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-33-level-34/</guid>
+      <description>&lt;p&gt;At this moment, level 34 does not exist.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit33&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0 ssh bandit33@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;&lt;img src=&#34;.gitbook/assets/Level 33 to Level 34.png&#34; alt=&#34;&#34;&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 0 → Level 1</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-0-level-1/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-0-level-1/</guid>
+      <description>&lt;p&gt;The goal of this level is to log into the game using SSH. &lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-need-to-login-via-ssh&#34;&gt;Here are the details which we need to login via SSH:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;bandit0&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh bandit0@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press Enter, and you will be prompted for a password. Enter the correct password, and you will be logged into the SSH server.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;.gitbook/assets/Level 0 to Level 1.png&#34; alt=&#34;&#34;&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 1 → Level 2</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-1-level-2/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-1-level-2/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in a file called &lt;code&gt;-&lt;/code&gt; located in the home directory.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If ssh bandit1@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Bash, this &lt;code&gt;-&lt;/code&gt; symbol has a special meaning. If you try to use &lt;code&gt;cat -&lt;/code&gt;, it won&amp;rsquo;t read the content of a file named &lt;code&gt;-&lt;/code&gt;. Instead, it will start waiting for input and then return the same input as output. To read the content of a file named &lt;code&gt;-&lt;/code&gt;, you can use the full path or escape the &lt;code&gt;-&lt;/code&gt; symbol. Here are some ways to achieve this:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 10 → Level 11</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-10-level-11/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-10-level-11/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt;, which contains &lt;code&gt;base64&lt;/code&gt; encoded data.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit10&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey ssh bandit10@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we know from the hint, the password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt;, which contains base64 encoded data. Base64 is a type of cipher text where the original text is transformed into another form using a specific encoding scheme to hide the original message.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 11 → Level 12</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-11-level-12/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-11-level-12/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt;, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit11&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr ssh bandit11@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we know from the hint, the password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt;, which contains ROT13 encoded data. ROT13 is a simple substitution cipher where each letter of the original text is replaced by the letter 13 positions after it in the alphabet. This transformation hides the original message.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 12 → Level 13</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-12-level-13/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-12-level-13/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 13 → Level 14</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-13-level-14/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-13-level-14/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in &lt;code&gt;/etc/bandit_pass/bandit14&lt;/code&gt; and can only be read by user &lt;code&gt;bandit14&lt;/code&gt;. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. &lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;localhost&lt;/code&gt; is a hostname that refers to the machine you are working on.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit13&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn ssh bandit13@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The password for the next level is stored in &lt;code&gt;/etc/bandit_pass/bandit14&lt;/code&gt; and can only be read by the user &lt;code&gt;bandit14&lt;/code&gt;. For this level, we don’t get the next password, we get a private SSH key that can be used to log into the next level. So, Let&amp;rsquo;s copy that private SSH key to our box, and login using private ssh in the next level account.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 14 → Level 15</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-14-level-15/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-14-level-15/</guid>
+      <description>&lt;p&gt;The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit14&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;private SSH key file:&lt;/strong&gt; &lt;code&gt;sshkey.private&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;From the previous &lt;code&gt;bandit13&lt;/code&gt; level challenges, we know that &lt;code&gt;bandit14&lt;/code&gt; has access to the file &lt;code&gt;/etc/bandit_pass/bandit14&lt;/code&gt;. We need to read this file to obtain the &lt;code&gt;bandit14&lt;/code&gt; password, which is necessary for completing the next step.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 15 → Level 16</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-15-level-16/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-15-level-16/</guid>
+      <description>&lt;p&gt;The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit15&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo ssh bandit15@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The challenge is to submit the &lt;code&gt;bandit15&lt;/code&gt; password to port 30001 on localhost using SSL encryption. We can do this using either &lt;code&gt;ncat&lt;/code&gt; with SSL support or directly using &lt;code&gt;openssl&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 16 → Level 17</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-16-level-17/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-16-level-17/</guid>
+      <description>&lt;p&gt;The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 17 → Level 18</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-17-level-18/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-17-level-18/</guid>
+      <description>&lt;p&gt;There are 2 files in the homedirectory: &lt;code&gt;passwords.old and passwords.new&lt;/code&gt;. The password for the next level is in &lt;code&gt;passwords.new&lt;/code&gt; and is the only line that has been changed between &lt;code&gt;passwords.old and passwords.new&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit17&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;EReVavePLFHtFlFsjn3hyzMlvSuSAcRD&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p EReVavePLFHtFlFsjn3hyzMlvSuSAcRD ssh bandit17@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We know there are two files in the home directory: &lt;code&gt;passwords.old&lt;/code&gt; and &lt;code&gt;passwords.new&lt;/code&gt;. The password we need is located in &lt;code&gt;passwords.new&lt;/code&gt;, and it&amp;rsquo;s the only line that has changed between these two files. We can easily retrieve it using the &lt;code&gt;diff&lt;/code&gt; command.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 18 → Level 19</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-18-level-19/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-18-level-19/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in a file &lt;code&gt;readme&lt;/code&gt; in the homedirectory. Unfortunately, someone has modified &lt;code&gt;.bashrc&lt;/code&gt; to log you out when you log in with SSH.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit18&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO ssh bandit18@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OOPS! Someone has modified the &lt;code&gt;.bashrc&lt;/code&gt; file to log out immediately upon login, displaying a &amp;ldquo;Byebye!&amp;rdquo; message. This makes it challenging to log in and interact with the system normally. However, SSH provides functionalities that allow us to execute commands without triggering the &lt;code&gt;.bashrc&lt;/code&gt; configuration file, which is a script that runs automatically if the user&amp;rsquo;s default shell is &lt;code&gt;bash&lt;/code&gt; or when the user switches to &lt;code&gt;bash&lt;/code&gt; from another shell.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 19 → Level 20</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-19-level-20/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-19-level-20/</guid>
+      <description>&lt;p&gt;To gain access to the next level, you should use the &lt;code&gt;setuid&lt;/code&gt; binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place &lt;code&gt;(/etc/bandit_pass)&lt;/code&gt;, after you have used the setuid binary.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit19&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8 ssh bandit19@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We are dealing with a &lt;a href=&#34;https://en.wikipedia.org/wiki/Suid&#34;&gt;SUID&lt;/a&gt; binary. &lt;a href=&#34;https://en.wikipedia.org/wiki/Suid&#34;&gt;SUID&lt;/a&gt; or &lt;a href=&#34;https://en.wikipedia.org/wiki/Setuid&#34;&gt;setuid&lt;/a&gt;, is a special type of permission in Unix-like operating systems that allows users to execute a file with the permissions of the file&amp;rsquo;s owner rather than their own permissions. This special permission bit (&lt;code&gt;s&lt;/code&gt; in the permission string) can be set on executable files using the &lt;code&gt;chmod&lt;/code&gt; command.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 2 → Level 3</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-2-level-3/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-2-level-3/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in a file called &lt;code&gt;spaces in this filename&lt;/code&gt; located in the home directory.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;263JGJPfgU6LtdEvgfWU1XP5yac29mFx&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 263JGJPfgU6LtdEvgfWU1XP5yac29mFx ssh bandit2@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Bash, filenames with spaces are treated as different files. If a filename contains spaces and we want to access its contents, here are some ways to achieve this:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 20 → Level 21</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-20-level-21/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-20-level-21/</guid>
+      <description>&lt;p&gt;There is a setuid &lt;code&gt;binary&lt;/code&gt; in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level &lt;code&gt;bandit20&lt;/code&gt;. If the password is correct, it will transmit the password for the next level &lt;code&gt;bandit21&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Try connecting to your own network daemon to see if it works as you think&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 21 → Level 22</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-21-level-22/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-21-level-22/</guid>
+      <description>&lt;p&gt;A program is running automatically at regular intervals from &lt;code&gt;cron&lt;/code&gt;, the time-based job scheduler. Look in &lt;code&gt;/etc/cron.d/&lt;/code&gt; for the configuration and see what command is being executed.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit21&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;EeoULMCra2q0dSkYj561DX7s1CpBuOBt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p EeoULMCra2q0dSkYj561DX7s1CpBuOBt ssh bandit21@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this level, we need to find the password for the next level &lt;code&gt;bandit22&lt;/code&gt;. The hint suggests that a program is running automatically at regular intervals using &lt;code&gt;cron&lt;/code&gt;, the time-based job scheduler. So, Lets begin:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 22 → Level 23</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-22-level-23/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-22-level-23/</guid>
+      <description>&lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit22&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q ssh bandit22@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;the-cron-jobs-are-usually-stored-in-etccrond-we-start-by-navigating-to-this-directory&#34;&gt;The cron jobs are usually stored in &lt;code&gt;/etc/cron.d&lt;/code&gt;. We start by navigating to this directory.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /etc/cron.d
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Output:   &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# cronjob_bandit22  cronjob_bandit23  cronjob_bandit24  e2scrub_all  otw-tmp-dir  sysstat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Among these files, &lt;code&gt;cronjob_bandit23&lt;/code&gt; is interesting since it suggests a cron job for &lt;code&gt;bandit23&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 23 → Level 24</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-23-level-24/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-23-level-24/</guid>
+      <description>&lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit23&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;0Zf11ioIjMVN551jX3CmStKLYqjk54Ga&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga ssh bandit23@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;the-cron-jobs-are-usually-stored-in&#34;&gt;&lt;strong&gt;The cron jobs are usually stored in &lt;code&gt;/etc/cron.d&lt;/code&gt;. We start by navigating to this directory.&lt;/strong&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /etc/cron.d
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Output:   &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# cronjob_bandit22  cronjob_bandit23  cronjob_bandit24  e2scrub_all  otw-tmp-dir  sysstat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Among these files, &lt;code&gt;cronjob_bandit24&lt;/code&gt; is interesting since it suggests a cron job for &lt;code&gt;bandit24&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 24 → Level 25</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-24-level-25/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-24-level-25/</guid>
+      <description>&lt;p&gt;A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pin code. There is no way to retrieve the pin code except by going through all the 10000 combinations, called brute-forcing.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit24&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 ssh bandit24@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To solve the challenge, we need to brute-force the password for bandit25 by trying all possible 4-digit PIN codes along with the known password for bandit24 on port 30002.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 25 → Level 26</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-25-level-26/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-25-level-26/</guid>
+      <description>&lt;p&gt;Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit25&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;iCi86ttT4KSNe1armKiwbQNmB3YJP3q4&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p iCi86ttT4KSNe1armKiwbQNmB3YJP3q4 ssh bandit25@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this level, we need to find which shell is used by &lt;code&gt;bandit26&lt;/code&gt;, understand how it works, and find a way to break out of it. This will involve some investigation and creativity. Let&amp;rsquo;s dive into the challenge.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 26 → Level 27</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-26-level-27/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-26-level-27/</guid>
+      <description>&lt;p&gt;Good job getting a shell! Now hurry and grab the password for &lt;code&gt;bandit27&lt;/code&gt;!&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit26&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ ssh bandit26@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this level, we must get a shell through &lt;a href=&#34;bandit-level-25-level-26.md&#34;&gt;Bandit: Level 25 → Level 26&lt;/a&gt; level. After gaining access to the &lt;code&gt;bandit26&lt;/code&gt; user shell, we find a SUID binary in the home directory. This looks kind of familiar, right? In fact, it&amp;rsquo;s the same challenge as &lt;a href=&#34;bandit-level-19-level-20.md&#34;&gt;Bandit: Level 19 → Level 20&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 27 → Level 28</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-27-level-28/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-27-level-28/</guid>
+      <description>&lt;p&gt;There is a git repository at &lt;code&gt;ssh://bandit27-git@localhost/home/bandit27-git/repo&lt;/code&gt; via the port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit27-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit27&lt;/code&gt;. Clone the repository and find the password for the next level.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit27&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;In this level, we need to work with a git repository located at &lt;code&gt;ssh://bandit27-git@localhost/home/bandit27-git/repo&lt;/code&gt; via port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit27-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit27&lt;/code&gt;. Let&amp;rsquo;s construct the command to clone the repository to our system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 28 → Level 29</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-28-level-29/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-28-level-29/</guid>
+      <description>&lt;p&gt;There is a git repository at &lt;code&gt;ssh://bandit28-git@localhost/home/bandit28-git/repo&lt;/code&gt; via the port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit28-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit28&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit28&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This level is similar like previous level, we are again dealing with a git repository located at &lt;code&gt;ssh://bandit28-git@localhost/home/bandit28-git/repo&lt;/code&gt; via port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit28-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit28&lt;/code&gt;. Let&amp;rsquo;s construct the command to clone the repository to our system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 29 → Level 30</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-29-level-30/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-29-level-30/</guid>
+      <description>&lt;p&gt;There is a git repository at &lt;code&gt;ssh://bandit29-git@localhost/home/bandit29-git/repo&lt;/code&gt; via the port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit29-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit29&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit29&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This level is similar like the previous level, we are again dealing with a git repository located at &lt;code&gt;ssh://bandit29-git@localhost/home/bandit29-git/repo&lt;/code&gt; via port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit29-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit29&lt;/code&gt;. Let&amp;rsquo;s construct the command to clone the repository to our system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 3 → Level 4</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-3-level-4/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-3-level-4/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in a hidden file in the &lt;code&gt;inhere&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx ssh bandit3@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In Bash, files starting with a period &lt;code&gt;.&lt;/code&gt; are considered hidden files and are not shown by default in file managers or when you simply execute the &lt;code&gt;ls&lt;/code&gt; command in the terminal. To view hidden files with the &lt;code&gt;ls&lt;/code&gt; command, you need to specify additional arguments such as &lt;code&gt;-a&lt;/code&gt; or &lt;code&gt;--all&lt;/code&gt;, which show all files in the current directory, including hidden ones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 30 → Level 31</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-30-level-31/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-30-level-31/</guid>
+      <description>&lt;p&gt;There is a git repository at &lt;code&gt;ssh://bandit30-git@localhost/home/bandit30-git/repo&lt;/code&gt; via the port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit30-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit30&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit30&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This level is similar like previous level, we are again dealing with a git repository located at &lt;code&gt;ssh://bandit30-git@localhost/home/bandit30-git/repo&lt;/code&gt; via port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit30-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit30&lt;/code&gt;. Let&amp;rsquo;s construct the command to clone the repository to our system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 31 → Level 32</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-31-level-32/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-31-level-32/</guid>
+      <description>&lt;p&gt;There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit31&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This level is similar like previous level, we are again dealing with a git repository located at &lt;code&gt;ssh://bandit31-git@localhost/home/bandit31-git/repo&lt;/code&gt; via port &lt;code&gt;2220&lt;/code&gt;. The password for the user &lt;code&gt;bandit31-git&lt;/code&gt; is the same as for the user &lt;code&gt;bandit31&lt;/code&gt;. Let&amp;rsquo;s construct the command to clone the repository to our system.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 32 → Level 33</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-32-level-33/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-32-level-33/</guid>
+      <description>&lt;p&gt;After all this git stuff, it’s time for another escape. Good luck!&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit32&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K ssh bandit32@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;&lt;img src=&#34;.gitbook/assets/Level 32 to Level 33 0.png&#34; alt=&#34;&#34;&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;I tested some payloads to break the shell, but they didn&amp;rsquo;t work. To investigate further, I decided to see which shell is used by &lt;code&gt;bandit32&lt;/code&gt; by logging in through &lt;code&gt;bandit31&lt;/code&gt;, whose credentials we have from previous challenges. This approach is similar to the challenge &lt;a href=&#34;bandit-level-25-level-26.md#id-5.-inspect-the-etc-passwd-file&#34;&gt;Bandit: Level 25 → Level 26&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 4 → Level 5</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-4-level-5/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-4-level-5/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the only human-readable file in the &lt;code&gt;inhere&lt;/code&gt; directory. Tip: if your terminal is messed up, try the “reset” command.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ ssh bandit4@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we know, the next level&amp;rsquo;s password file is located in the &lt;code&gt;inhere&lt;/code&gt; directory and is in a human-readable format, meaning it falls under the ASCII character set. We can find it using the &lt;code&gt;file&lt;/code&gt; command.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 5 → Level 6</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-5-level-6/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-5-level-6/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;human-readable&lt;/li&gt;
+&lt;li&gt;1033 bytes in size&lt;/li&gt;
+&lt;li&gt;not executable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw ssh bandit5@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since we have a file property, we can use the &lt;code&gt;find&lt;/code&gt; command to find the exact file. Based on the hint, we know the next level&amp;rsquo;s password file is in the &lt;code&gt;inhere&lt;/code&gt; directory, which is located in our user&amp;rsquo;s home directory. So, we can find it using the &lt;code&gt;find&lt;/code&gt; command.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 6 → Level 7</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-6-level-7/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-6-level-7/</guid>
+      <description>&lt;p&gt;The password for the next level is stored somewhere on the server and has all of the following properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;owned by user bandit7&lt;/li&gt;
+&lt;li&gt;owned by group bandit6&lt;/li&gt;
+&lt;li&gt;33 bytes in size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;HWasnPhtq9AVKe0dmk45nxy20cvUa6EG&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p HWasnPhtq9AVKe0dmk45nxy20cvUa6EG ssh bandit6@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To find the password file for the next level, which has the following properties: owned by user &lt;code&gt;bandit7&lt;/code&gt;, owned by group &lt;code&gt;bandit6&lt;/code&gt;, and 33 bytes in size, we can use the &lt;code&gt;find&lt;/code&gt; command with specific criteria:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 7 → Level 8</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-7-level-8/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-7-level-8/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt; next to the word &lt;code&gt;millionth&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit7&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj ssh bandit7@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we know, The password of the next level is at next to the word &lt;code&gt;millionth&lt;/code&gt;. So, we can use the &lt;code&gt;grep&lt;/code&gt; command to match the line containing the word &lt;code&gt;millionth&lt;/code&gt; and retrieve the password.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 8 → Level 9</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-8-level-9/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-8-level-9/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt; and is the only line of text that occurs only once.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit8&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc ssh bandit8@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we know from the hint, the password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt; and is the only line of text that appears exactly once. So, Let&amp;rsquo;s begin to find it:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit: Level 9 → Level 10</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/bandit-level-9-level-10/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/bandit-level-9-level-10/</guid>
+      <description>&lt;p&gt;The password for the next level is stored in the file &lt;code&gt;data.txt&lt;/code&gt; in one of the few human-readable strings, preceded by several &lt;code&gt;=&lt;/code&gt; characters.&lt;/p&gt;
+&lt;h3 id=&#34;here-are-the-details-which-we-have-from-the-previous-level&#34;&gt;Here are the details which we have from the previous level:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host:&lt;/strong&gt; &lt;code&gt;bandit.labs.overthewire.org&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port:&lt;/strong&gt; &lt;code&gt;2220&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username:&lt;/strong&gt; &lt;code&gt;bandit9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password:&lt;/strong&gt; &lt;code&gt;4CKMh1JI91bUIZZPXDqGanal4xvAg0JM&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;so-the-ssh-syntax-will-be&#34;&gt;So, The SSH syntax will be:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sshpass -p 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM ssh bandit9@bandit.labs.overthewire.org -p &lt;span class=&#34;m&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As we know from the hint, the password for the next level is stored in the &lt;code&gt;data.txt&lt;/code&gt; file in one of the few human-readable strings, preceded by several &lt;code&gt;=&lt;/code&gt; characters. So, We can easily retrieve it using the &lt;code&gt;grep&lt;/code&gt; command, but since &lt;code&gt;data.txt&lt;/code&gt; is not in ASCII text, we need to use the &lt;code&gt;strings&lt;/code&gt; command to extract only those characters that fall within the ASCII character set:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bandit Level 0</title>
+      <link>http://localhost:36511/posts/overthewire/bandit/level-0/</link>
+      <pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:36511/posts/overthewire/bandit/level-0/</guid>
+      <description>Solution for Bandit Level 0 -&amp;gt; Level 1</description>
+    </item>
+  </channel>
+</rss>

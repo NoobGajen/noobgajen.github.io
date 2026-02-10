@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CustomPrompt on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/customprompt/</link>
+    <description>Recent content in CustomPrompt on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/customprompt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What should ChatGPT call you?</title>
+      <link>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/chatgpt_customprompt/</guid>
+      <description>&lt;p&gt;You can call me Gajendra. I’m working to become a skilled ethical hacker and bug bounty hunter, focusing on learning practical cybersecurity techniques and offensive security methods. I prefer responses that are clear, technical, and straight to the point, with real-world examples related to CTF challenges and red/blue teaming. Keep it simple, focused on Linux/Arch Linux, and give me actionable insights.&lt;/p&gt;
+&lt;h2 id=&#34;what-do-you-do&#34;&gt;What do you do?&lt;/h2&gt;
+&lt;p&gt;I’m a student of Bachelor in Information Technology with a passion for cybersecurity, focusing on red teaming, blue teaming, bug bounties, and CTF challenges. My goal is to specialize in both offensive and defensive security techniques to become a professional ethical hacker. I actively participate in CTFs on platforms like TryHackMe and HackTheBox. Additionally, I’m learning programming languages such as Bash, Python, PHP, C, HTML, and JavaScript to better understand applications from a developer&amp;rsquo;s perspective and secure them by identifying vulnerabilities before malicious actors can exploit them.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

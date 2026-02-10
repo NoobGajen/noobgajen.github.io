@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Terminal-Multiplexer on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/terminal-multiplexer/</link>
+    <description>Recent content in Terminal-Multiplexer on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/terminal-multiplexer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Saving the Current Pane Buffer in tmux</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/tmux_capture_pane_buffer_in_a_file/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/tmux_capture_pane_buffer_in_a_file/</guid>
+      <description>&lt;p&gt;This guide explains how to save the contents of the current pane in &lt;code&gt;tmux&lt;/code&gt; to a file.&lt;/p&gt;
+&lt;h2 id=&#34;step-by-step-instructions&#34;&gt;Step-by-Step Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Capture the Pane&amp;rsquo;s Content&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press prefix key &lt;code&gt;Ctrl+b&lt;/code&gt; to enter &lt;code&gt;tmux&lt;/code&gt; command mode.&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;:capture-pane -S - -E -&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt;. This captures the entire visible contents of the current pane to a buffer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Save the Buffer to a File&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press prefix key &lt;code&gt;Ctrl+b&lt;/code&gt; again to enter &lt;code&gt;tmux&lt;/code&gt; command mode.&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;:save-buffer /tmp/pane_output.log&lt;/code&gt; and press &lt;code&gt;Enter&lt;/code&gt;. This saves the buffer content to a file named &lt;code&gt;/tmp/pane_output.log&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;combined-command-method&#34;&gt;Combined Command Method&lt;/h2&gt;
+&lt;p&gt;You can capture the pane&amp;rsquo;s content and save it to a file using the following commands in your shell within the &lt;code&gt;tmux&lt;/code&gt; session:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

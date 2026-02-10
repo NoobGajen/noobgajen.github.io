@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ai-Tools on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/ai-tools/</link>
+    <description>Recent content in Ai-Tools on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatGPT Secret Codes - Hidden Prompts &amp; Power Features</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/chatgpt-secret-codes---hidden-prompts--power-features/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/chatgpt-secret-codes---hidden-prompts--power-features/</guid>
+      <description>&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Note:&lt;/strong&gt; These may behave slightly differently depending on which version of ChatGPT you’re using (free vs Plus, GPT-3.5 vs GPT-4o).&lt;/li&gt;
+&lt;li&gt;Works with GPT-powered tools (like Claude, Perplexity, etc.) too - try it and let me know what works where.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;codes-you-just-type-them-as-a-prompt&#34;&gt;&lt;strong&gt;Codes (You just type them as a prompt)&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;1&#34;&gt;&lt;strong&gt;1. &lt;code&gt;ELI10:&lt;/code&gt; – Explain Like I’m 10&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;👶 Simplifies complex topics so even a child can understand.&lt;/p&gt;
+&lt;p&gt;📌 &lt;em&gt;Use for:&lt;/em&gt; tech, science, finance, AI, etc.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

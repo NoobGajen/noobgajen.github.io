@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Packet-Sniffing on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/packet-sniffing/</link>
+    <description>Recent content in Packet-Sniffing on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/packet-sniffing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Table of Contents</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/interface_managing_guide/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/interface_managing_guide/</guid>
+      <description>&lt;h2 id=&#34;airmon-ng&#34;&gt;Airmon-ng&lt;/h2&gt;
+&lt;p&gt;To start monitoring mode on wlan0:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo airmon-ng start wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;iwconfig&#34;&gt;iwconfig&lt;/h2&gt;
+&lt;p&gt;To enable monitor mode using iwconfig:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ifconfig &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; down
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iwconfig &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; mode monitor
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ifconfig &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;iw&#34;&gt;iw&lt;/h2&gt;
+&lt;p&gt;To enable monitor mode using iw:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; down
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iw &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; monitor control
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;adding-a-new-monitor-interface&#34;&gt;Adding a New Monitor Interface&lt;/h3&gt;
+&lt;p&gt;To add a new monitor interface:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iw &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; interface add &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;NEW_INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; monitor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;aircrack-ng-installation&#34;&gt;Aircrack-ng Installation&lt;/h2&gt;
+&lt;p&gt;To install aircrack-ng:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install aircrack-ng
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;airmon-ng-commands&#34;&gt;Airmon-ng Commands&lt;/h2&gt;
+&lt;p&gt;To use airmon-ng commands:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

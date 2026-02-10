@@ -1,0 +1,22 @@
+<div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        {{ range ( where .Site.RegularPages "Type" "posts" | first 5 ) }}
+        <div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+        {{end}}
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+        {{ $allowed := slice "CTFs" "TryHackMe" "OverTheWire" "DVWA" "Blog" "DreamHack" }} {{ range
+        .Site.Taxonomies.tags.ByCount }} {{ if in $allowed .Page.Title }}
+        <a class="sidebar-tag" href="{{ .Page.Permalink }}"> {{ .Page.Title }} </a>
+        {{ end }} {{ end }}
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        {{ .TableOfContents }}
+    </section>
+</div>

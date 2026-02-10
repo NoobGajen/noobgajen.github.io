@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nfs-Enumeration on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/nfs-enumeration/</link>
+    <description>Recent content in Nfs-Enumeration on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nfs-enumeration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scanning `rpcbind` on the Network</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/rpcbind_guide/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/rpcbind_guide/</guid>
+      <description>&lt;p&gt;To scan for &lt;code&gt;rpcbind&lt;/code&gt; on a network and check NFS shares, use the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nmap -p &lt;span class=&#34;m&#34;&gt;111&lt;/span&gt; --script&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nfs-ls,nfs-statfs,nfs-showmount &lt;span class=&#34;nv&#34;&gt;$IP&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Scanning port 111 for rpcbind and list NFS shares&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;listing-mounted-partitions-on-the-network&#34;&gt;Listing Mounted Partitions on the Network&lt;/h3&gt;
+&lt;p&gt;To list the mounted partitions of a network system, use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;showmount -e &lt;span class=&#34;nv&#34;&gt;$IP&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# List the exported directories on the NFS server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;mounting-rpcbind-directories-on-local-machine&#34;&gt;Mounting &lt;code&gt;rpcbind&lt;/code&gt; Directories on Local Machine&lt;/h1&gt;
+&lt;p&gt;To mount a remote NFS directory on local machine. In this example, the directory &lt;code&gt;/var&lt;/code&gt; is mounted from the remote server with IP &lt;code&gt;10.10.122.178&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

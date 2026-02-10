@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Discord-Bot on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/discord-bot/</link>
+    <description>Recent content in Discord-Bot on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/discord-bot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🎵 How to Use Jockie Music Bot. 🎶</title>
+      <link>http://localhost:1313/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/</guid>
+      <description>&lt;p&gt;Jockie Music Bot is a powerful Discord bot for playing music from various platforms like &lt;strong&gt;YouTube, Spotify, SoundCloud, and more&lt;/strong&gt;. This guide will help you &lt;strong&gt;control playback, manage the queue, adjust audio settings, and more&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;-search--add-music&#34;&gt;&lt;strong&gt;🔎 Search &amp;amp; Add Music&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!search &amp;lt;song name&amp;gt;         &lt;span class=&#34;c1&#34;&gt;# Search for a song and choose from results  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!play &amp;lt;song name or link&amp;gt;   &lt;span class=&#34;c1&#34;&gt;# Play a song or add it to the queue  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!play --now &amp;lt;Music Link&amp;gt;    &lt;span class=&#34;c1&#34;&gt;# Play immediately, skipping the queue  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!play &amp;lt;playlist link&amp;gt;       &lt;span class=&#34;c1&#34;&gt;# Play an entire YouTube/Spotify playlist  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!playradio &amp;lt;genre&amp;gt;          &lt;span class=&#34;c1&#34;&gt;# Play a genre-based radio station  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-playback-commands&#34;&gt;&lt;strong&gt;▶️ Playback Commands&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!pause                      &lt;span class=&#34;c1&#34;&gt;# Pause the current song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!resume                     &lt;span class=&#34;c1&#34;&gt;# Resume the paused song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!stop                       &lt;span class=&#34;c1&#34;&gt;# Stop playback and clear the queue  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!disconnect                 &lt;span class=&#34;c1&#34;&gt;# Make the bot leave the voice channel  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-navigation-commands&#34;&gt;&lt;strong&gt;⏭️ Navigation Commands&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!next                       &lt;span class=&#34;c1&#34;&gt;# Skip to the next song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!previous                   &lt;span class=&#34;c1&#34;&gt;# Go back to the previous song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!seek &amp;lt;time&amp;gt;                &lt;span class=&#34;c1&#34;&gt;# Jump forward (e.g., m!seek 1m30s)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!seek &amp;lt;-time&amp;gt;               &lt;span class=&#34;c1&#34;&gt;# Jump backward (e.g., m!seek -30s)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-queue-management&#34;&gt;&lt;strong&gt;📋 Queue Management&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!queue                      &lt;span class=&#34;c1&#34;&gt;# Show the current queue  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!current                    &lt;span class=&#34;c1&#34;&gt;# Show details of the currently playing song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!clearqueue                 &lt;span class=&#34;c1&#34;&gt;# Remove all songs from the queue  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!remove &amp;lt;position&amp;gt;          &lt;span class=&#34;c1&#34;&gt;# Remove a specific song (e.g., m!remove 2)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!remove &amp;lt;from&amp;gt; &amp;lt;to&amp;gt;         &lt;span class=&#34;c1&#34;&gt;# Remove a range of songs (e.g., m!remove 2 5)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!shuffle                    &lt;span class=&#34;c1&#34;&gt;# Shuffle the queue  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!shuffleoff                 &lt;span class=&#34;c1&#34;&gt;# Disable shuffle  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!loop                       &lt;span class=&#34;c1&#34;&gt;# Loop the current song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!loopoff                    &lt;span class=&#34;c1&#34;&gt;# Disable loop  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-audio-control&#34;&gt;&lt;strong&gt;🎶 Audio Control&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!volume &amp;lt;1-100&amp;gt;             &lt;span class=&#34;c1&#34;&gt;# Adjust volume (default 100)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!bassboost &amp;lt;level&amp;gt;          &lt;span class=&#34;c1&#34;&gt;# Increase bass (low, medium, high, off)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!nightcore                  &lt;span class=&#34;c1&#34;&gt;# Enable nightcore effect  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!vaporwave                  &lt;span class=&#34;c1&#34;&gt;# Enable vaporwave effect  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!speed &amp;lt;0.5 - 2.0&amp;gt;          &lt;span class=&#34;c1&#34;&gt;# Change playback speed  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-lyrics--info&#34;&gt;&lt;strong&gt;🎤 Lyrics &amp;amp; Info&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!lyrics                     &lt;span class=&#34;c1&#34;&gt;# Get lyrics of the current song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!np                         &lt;span class=&#34;c1&#34;&gt;# Now playing (song details)  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!song info                   &lt;span class=&#34;c1&#34;&gt;# Get full details about the current song  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-auto--smart-features&#34;&gt;&lt;strong&gt;🔄 Auto &amp;amp; Smart Features&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!autoplay                   &lt;span class=&#34;c1&#34;&gt;# Enable autoplay for recommendations  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!autoplayoff                &lt;span class=&#34;c1&#34;&gt;# Disable autoplay  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;m!24/7                       &lt;span class=&#34;c1&#34;&gt;# Keep bot active 24/7 in the voice channel  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

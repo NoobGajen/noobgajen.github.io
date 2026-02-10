@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Configure Custom DNS Servers in Arch based Linux. | Gajendra Mahato</title>
+<meta name="keywords" content="networking, security, arch-linux, dns-configuration, network-configuration">
+<meta name="description" content="First of all, check openresolv package is installed in your system or not. if not then simply install it by:
+sudo pacman -S extra/openresolv
+Step 2: Remove Immutable Permissions
+# Check for immutable permissions on /etc/resolv.conf
+lsattr /etc/resolv*
+
+# If immutable permissions exist, them remove it by
+sudo chattr -i /etc/resolv.conf
+Step 3: Set Custom DNS Servers
+# Edit the resolvconf.conf file
+sudo nano /etc/resolvconf.conf
+
+# Configuration for resolvconf(8)
+# See resolvconf.conf(5) for details
+
+resolv_conf=/etc/resolv.conf
+# If you run a local name server, you should uncomment the below line and
+# configure your subscribers configuration files below.
+#name_servers=127.0.0.1
+###### Block malware with 1.1.1.1 for Families #####
+name_servers=1.0.0.2
+name_servers=1.1.1.2
+
+###### Use 1.1.1.1 resolver ######
+name_servers=1.0.0.1
+name_servers=1.1.1.1
+
+###### AdGuard DNS ######
+# name_servers=94.140.14.59
+# name_servers=94.140.14.49
+
+######### AdGuard Non-filtering DNS #######
+name_servers=94.140.14.141
+name_servers=94.140.14.140
+Enable dhcpcd services to work Custom DNS. if it is not installed in your system then install it by
+sudo pacman -S extra/dhcpcd 
+sudo systemctl enable --now dhcpcd.service
+Conclusion:
+You&rsquo;ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon.jpg">
+<link rel="apple-touch-icon" href="http://localhost:1313/favicon.jpg">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="Configure Custom DNS Servers in Arch based Linux.">
+  <meta property="og:description" content="First of all, check openresolv package is installed in your system or not. if not then simply install it by: sudo pacman -S extra/openresolv Step 2: Remove Immutable Permissions # Check for immutable permissions on /etc/resolv.conf lsattr /etc/resolv* # If immutable permissions exist, them remove it by sudo chattr -i /etc/resolv.conf Step 3: Set Custom DNS Servers # Edit the resolvconf.conf file sudo nano /etc/resolvconf.conf # Configuration for resolvconf(8) # See resolvconf.conf(5) for details resolv_conf=/etc/resolv.conf # If you run a local name server, you should uncomment the below line and # configure your subscribers configuration files below. #name_servers=127.0.0.1 ###### Block malware with 1.1.1.1 for Families ##### name_servers=1.0.0.2 name_servers=1.1.1.2 ###### Use 1.1.1.1 resolver ###### name_servers=1.0.0.1 name_servers=1.1.1.1 ###### AdGuard DNS ###### # name_servers=94.140.14.59 # name_servers=94.140.14.49 ######### AdGuard Non-filtering DNS ####### name_servers=94.140.14.141 name_servers=94.140.14.140 Enable dhcpcd services to work Custom DNS. if it is not installed in your system then install it by sudo pacman -S extra/dhcpcd sudo systemctl enable --now dhcpcd.service Conclusion: You’ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-13T00:00:00+00:00">
+    <meta property="article:tag" content="Networking">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Arch-Linux">
+    <meta property="article:tag" content="Dns-Configuration">
+    <meta property="article:tag" content="Network-Configuration">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Configure Custom DNS Servers in Arch based Linux.">
+<meta name="twitter:description" content="First of all, check openresolv package is installed in your system or not. if not then simply install it by:
+sudo pacman -S extra/openresolv
+Step 2: Remove Immutable Permissions
+# Check for immutable permissions on /etc/resolv.conf
+lsattr /etc/resolv*
+
+# If immutable permissions exist, them remove it by
+sudo chattr -i /etc/resolv.conf
+Step 3: Set Custom DNS Servers
+# Edit the resolvconf.conf file
+sudo nano /etc/resolvconf.conf
+
+# Configuration for resolvconf(8)
+# See resolvconf.conf(5) for details
+
+resolv_conf=/etc/resolv.conf
+# If you run a local name server, you should uncomment the below line and
+# configure your subscribers configuration files below.
+#name_servers=127.0.0.1
+###### Block malware with 1.1.1.1 for Families #####
+name_servers=1.0.0.2
+name_servers=1.1.1.2
+
+###### Use 1.1.1.1 resolver ######
+name_servers=1.0.0.1
+name_servers=1.1.1.1
+
+###### AdGuard DNS ######
+# name_servers=94.140.14.59
+# name_servers=94.140.14.49
+
+######### AdGuard Non-filtering DNS #######
+name_servers=94.140.14.141
+name_servers=94.140.14.140
+Enable dhcpcd services to work Custom DNS. if it is not installed in your system then install it by
+sudo pacman -S extra/dhcpcd 
+sudo systemctl enable --now dhcpcd.service
+Conclusion:
+You&rsquo;ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Tips \u0026 Tricks",
+      "item": "http://localhost:1313/posts/tipsandtricks/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "ArchLinux",
+      "item": "http://localhost:1313/posts/tipsandtricks/archlinux/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Configure Custom DNS Servers in Arch based Linux.",
+      "item": "http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Configure Custom DNS Servers in Arch based Linux.",
+  "name": "Configure Custom DNS Servers in Arch based Linux.",
+  "description": "First of all, check openresolv package is installed in your system or not. if not then simply install it by: sudo pacman -S extra/openresolv Step 2: Remove Immutable Permissions # Check for immutable permissions on /etc/resolv.conf lsattr /etc/resolv* # If immutable permissions exist, them remove it by sudo chattr -i /etc/resolv.conf Step 3: Set Custom DNS Servers # Edit the resolvconf.conf file sudo nano /etc/resolvconf.conf # Configuration for resolvconf(8) # See resolvconf.conf(5) for details resolv_conf=/etc/resolv.conf # If you run a local name server, you should uncomment the below line and # configure your subscribers configuration files below. #name_servers=127.0.0.1 ###### Block malware with 1.1.1.1 for Families ##### name_servers=1.0.0.2 name_servers=1.1.1.2 ###### Use 1.1.1.1 resolver ###### name_servers=1.0.0.1 name_servers=1.1.1.1 ###### AdGuard DNS ###### # name_servers=94.140.14.59 # name_servers=94.140.14.49 ######### AdGuard Non-filtering DNS ####### name_servers=94.140.14.141 name_servers=94.140.14.140 Enable dhcpcd services to work Custom DNS. if it is not installed in your system then install it by sudo pacman -S extra/dhcpcd sudo systemctl enable --now dhcpcd.service Conclusion: You\u0026rsquo;ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.\n",
+  "keywords": [
+    "networking", "security", "arch-linux", "dns-configuration", "network-configuration"
+  ],
+  "articleBody": "First of all, check openresolv package is installed in your system or not. if not then simply install it by: sudo pacman -S extra/openresolv Step 2: Remove Immutable Permissions # Check for immutable permissions on /etc/resolv.conf lsattr /etc/resolv* # If immutable permissions exist, them remove it by sudo chattr -i /etc/resolv.conf Step 3: Set Custom DNS Servers # Edit the resolvconf.conf file sudo nano /etc/resolvconf.conf # Configuration for resolvconf(8) # See resolvconf.conf(5) for details resolv_conf=/etc/resolv.conf # If you run a local name server, you should uncomment the below line and # configure your subscribers configuration files below. #name_servers=127.0.0.1 ###### Block malware with 1.1.1.1 for Families ##### name_servers=1.0.0.2 name_servers=1.1.1.2 ###### Use 1.1.1.1 resolver ###### name_servers=1.0.0.1 name_servers=1.1.1.1 ###### AdGuard DNS ###### # name_servers=94.140.14.59 # name_servers=94.140.14.49 ######### AdGuard Non-filtering DNS ####### name_servers=94.140.14.141 name_servers=94.140.14.140 Enable dhcpcd services to work Custom DNS. if it is not installed in your system then install it by sudo pacman -S extra/dhcpcd sudo systemctl enable --now dhcpcd.service Conclusion: You’ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.\n",
+  "wordCount" : "180",
+  "inLanguage": "en",
+  "datePublished": "2024-01-13T00:00:00Z",
+  "dateModified": "2024-01-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/tipsandtricks/archlinux/change_dns_in_arch_linux/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+  <style>
+    @media screen and (max-width: 768px) {
+      .mobile-header {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .mobile-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .mobile-avatar-link {
+      line-height: 0;
+    }
+  </style>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/" class="mobile-avatar-link">
+        <img src="http://localhost:1313/images/avatar.jpg" alt="Avatar Image" class="mobile-avatar">
+      </a>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="http://localhost:1313/images/avatar.jpg"
+            alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Computer Science Student</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About Me
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/posts/tipsandtricks/cheatsheets/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/">Tips &amp; Tricks</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/tipsandtricks/archlinux/">ArchLinux</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Configure Custom DNS Servers in Arch based Linux.
+    </h1>
+    <div class="post-meta"><span title='2024-01-13 00:00:00 +0000 UTC'>January 13, 2024</span>&nbsp;·&nbsp;<span>1 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h4 id="first-of-all-check-openresolv-package-is-installed-in-your-system-or-not-if-not-then-simply-install-it-by">First of all, check <code>openresolv</code> package is installed in your system or not. if not then simply install it by:<a hidden class="anchor" aria-hidden="true" href="#first-of-all-check-openresolv-package-is-installed-in-your-system-or-not-if-not-then-simply-install-it-by">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S extra/openresolv
+</span></span></code></pre></div><h4 id="step-2-remove-immutable-permissions">Step 2: Remove Immutable Permissions<a hidden class="anchor" aria-hidden="true" href="#step-2-remove-immutable-permissions">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Check for immutable permissions on /etc/resolv.conf</span>
+</span></span><span class="line"><span class="cl">lsattr /etc/resolv*
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If immutable permissions exist, them remove it by</span>
+</span></span><span class="line"><span class="cl">sudo chattr -i /etc/resolv.conf
+</span></span></code></pre></div><h4 id="step-3-set-custom-dns-servers">Step 3: Set Custom DNS Servers<a hidden class="anchor" aria-hidden="true" href="#step-3-set-custom-dns-servers">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Edit the resolvconf.conf file</span>
+</span></span><span class="line"><span class="cl">sudo nano /etc/resolvconf.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Configuration for resolvconf(8)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See resolvconf.conf(5) for details</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">resolv_conf</span><span class="o">=</span>/etc/resolv.conf
+</span></span><span class="line"><span class="cl"><span class="c1"># If you run a local name server, you should uncomment the below line and</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># configure your subscribers configuration files below.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#name_servers=127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">###### Block malware with 1.1.1.1 for Families #####</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name_servers</span><span class="o">=</span>1.0.0.2
+</span></span><span class="line"><span class="cl"><span class="nv">name_servers</span><span class="o">=</span>1.1.1.2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">###### Use 1.1.1.1 resolver ######</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name_servers</span><span class="o">=</span>1.0.0.1
+</span></span><span class="line"><span class="cl"><span class="nv">name_servers</span><span class="o">=</span>1.1.1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">###### AdGuard DNS ######</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># name_servers=94.140.14.59</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># name_servers=94.140.14.49</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">######### AdGuard Non-filtering DNS #######</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name_servers</span><span class="o">=</span>94.140.14.141
+</span></span><span class="line"><span class="cl"><span class="nv">name_servers</span><span class="o">=</span>94.140.14.140
+</span></span></code></pre></div><h4 id="enable-dhcpcd-services-to-work-custom-dns-if-it-is-not-installed-in-your-system-then-install-it-by">Enable <code>dhcpcd</code> services to work Custom DNS. if it is not installed in your system then install it by<a hidden class="anchor" aria-hidden="true" href="#enable-dhcpcd-services-to-work-custom-dns-if-it-is-not-installed-in-your-system-then-install-it-by">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S extra/dhcpcd 
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now dhcpcd.service
+</span></span></code></pre></div><p><strong>Conclusion:</strong>
+You&rsquo;ve successfully configured custom DNS servers on Arch based Linux. Enjoy improved network security and privacy with your chosen DNS servers.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/networking/">Networking</a></li>
+      <li><a href="http://localhost:1313/tags/security/">Security</a></li>
+      <li><a href="http://localhost:1313/tags/arch-linux/">Arch-Linux</a></li>
+      <li><a href="http://localhost:1313/tags/dns-configuration/">Dns-Configuration</a></li>
+      <li><a href="http://localhost:1313/tags/network-configuration/">Network-Configuration</a></li>
+    </ul>
+<nav class="paginav">
+    <a class="prev" href="/posts/tipsandtricks/archlinux/persistent-mac-address-spoofing-global-&#43;-per-connection--by-qwenai/">
+        <span class="title">« Prev</span>
+        <br>
+        <span>🥇 Persistent MAC Address Spoofing (Global &#43; Per-Connection)  by QwenAi</span>
+    </a>
+</nav>
+  </footer>
+</article>
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-0-level-1/">Bandit: Level 0 =&gt; Level 1</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-1-level-2/">Bandit: Level 1 =&gt; Level 2</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-2-level-3/">Bandit: Level 2 =&gt; Level 3</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-3-level-4/">Bandit: Level 3 =&gt; Level 4</a></div>
+        
+        <div><a href="http://localhost:1313/posts/overthewire-bandit/bandit-level-4-level-5/">Bandit: Level 4 =&gt; Level 5</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                                                                                                                                                                                    
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                                                                                                                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.6cd0146acf9838eb3d5ac7ebaad0cd534927930fd1c398e8847e358ea1dedbff.js" integrity="sha256-bNAUas&#43;YOOs9WsfrqtDNU0knkw/Rw5johH41jqHe2/8="></script>
+</body>
+
+</html>

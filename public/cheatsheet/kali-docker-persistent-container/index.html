@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>🐉 Kali Docker Persistent Container | Gajendra Mahato</title>
+<meta name="keywords" content="docker, security, penetration-testing, ctf, kali-linux, containerization, devops">
+<meta name="description" content="📂 Files
+Dockerfile (placed in empty folder)
+FROM kalilinux/kali-rolling
+
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+
+# install essentials: zsh sudo tzdata chrony util-linux iproute2
+RUN apt update &amp;&amp; apt install -y \
+    zsh sudo tzdata chrony util-linux iproute2 \
+  &amp;&amp; useradd -m -s /usr/bin/zsh kali \
+  &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \
+  &amp;&amp; usermod -aG sudo kali \
+  &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+USER kali
+WORKDIR /home/kali
+ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;]
+
+🛠️ Build Image
+Run from the folder with Dockerfile
+docker build -t kali-zsh-vm:privileged .
+
+🚀 Create and Run Persistent Privileged Container
+This creates kali-persistent with host timezone and /tmp/test mounted">
+<meta name="author" content="">
+<link rel="canonical"
+    href="http://localhost:1313/cheatsheet/kali-docker-persistent-container/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ="
+    rel="preload stylesheet" as="style">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_hu_1fe931fd7db6f211.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_hu_4e7d0dfca324047e.jpg">
+<link rel="apple-touch-icon" href="/images/favicon_hu_27b3d5f861897af6.jpg">
+<meta name="theme-color" content=" #2e2e33">
+<meta name="msapplication-TileColor" content=" #2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/cheatsheet/kali-docker-persistent-container/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet" href="/css/custom.min.63fa54a2907ef17de5b711b6a3bfab36f6c57ca719c46ce6516cfd0d8ee7b452.css" />
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Gajendra Mahato"
+    href="http://localhost:1313/index.xml"
+/>
+<meta property="og:url" content="http://localhost:1313/cheatsheet/kali-docker-persistent-container/">
+  <meta property="og:site_name" content="Gajendra Mahato">
+  <meta property="og:title" content="🐉 Kali Docker Persistent Container">
+  <meta property="og:description" content="📂 Files Dockerfile (placed in empty folder)
+FROM kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update &amp;&amp; apt install -y \ zsh sudo tzdata chrony util-linux iproute2 \ &amp;&amp; useradd -m -s /usr/bin/zsh kali \ &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \ &amp;&amp; usermod -aG sudo kali \ &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;] 🛠️ Build Image Run from the folder with Dockerfile
+docker build -t kali-zsh-vm:privileged . 🚀 Create and Run Persistent Privileged Container This creates kali-persistent with host timezone and /tmp/test mounted">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="cheatsheet">
+    <meta property="article:published_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-13T00:00:00+00:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Penetration-Testing">
+    <meta property="article:tag" content="CTF">
+    <meta property="article:tag" content="Kali-Linux">
+    <meta property="article:tag" content="Containerization">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="🐉 Kali Docker Persistent Container">
+<meta name="twitter:description" content="📂 Files
+Dockerfile (placed in empty folder)
+FROM kalilinux/kali-rolling
+
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
+
+# install essentials: zsh sudo tzdata chrony util-linux iproute2
+RUN apt update &amp;&amp; apt install -y \
+    zsh sudo tzdata chrony util-linux iproute2 \
+  &amp;&amp; useradd -m -s /usr/bin/zsh kali \
+  &amp;&amp; echo &#34;kali:kali&#34; | chpasswd \
+  &amp;&amp; usermod -aG sudo kali \
+  &amp;&amp; apt clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+USER kali
+WORKDIR /home/kali
+ENTRYPOINT [&#34;/usr/bin/zsh&#34;,&#34;-l&#34;]
+
+🛠️ Build Image
+Run from the folder with Dockerfile
+docker build -t kali-zsh-vm:privileged .
+
+🚀 Create and Run Persistent Privileged Container
+This creates kali-persistent with host timezone and /tmp/test mounted">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Cheatsheets",
+      "item": "http://localhost:1313/cheatsheet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "🐉 Kali Docker Persistent Container",
+      "item": "http://localhost:1313/cheatsheet/kali-docker-persistent-container/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "🐉 Kali Docker Persistent Container",
+  "name": "🐉 Kali Docker Persistent Container",
+  "description": "📂 Files Dockerfile (placed in empty folder)\nFROM kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update \u0026amp;\u0026amp; apt install -y \\ zsh sudo tzdata chrony util-linux iproute2 \\ \u0026amp;\u0026amp; useradd -m -s /usr/bin/zsh kali \\ \u0026amp;\u0026amp; echo \u0026#34;kali:kali\u0026#34; | chpasswd \\ \u0026amp;\u0026amp; usermod -aG sudo kali \\ \u0026amp;\u0026amp; apt clean \u0026amp;\u0026amp; rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [\u0026#34;/usr/bin/zsh\u0026#34;,\u0026#34;-l\u0026#34;] 🛠️ Build Image Run from the folder with Dockerfile\ndocker build -t kali-zsh-vm:privileged . 🚀 Create and Run Persistent Privileged Container This creates kali-persistent with host timezone and /tmp/test mounted\n",
+  "keywords": [
+    "docker", "security", "penetration-testing", "ctf", "kali-linux", "containerization", "devops"
+  ],
+  "articleBody": "📂 Files Dockerfile (placed in empty folder)\nFROM kalilinux/kali-rolling ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC # install essentials: zsh sudo tzdata chrony util-linux iproute2 RUN apt update \u0026\u0026 apt install -y \\ zsh sudo tzdata chrony util-linux iproute2 \\ \u0026\u0026 useradd -m -s /usr/bin/zsh kali \\ \u0026\u0026 echo \"kali:kali\" | chpasswd \\ \u0026\u0026 usermod -aG sudo kali \\ \u0026\u0026 apt clean \u0026\u0026 rm -rf /var/lib/apt/lists/* USER kali WORKDIR /home/kali ENTRYPOINT [\"/usr/bin/zsh\",\"-l\"] 🛠️ Build Image Run from the folder with Dockerfile\ndocker build -t kali-zsh-vm:privileged . 🚀 Create and Run Persistent Privileged Container This creates kali-persistent with host timezone and /tmp/test mounted\ndocker run -it --name kali-persistent \\ --privileged \\ --mount type=bind,source=/tmp/test,target=/tmp/test \\ --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \\ --mount type=bind,source=/etc/timezone,target=/etc/timezone,readonly \\ kali-zsh-vm:privileged If host lacks /etc/timezone use:\ndocker run -it --name kali-persistent \\ --privileged \\ -e TZ=\"$(cat /etc/timezone 2\u003e/dev/null || echo 'Etc/UTC')\" \\ --mount type=bind,source=/tmp/test,target=/tmp/test \\ --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \\ kali-zsh-vm:privileged ⏰ Quick Time Sync Inside Container Run as kali (password = kali)\nsudo chronyd -q 'server pool.ntp.org iburst' date Or use Google time:\nsudo chronyd -q 'server time.google.com iburst' date To run chrony as daemon:\nsudo chronyd sudo chronyc makestep 🔑 Open the Container Later (Start or Attach) Start and attach interactive login (drops into kali zsh):\ndocker start -ai kali-persistent If container is running and you want a new shell as kali:\ndocker exec -it --user kali kali-persistent /usr/bin/zsh -l If you need a root shell:\ndocker exec -it --user root kali-persistent bash # or docker exec -it --user root kali-persistent /bin/zsh -l 🔍 Verify Inside Container whoami groups echo $SHELL date ls -ld /tmp/test sudo whoami # enter 'kali' to confirm sudo works 👤 Optional: Match kali UID/GID to Host Change host dir ownership:\nsudo chown $(id -u):$(id -g) /tmp/test Or adjust UID/GID in Dockerfile before build:\n# add before USER kali RUN groupmod -g 1000 kali || true \u0026\u0026 usermod -u 1000 -g 1000 kali || true 🗑️ Stop and Remove Container or Image Stop:\ndocker stop kali-persistent Remove container:\ndocker rm kali-persistent Remove image:\ndocker rmi kali-zsh-vm:privileged ",
+  "wordCount" : "335",
+  "inLanguage": "en",
+  "datePublished": "2026-01-13T00:00:00Z",
+  "dateModified": "2026-01-13T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/cheatsheet/kali-docker-persistent-container/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gajendra Mahato",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.jpg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="sidebar-layout">
+  <div class="container">
+    <header class="mobile-header">
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <a href="http://localhost:1313/">
+        <div>Gajendra Mahato</div>
+      </a>
+      <button class="mobile-search-btn"><i class="fas fa-search"></i>
+      </button>
+    </header>
+
+    
+    <aside class="sidebar">
+      <button class="mobile-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sidebar-header">
+        <a href="http://localhost:1313/" class="avatar-link"><img src="/images/avatar.png" alt="Avatar Image"></a>
+        <a href="http://localhost:1313/">
+          <div class="name-title">Gajendra Mahato</div>
+        </a>
+        <p>Cybersecurity Enthusiast • CTF Player • Developer • Lifelong Learner</p>
+      </div>
+
+
+      <nav class="sidebar-nav">
+        
+        <a href="/" class="">
+          <span class="icon-container"><i class='fa-solid fa-house'></i></span> Home
+        </a>
+        
+        <a href="/about/" class="">
+          <span class="icon-container"><i class='fa-solid fa-user'></i></span> About
+        </a>
+        
+        <a href="/posts/" class="">
+          <span class="icon-container"><i class='fa-solid fa-pen-nib'></i></span> Writeups
+        </a>
+        
+        <a href="/portfolio/" class="">
+          <span class="icon-container"><i class='fa-solid fa-briefcase'></i></span> Portfolio
+        </a>
+        
+        <a href="/cheatsheet/" class="">
+          <span class="icon-container"><i class='fa-solid fa-book'></i></span> Cheatsheet
+        </a>
+        
+        <a href="/contact/" class="">
+          <span class="icon-container"><i class='fa-solid fa-envelope'></i></span> Contact
+        </a>
+        
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/NoobGajen" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/GajendraMahato" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/NoobGajen" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://tryhackme.com/p/TheLinuxLover" target="_blank"><i class="fas fa-user-secret"></i></i></a>
+        <a href="http://localhost:1313/index.xml" target="_blank">
+          <i class="fa-solid fa-rss"></i>
+        </a>
+      </div>
+    </aside>
+
+    
+    <main class="content">
+      <header class="topnav">
+        <div id="search-container" class="search-container">
+          <span class="absolute left-3 top-2.5 text-gray-400">
+            <i class="fas fa-search"></i>
+          </span>
+          <input id="search-input" type="text" placeholder="Search..."
+            class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </header>
+      <div class="content-container">
+        <div class="inside">
+<article class="post-single">
+
+  
+  <nav class="breadcrumbs">
+    <a href="/">Home</a>
+    
+      <span style="margin: 0 4px;">››</span> <a href="/cheatsheet">Cheatsheet</a>
+    
+    <span style="margin: 0 4px;">››</span> <a>🐉 Kali Docker Persistent Container</a>
+  </nav>
+
+  
+
+  
+  <header class="post-header">
+    <h1>🐉 Kali Docker Persistent Container</h1>
+    <p class="post-description"></p>
+    <p class="post-meta">
+      Jan 13, 2026 • 2 min read
+    </p>
+    
+  </header>
+
+  
+  <div class="post-content">
+    <h2 id="-files">📂 Files</h2>
+<p><strong>Dockerfile</strong> (placed in empty folder)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">kalilinux/kali-rolling</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive <span class="nv">TZ</span><span class="o">=</span>Etc/UTC<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c"># install essentials: zsh sudo tzdata chrony util-linux iproute2</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> apt install -y <span class="se">\
+</span></span></span><span class="line"><span class="cl">    zsh sudo tzdata chrony util-linux iproute2 <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="o">&amp;&amp;</span> useradd -m -s /usr/bin/zsh kali <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;kali:kali&#34;</span> <span class="p">|</span> chpasswd <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="o">&amp;&amp;</span> usermod -aG sudo kali <span class="se">\
+</span></span></span><span class="line"><span class="cl">  <span class="o">&amp;&amp;</span> apt clean <span class="o">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">kali</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/home/kali</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&#34;/usr/bin/zsh&#34;</span><span class="p">,</span><span class="s2">&#34;-l&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></div><hr>
+<h2 id="-build-image">🛠️ Build Image</h2>
+<p>Run from the folder with <code>Dockerfile</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker build -t kali-zsh-vm:privileged .
+</span></span></code></pre></div><hr>
+<h2 id="-create-and-run-persistent-privileged-container">🚀 Create and Run Persistent Privileged Container</h2>
+<p>This creates <strong>kali-persistent</strong> with host timezone and <code>/tmp/test</code> mounted</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -it --name kali-persistent <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --privileged <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --mount <span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/tmp/test,target<span class="o">=</span>/tmp/test <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --mount <span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/etc/localtime,target<span class="o">=</span>/etc/localtime,readonly <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --mount <span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/etc/timezone,target<span class="o">=</span>/etc/timezone,readonly <span class="se">\
+</span></span></span><span class="line"><span class="cl">  kali-zsh-vm:privileged
+</span></span></code></pre></div><p>If host lacks <code>/etc/timezone</code> use:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -it --name kali-persistent <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --privileged <span class="se">\
+</span></span></span><span class="line"><span class="cl">  -e <span class="nv">TZ</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>cat /etc/timezone 2&gt;/dev/null <span class="o">||</span> <span class="nb">echo</span> <span class="s1">&#39;Etc/UTC&#39;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --mount <span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/tmp/test,target<span class="o">=</span>/tmp/test <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --mount <span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span>/etc/localtime,target<span class="o">=</span>/etc/localtime,readonly <span class="se">\
+</span></span></span><span class="line"><span class="cl">  kali-zsh-vm:privileged
+</span></span></code></pre></div><hr>
+<h2 id="-quick-time-sync-inside-container">⏰ Quick Time Sync Inside Container</h2>
+<p>Run as <strong>kali</strong> (password = <code>kali</code>)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chronyd -q <span class="s1">&#39;server pool.ntp.org iburst&#39;</span>
+</span></span><span class="line"><span class="cl">date
+</span></span></code></pre></div><p>Or use Google time:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chronyd -q <span class="s1">&#39;server time.google.com iburst&#39;</span>
+</span></span><span class="line"><span class="cl">date
+</span></span></code></pre></div><p>To run chrony as daemon:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chronyd
+</span></span><span class="line"><span class="cl">sudo chronyc makestep
+</span></span></code></pre></div><hr>
+<h2 id="-open-the-container-later-start-or-attach">🔑 Open the Container Later (Start or Attach)</h2>
+<p>Start and attach interactive login (drops into <strong>kali</strong> zsh):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker start -ai kali-persistent
+</span></span></code></pre></div><p>If container is running and you want a new shell as <strong>kali</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it --user kali kali-persistent /usr/bin/zsh -l
+</span></span></code></pre></div><p>If you need a <strong>root shell</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it --user root kali-persistent bash
+</span></span><span class="line"><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it --user root kali-persistent /bin/zsh -l
+</span></span></code></pre></div><hr>
+<h2 id="-verify-inside-container">🔍 Verify Inside Container</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">whoami
+</span></span><span class="line"><span class="cl">groups
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$SHELL</span>
+</span></span><span class="line"><span class="cl">date
+</span></span><span class="line"><span class="cl">ls -ld /tmp/test
+</span></span><span class="line"><span class="cl">sudo whoami   <span class="c1"># enter &#39;kali&#39; to confirm sudo works</span>
+</span></span></code></pre></div><hr>
+<h2 id="-optional-match-kali-uidgid-to-host">👤 Optional: Match kali UID/GID to Host</h2>
+<p>Change host dir ownership:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> /tmp/test
+</span></span></code></pre></div><p>Or adjust UID/GID in Dockerfile before build:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="line"><span class="cl"><span class="c"># add before USER kali</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> groupmod -g <span class="m">1000</span> kali <span class="o">||</span> <span class="nb">true</span> <span class="o">&amp;&amp;</span> usermod -u <span class="m">1000</span> -g <span class="m">1000</span> kali <span class="o">||</span> true<span class="err">
+</span></span></span></code></pre></div><hr>
+<h2 id="-stop-and-remove-container-or-image">🗑️ Stop and Remove Container or Image</h2>
+<p>Stop:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker stop kali-persistent
+</span></span></code></pre></div><p>Remove container:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rm kali-persistent
+</span></span></code></pre></div><p>Remove image:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker rmi kali-zsh-vm:privileged
+</span></span></code></pre></div>
+  </div>
+
+  
+
+  
+
+<section class="related-posts">
+  <h3>Related Posts</h3>
+    <div class="related-posts-list">
+        
+        <article>
+            <a href="/cheatsheet/kali-distrobox-persistent-config/" class="related-item">
+              <time>Jan 13, 2026</time>
+              <h4 href="/cheatsheet/kali-distrobox-persistent-config/">🐉 Kali Distrobox Persistent Config</h4>
+              <p></p>
+            </a>
+        </article>
+    
+        <article>
+            <a href="/cheatsheet/metasploit-practical-guide-for-beginners-and-ctf-use/" class="related-item">
+              <time>Jan 13, 2026</time>
+              <h4 href="/cheatsheet/metasploit-practical-guide-for-beginners-and-ctf-use/">🧨 Metasploit Practical Guide (for Beginners and CTF use)</h4>
+              <p></p>
+            </a>
+        </article>
+    
+        <article>
+            <a href="/posts/tipsandtricks/webvulnerability/http_status_code/" class="related-item">
+              <time>Jan 13, 2026</time>
+              <h4 href="/posts/tipsandtricks/webvulnerability/http_status_code/">2xx: Success</h4>
+              <p></p>
+            </a>
+        </article>
+    
+    </div>
+</section>
+
+
+  
+  <nav class="post-navigation">
+  
+  
+    <a class="prev-post" href="/cheatsheet/smb-using-smbserver.py/">
+
+        <span>OLDER</span>
+        <div>📁 File Sharing Over SMB Using `smbserver.py`</div>
+
+    </a>
+  
+
+  
+  
+    <a class="next-post" href="/cheatsheet/kali-distrobox-persistent-config/">
+
+        <span>NEWER</span>
+        <div>🐉 Kali Distrobox Persistent Config</div>
+
+    </a>
+  
+</nav>
+
+</article>
+
+          <div style="margin-top: auto">
+            <div class="content-footer">
+              <div>© 2025 <a href="https://x.com/NoobGajen">Gajendra Mahato</a>. Some rights reserved.</div>
+              <div>Using the <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> theme for <a
+                  href="https://gohugo.io/">Hugo</a>.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="right-sidebar">
+    <section>
+        <h2>Recently Added</h2>
+
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/2.-number/">✅ `floor()`</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/programming/3.-strings/">✅ String Basics in Python</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/tutorials/discord_bot_jookie_music_tutorilas/">🎵 How to Use Jockie Music Bot. 🎶</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-python-reverse-shell-cheat-sheet/">🐍 Python Reverse Shell Cheat Sheet</a></div>
+        
+        <div><a href="http://localhost:1313/posts/tipsandtricks/webvulnerability/-bypassing-disable_functions-in-php-for-reverse-shell-using-chankro/">🐘 Bypassing `disable_functions` in PHP for Reverse Shell Using Chankro</a></div>
+        
+    </section>
+
+    <section>
+        <h2>Trending Tags</h2>
+                                                                                                                                                                                      
+        <a class="sidebar-tag" href="http://localhost:1313/tags/blog/"> Blog </a>
+                                                                                                          
+        <a class="sidebar-tag" href="http://localhost:1313/tags/overthewire/"> OverTheWire </a>
+                                                                   
+    </section>
+
+    <section id="post-content">
+        <h2>Table of Content</h2>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-files">📂 Files</a></li>
+    <li><a href="#-build-image">🛠️ Build Image</a></li>
+    <li><a href="#-create-and-run-persistent-privileged-container">🚀 Create and Run Persistent Privileged Container</a></li>
+    <li><a href="#-quick-time-sync-inside-container">⏰ Quick Time Sync Inside Container</a></li>
+    <li><a href="#-open-the-container-later-start-or-attach">🔑 Open the Container Later (Start or Attach)</a></li>
+    <li><a href="#-verify-inside-container">🔍 Verify Inside Container</a></li>
+    <li><a href="#-optional-match-kali-uidgid-to-host">👤 Optional: Match kali UID/GID to Host</a></li>
+    <li><a href="#-stop-and-remove-container-or-image">🗑️ Stop and Remove Container or Image</a></li>
+  </ul>
+</nav>
+    </section>
+</div>
+
+
+
+        <div class="search-results-wrapper">
+          <div class="search-results-list">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  
+
+  <div class="mobile-search-layout">
+    <header>
+      <div class="search-container"><span class="absolute left-3 top-2.5 text-gray-400">
+          <i class="fas fa-search"></i>
+        </span>
+        <input id="mobile-search-input" type="text" placeholder="Search..."
+          class="w-full border rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div><button class="cancel-btn">Cancel</button>
+    </header>
+    <div class="search-results-list mobile-search-results-list"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  
+  <script src="/js/main.min.f498cffc329d7737369b890ae55066dbfda3abb029afa9e21a7d3da5938afc88.js" integrity="sha256-9JjP/DKddzc2m4kK5VBm2/2jq7Apr6niGn09pZOK/Ig="></script>
+</body>
+
+</html>

