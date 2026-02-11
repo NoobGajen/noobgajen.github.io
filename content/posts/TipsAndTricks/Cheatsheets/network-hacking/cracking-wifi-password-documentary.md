@@ -1,11 +1,15 @@
-+++
-date = '2025-09-18T08:53:56+07:00'
-title = 'Cracking Wi-Fi Password Documentary'
-tags = ['Blog', 'Hacking']
-categories = ['Network Hacking']
-description = "A revealing documentary on Wi-Fi security: the breakthroughs, the breaches, and the ethical fight to protect our wireless world."
-draft = false
-+++
+---
+date: '2025-09-18T08:53:56+07:00'
+title: 'Cracking Wi-Fi Password Documentary'
+tags: ['Blog', 'Hacking']
+categories: ['Network Hacking']
+description: "A revealing documentary on Wi-Fi security: the breakthroughs, the breaches, and the ethical fight to protect our wireless world."
+draft: false
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
+---
 
 ## WEP (Wired Equivalent Privacy) Cracking
 

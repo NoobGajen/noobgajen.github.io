@@ -6,7 +6,7 @@ description: "Portfolio of Gajendra Mahato"
 
 # Gajendra Mahato
 
-📍 Jadibuti, Kathmandu-32, Nepal<br>
+📍 Barahathawa-05, Sarlahi, Nepal<br>
 📧 [sudogajendra@gmail.com](mailto:sudogajendra@gmail.com)<br>
 📞 [+977 9866114847](tel:+9779866114847)<br>
 🌐 [gajendramahato.com.np](https://gajendramahato.com.np)

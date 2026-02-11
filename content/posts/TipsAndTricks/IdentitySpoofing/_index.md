@@ -1,4 +1,0 @@
----
-title: "IdentitySpoofing"
-hidemeta: true
----
