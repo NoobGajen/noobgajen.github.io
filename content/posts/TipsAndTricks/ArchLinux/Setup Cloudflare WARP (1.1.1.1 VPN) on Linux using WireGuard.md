@@ -1,6 +1,11 @@
 ---
 title: "📡 Setup Cloudflare WARP (1.1.1.1 VPN) on Arch Linux and Debian using WireGuard"
 date: 2026-01-13
+description: ""
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ## 🧰 Requirements

@@ -2,6 +2,11 @@
 title: "Scanning `rpcbind` on the Network"
 date: 2026-01-13
 tags: ['networking', 'security', 'post-exploitation', 'red-teaming', 'bug-bounty', 'nfs-enumeration', 'ftp-commands', 'security-testing']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 To scan for `rpcbind` on a network and check NFS shares, use the following command:

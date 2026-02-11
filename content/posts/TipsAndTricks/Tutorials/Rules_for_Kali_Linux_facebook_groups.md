@@ -2,6 +2,11 @@
 title: "Rules for Kali Linux facebook group"
 date: 2026-01-13
 tags: ['security', 'networking', 'facebook-group-rules', 'community-guidelines', 'ethical-hacking-community', 'facebook']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ## 1. Stay Focused on Learning & Skill Development:

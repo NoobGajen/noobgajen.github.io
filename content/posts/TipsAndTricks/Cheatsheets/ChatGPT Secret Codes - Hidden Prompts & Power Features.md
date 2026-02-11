@@ -2,6 +2,11 @@
 title: "ChatGPT Secret Codes - Hidden Prompts & Power Features"
 date: 2026-01-13
 tags: ['ChatGPT', 'prompt-engineering', 'chatgpt-tips', 'ai-tools']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ---

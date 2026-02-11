@@ -2,6 +2,11 @@
 title: "Configuring DHCP Server to Assign Hostname via DHCP"
 date: 2026-01-13
 tags: ['networking', 'dhcp-server', 'hostname-assignment']
+description: "This guide explains how to configure the DHCP server to assign a hostname to a client."
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 #### Begin by installing the DHCP server package.

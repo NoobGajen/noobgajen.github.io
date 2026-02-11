@@ -2,6 +2,11 @@
 title: "Clang Format Configurations for C-family Languages (C, C++, etc)"
 date: 2026-01-13
 tags: ['clang-format', 'code-formatting', 'c++', 'cpp']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 The `clang-format` tool works for multiple programming languages, not just C or C++. It supports:

@@ -2,6 +2,11 @@
 title: "Brute Force Login Page with Hydra"
 date: 2026-01-13
 tags: ['login-bruteforce', 'web-security', 'http', 'web-fuzzing', 'hydra-tool']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 Hydra is a powerful tool used for performing brute-force attacks on various services. In this tutorial, we'll explore brute-forcing login pages using different HTTP methods with Hydra.

@@ -2,6 +2,11 @@
 title: "1. Merge `dev` into `stable`"
 date: 2026-01-13
 tags: ['git-branching', 'version-control']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 To copy the content from the `dev` branch to the `stable` branch in Git, you have a few options depending on your specific needs. Here are some common methods:

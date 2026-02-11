@@ -2,6 +2,11 @@
 title: "To extrack hash from private.asc file"
 date: 2026-01-13
 tags: ['security', 'gpg-keys', 'key-recovery']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 To see available keys in your system

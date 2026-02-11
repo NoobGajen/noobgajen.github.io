@@ -2,6 +2,11 @@
 title: "Tutorial: Downloading Files from Linux to Windows Using Windows CLI"
 date: 2026-01-13
 tags: ['http', 'networking', 'security', 'file-transfer', 'cross-platform', 'windows-cli']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ## Method 1: Using an HTTP Server

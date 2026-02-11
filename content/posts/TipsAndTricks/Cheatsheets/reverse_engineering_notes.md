@@ -1,6 +1,11 @@
 ---
 title: "Reverse Engineering notes with GDB (pwndbg)"
 date: 2026-01-13
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 This guide walks through analyzing a basic binary (e.g., `crackme`) using `pwndbg`.

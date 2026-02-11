@@ -2,6 +2,11 @@
 title: "Configure Custom DNS Servers in Arch based Linux."
 date: 2024-01-13
 tags: ['networking', 'security', 'arch-linux', 'dns-configuration', 'network-configuration']
+description: "This guide explains how to configure custom DNS servers in Arch based Linux."
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 #### First of all, check `openresolv` package is installed in your system or not. if not then simply install it by:

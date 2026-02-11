@@ -2,6 +2,11 @@
 title: "Switch Back to PulseAudio"
 date: 2026-01-13
 tags: ['networking', 'audio-configuration', 'linux-audio']
+description: ""
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ### Title: Disable Pipewire Audio Service

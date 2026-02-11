@@ -2,6 +2,10 @@
 title: "Table of Contents"
 date: 2026-01-13
 tags: ['networking', 'security', 'wireless-attacks', 'wireless-security', 'monitor-mode', 'packet-sniffing']
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ## Airmon-ng

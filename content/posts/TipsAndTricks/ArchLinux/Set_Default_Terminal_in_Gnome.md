@@ -2,6 +2,11 @@
 title: "Set Default Terminal in Gnome"
 date: 2026-01-13
 tags: ['automation', 'gnome-settings', 'terminal-configuration']
+description: ""
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ```bash

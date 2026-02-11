@@ -2,6 +2,11 @@
 title: "Easy Guide to Fixing GRUB on Garuda Linux (BTRFS)"
 date: 2026-01-13
 tags: ['security', 'garuda-linux', 'btrfs', 'grub-fix', 'bootloader-repair']
+description: "This simple guide helps you fix the GRUB bootloader on Garuda Linux with a BTRFS file system. Follow these steps to install the necessary tools, mount partitions, fix GRUB, and check EFI entries."
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 This simple guide helps you fix the GRUB bootloader on **Garuda Linux** with a **BTRFS** file system. Follow these steps to install the necessary tools, mount partitions, fix GRUB, and check EFI entries.

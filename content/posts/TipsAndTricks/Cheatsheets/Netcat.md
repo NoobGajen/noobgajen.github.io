@@ -2,6 +2,11 @@
 title: "File Transfer Using Netcat"
 date: 2026-01-13
 tags: ['networking', 'netcat', 'file-transfer']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ## 🖥️ Step 1: Start Listening on Local Machine (Kali)

@@ -76,6 +76,15 @@ uglyURLs = false
   [[params.socialIcons]]
     name = "youtube"
     url = "https://www.youtube.com/@NoobGajen"
+  [[params.socialIcons]]
+    name = "facebook"
+    url = "https://www.facebook.com/nullPi"  
+    [[params.socialIcons]]
+    name = "hackthebox"
+    url = "https://profile.hackthebox.com/profile/019c4aa3-6214-7066-a1fb-453e70ef42e9"
+    [[params.socialIcons]]
+    name = "tryhackme"
+    url = "https://tryhackme.com/p/TheLinuxLover"
   # Add other social icons as needed
 
 [sitemap]
@@ -115,10 +124,11 @@ uglyURLs = false
     pre = "<i class='fa-solid fa-house'></i>"
 
   [[menu.main]]
-    name = "About Me"
-    url = "/about/"
+    name = "Portfolio"
+    url = "/portfolio/"
     weight = 2
-    pre = "<i class='fa-solid fa-user'></i>"
+    pre = "<i class='fa-solid fa-briefcase'></i>"
+
 
   [[menu.main]]
     name = "Writeups"
@@ -126,20 +136,15 @@ uglyURLs = false
     weight = 3
     pre = "<i class='fa-solid fa-pen-nib'></i>"
 
-  [[menu.main]]
-    name = "Portfolio"
-    url = "/portfolio/"
-    weight = 4
-    pre = "<i class='fa-solid fa-briefcase'></i>"
 
   [[menu.main]]
     name = "Cheatsheet"
     url = "/posts/tipsandtricks/cheatsheets/"
-    weight = 5
+    weight = 4
     pre = "<i class='fa-solid fa-book'></i>"
 
   [[menu.main]]
-    name = "Contact"
-    url = "/contact/"
-    weight = 6
-    pre = "<i class='fa-solid fa-envelope'></i>"
+    name = "Tags"
+    url = "/tags/"
+    weight = 5
+    pre = "<i class='fa-solid fa-tags'></i>"

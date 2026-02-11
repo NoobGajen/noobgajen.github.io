@@ -2,6 +2,11 @@
 title: "Spoofing MAC Address in a Persistent fashion"
 date: 2026-01-13
 tags: ['networking', 'security', 'mac-spoofing', 'systemd', 'network-configuration']
+description: "This method allows users to change their WiFi adapter's MAC address persistently. It also enables users to bypass MAC address blacklisting by network owners, as it allows connection to WiFi networks with a spoofed MAC address."
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 This method allows users to change their WiFi adapter's MAC address persistently. It also enables users to bypass MAC address blacklisting by network owners, as it allows connection to WiFi networks with a spoofed MAC address.

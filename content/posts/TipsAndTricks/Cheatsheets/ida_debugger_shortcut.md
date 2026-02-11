@@ -1,6 +1,11 @@
 ---
 title: "IDA Debugger Key Notes (Default)"
 date: 2026-01-13
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ### Execution control

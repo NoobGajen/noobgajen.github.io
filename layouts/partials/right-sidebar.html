@@ -2,7 +2,7 @@
     <section>
         <h2>Recently Added</h2>
 
-        {{ range ( where .Site.RegularPages "Type" "posts" | first 5 ) }}
+        {{ range first 5 (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
         <div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
         {{end}}
     </section>

@@ -2,6 +2,11 @@
 title: "🎵 How to Use Jockie Music Bot. 🎶"
 date: 2026-01-13
 tags: ['automation', 'discord-bot', 'music-bot', 'bot-commands', 'discord']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 Jockie Music Bot is a powerful Discord bot for playing music from various platforms like **YouTube, Spotify, SoundCloud, and more**. This guide will help you **control playback, manage the queue, adjust audio settings, and more**.  

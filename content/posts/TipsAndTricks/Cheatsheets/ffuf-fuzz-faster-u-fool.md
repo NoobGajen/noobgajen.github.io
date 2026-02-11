@@ -2,6 +2,11 @@
 title: "FFUF - Fuzz Faster U Fool"
 date: 2026-01-13
 tags: ['ffuf', 'fuzzing', 'web-fuzzing', 'directory-bruteforce', 'parameter-fuzzing', 'api-testing', 'vhost-enum', 'http-methods', 'proxy', 'login-bruteforce', 'rate-limiting', 'red-teaming', 'bug-bounty', 'post-exploitation', 'content-discovery', 'automation', 'web-security', 'ctf-tools', 'HTTP', 'ffuf-tool', 'security-testing']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 ## **1. Directory and File Brute Forcing**

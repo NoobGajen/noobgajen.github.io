@@ -2,6 +2,11 @@
 title: "Jamming Wi-Fi with `mdk4`"
 date: 2026-01-13
 tags: ['networking', 'security', 'security-testing', 'wifi-jamming', 'mdk4', 'wireless-attacks', 'dos-attack', 'wireless-security', 'packet-capture']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 With the `mdk4` tool, you can jam Wi-Fi networks in various ways. This guide will walk you through the installation, setup, and usage of `mdk4`, including examples for different attacks.

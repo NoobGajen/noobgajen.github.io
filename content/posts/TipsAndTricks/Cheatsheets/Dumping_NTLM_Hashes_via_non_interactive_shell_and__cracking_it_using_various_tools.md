@@ -2,6 +2,11 @@
 title: "Dumping NTLM Hashes via Non-Interactive Shell (Windows)"
 date: 2026-01-13
 tags: ['windows', 'ntlm', 'hash-dumping', 'samdump2', 'secretsdump', 'impacket', 'hashcat', 'red-teaming', 'post-exploitation', 'password-cracking', 'offline-attacks', 'registry-hive', 'windows-security', 'privilege-escalation', 'active-directory']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 # Step 1: Save Registry Hives (SAM, SECURITY, SYSTEM)

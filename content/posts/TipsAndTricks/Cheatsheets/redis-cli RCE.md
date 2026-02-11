@@ -2,6 +2,11 @@
 title: "Reading a File in Redis-CLI Interactive Shell"
 date: 2026-01-13
 tags: ['security', 'redis', 'post-exploitation', 'lua-scripting', 'redis-exploitation']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 Redis allows the execution of Lua scripts through the `EVAL` command. If Redis is misconfigured or exposed to attackers, the Lua scripting engine can be used to execute arbitrary commands, including reading files on the system.

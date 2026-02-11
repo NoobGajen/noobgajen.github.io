@@ -2,6 +2,12 @@
 title: "Saving the Current Pane Buffer in tmux"
 date: 2026-01-13
 tags: ['automation', 'tmux', 'terminal-multiplexer']
+description: ""
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
+---
 ---
 
 This guide explains how to save the contents of the current pane in `tmux` to a file.

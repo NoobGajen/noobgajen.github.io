@@ -2,6 +2,11 @@
 title: "Tutorial: String Manipulation in Perl with s///, y///, and s///g"
 date: 2026-01-13
 tags: ['automation', 'string-manipulation', 'file-renaming', 'regex', 'security', 'perl-scripting']
+description: " "
+cover:
+  image: "/images/TipsAndTricks/Tips and Tricks.jpg"
+  alt: "Tips & Tricks Cover"
+  relative: true
 ---
 
 Perl provides powerful operators for manipulating strings using regular expressions. Here's a breakdown of each operator with examples:
